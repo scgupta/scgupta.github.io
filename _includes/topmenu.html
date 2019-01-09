@@ -1,0 +1,106 @@
+<header>
+<nav id="topmenu">
+
+<!-- Menu on large and medium screen -->
+<div id="topmenu-large" class="w3-navbar w3-left-align w3-border w3-theme-light">
+
+<li class="w3-hide-medium w3-hide-large w3-opennav w3-hover-blue w3-right">
+  <!-- ☰ -->
+  <a class="w3-hover-blue" href="javascript:void(0);" onclick="showMenu('topmenu-small')"><i class="fa fa-bars fa-fw"></i></a>
+</li>
+
+<li class="w3-opennav w3-hide-large w3-hide-medium w3-hover-blue w3-right">
+<a href="javascript:void(0);" title="search" class="w3-hover-blue" onclick="showMenu('search')"><i class="fa fa-search fa-fw"></i></a>
+</li>
+
+<li class="w3-hide-small w3-dropdown-hover w3-hover-blue w3-right">
+<a href="/search.html" title="search" class="w3-hover-blue"><i class="fa fa-search fa-fw"></i></a>
+<div class="w3-dropdown-content w3-padding w3-theme-light w3-card-4" style="right: 0;">
+{% include search-box.html size="20" %}
+</div>
+</li>
+
+<li class="w3-hide-small w3-dropdown-hover w3-hover-blue w3-right">
+<a href="#" title="follow" class="w3-hover-blue">
+<i class="fa {{ site.data.socialmedias["facebook"].faicon }}"></i>
+<i class="fa {{ site.data.socialmedias["twitter"].faicon }}"></i>
+<i class="fa {{ site.data.socialmedias["googleplus"].faicon }}"></i>
+</a>
+<div class="w3-dropdown-content w3-padding w3-theme-light w3-card-4" style="right: 50px;">
+
+<div class="w3-padding">
+<div class="fb-follow" data-href="{{ site.data.socialmedias["facebook"].url | append: site.data.socialmedias["facebook"].user }}" data-layout="button_count" data-show-faces="false"></div>
+</div>
+
+<div class="w3-padding">
+<a class="twitter-follow-button" href="{{ site.data.socialmedias["twitter"].url | append: site.data.socialmedias["twitter"].user }}" data-show-count="true" data-show-screen-name="false"><!--Follow--></a>
+</div>
+
+<div class="w3-padding">
+<div class="g-follow" data-annotation="bubble" data-height="20" data-href="{{ site.data.socialmedias["googleplus"].url | append: site.data.socialmedias["googleplus"].user}}" data-rel="author"></div>
+</div>
+
+</div>
+</li>
+
+<!--
+<li class="w3-opennav w3-hover-blue w3-right">
+<a href="/sitemap.html" title="sitemap" class="w3-hover-blue"><i class="fa fa-sitemap fa-fw"></i></a>
+</li>
+
+<li class="w3-opennav w3-hover-blue w3-right">
+<a href="/about/" title="about" class="w3-hover-blue"><i class="fa fa-info fa-fw"></i></a>
+</li>
+-->
+
+<li class="w3-opennav w3-hover-blue">
+<a href="/" class="w3-hover-blue"><i class="fa fa-home"></i></a>
+</li>
+
+<!-- Generated Menu -->
+{% for menu in site.data.topmenu %} {% if menu.children %}
+<li class="w3-hide-small w3-dropdown-hover w3-hover-blue">
+<a href="{{ menu.url }}" class="w3-hover-blue">{{ menu.label }} <i class="fa fa-caret-down"></i></a>
+<div class="w3-dropdown-content w3-theme-light w3-card-4">
+{% for submenu in menu.children %}  <a href="{{ submenu.url }}" class="w3-hover-blue">{{ submenu.label }}</a>
+{% endfor %}</div>
+</li>
+{% else %}
+<li><a href="{{ menu.url }}" class="w3-hide-small w3-hover-blue">{{ menu.label }}</a></li>
+{% endif %} {% endfor %}
+<!-- End: Generated Menu -->
+
+</div>
+<!-- End: Menu on large and medium screen -->
+
+<!-- Menu on small screen -->
+<div id="topmenu-small" class="w3-navbar w3-hide w3-hide-large w3-hide-medium w3-left-align w3-border w3-theme-light">
+
+<!-- Generated Menu -->
+{% for menu in site.data.topmenu %} {% if menu.children %}
+<li class="w3-dropdown-hover w3-hover-blue">
+<a href="{{ menu.url }}" class="w3-hover-blue">{{ menu.label }} <i class="fa fa-caret-down"></i></a>
+<div class="w3-dropdown-content w3-theme-light w3-card-4">
+{% for submenu in menu.children %}  <a href="{{ submenu.url }}" class="w3-hover-blue">{{ submenu.label }}</a>
+{% endfor %}</div>
+</li>
+{% else %}
+<li><a href="{{ menu.url }}" class="w3-hover-blue">{{ menu.label }}</a></li>
+{% endif %} {% endfor %}
+<!-- End: Generated Menu -->
+
+</div>
+<!-- End: Menu on small screen -->
+
+<div id="search" class="w3-hide w3-hide-large w3-hide-medium w3-right w3-margin">
+{% include search-box.html size="20" %}
+</div>
+
+<script>
+function showMenu(elementid) {
+    document.getElementById(elementid).classList.toggle("w3-show");
+}
+</script>
+
+</nav>
+</header>

@@ -1,0 +1,17 @@
+{% assign path_parts = page.path | remove: "/_posts" | remove: "index.html" | split: '/' %}
+{% if path_parts.size > 0 %}
+<nav>
+<ol itemscope itemtype="http://schema.org/BreadcrumbList" id="breadcrumb" class="breadcrumb w3-tiny w3-container w3-hide-small">
+  {% assign url = "/" %}
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ url }}"><span itemprop="name">Home</span></a><span itemprop="position" content="1" /></li>
+  {% for part in path_parts %}{% if forloop.last %}
+  <li>{{ page.title }}</li>
+  {% else %}{% assign url = (url | remove: "/blog" | append: part | append: '/') %}{% assign page_title = part %}
+    {% for p in site.pages %}{% if url == p.url %}
+        {% assign page_title = p.title %}
+    {% endif %}{% endfor %}
+  <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemprop="item" href="{{ url }}"><span itemprop="name">{{ page_title }}</span></a><span itemprop="position" content="{{ forloop.index | plus: '1' }}" /></li>
+  {% endif %}{% endfor %}
+</ol>
+</nav>
+{% endif %}

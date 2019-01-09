@@ -1,0 +1,25 @@
+<!-- Search Box -->
+<!--
+<script>
+  (function() {
+    var cx = '{{ site.data.analytics.google.search.cseid }}';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+-->
+<form action="/search.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="{{ site.data.analytics.google.search.cseid }}" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="search" name="q" size="{{ include.size }}" style="vertical-align:middle; padding: 4px" />
+    <input type="submit" name="sa" value="&#xf002;" class="w3-btn w3-theme-l1 w3-hover-blue" style="font-family: FontAwesome;"/>
+  </div>
+</form>
+<!-- End: Search Box -->

@@ -1,0 +1,96 @@
+---
+title: UML Action Language
+excerpt: "UML Action Language (UAL) is now an OMG standard. RSA/RSA-RT are IDEs with compilers that transform UML-UAL models into excutable code."
+redirect_from:
+  - /projects/uml-action-language/
+---
+
+<p>
+UML Action Language (UAL) with well defined semantics is now an <a href="http://www.omg.org/spec/ALF/" target="_blank" rel="nofollow">OMG standard</a> for <a href="http://en.wikipedia.org/wiki/Executable_UML" target="_blank" rel=nofollow">Executable Models</a>.
+</p>
+
+<p>
+Rational Software Architect (RSA) and its Real Time Edition (RSA-RTE) have UML transformations that can transform behaviorally complete UML models into executable code. UML was rich enough to express structure of the system, but it could express only limited kinds of behavior, and graphically defining even those limited behaviors was cumbersome. So, in practice, engineers modeled their system using UML, but encoded behaviors (such as actions to be taken while entering or exiting a state, or while taking a transition to another state) in various programming languages such as C/C++, and embedded them in the respective model element (State, Transition etc.) as UML Opaque Behavior element. These opaque elements are copied verbatim to the generated code by UML transformations.
+</p>
+
+<p>
+With opaque behavior code embedded in UML models, though an engineer worked at the model level, the model was not "pure" and semantically complete and it was not possible to semantically analysis these opaque elements (for example, there was no way to model-check whether any model level abstraction or constraint was broken in a C++ code snippet). It also caused several productivity issues for the system design engineer as (s)he spent significant amount of time dealing with the intricacies of C++ and understanding how a model is transformed to C++ to be able to write correct code snippets. This time could be better spent in designing the model. It also tied the model to a target language, platform and UML transform, rendering it impure and importable, and model simulation unfeasible.
+</p>
+
+<p>
+A standard UML Action Language for specifying complete behavior can address these issues. The goal with developing UAL (and standardizing it at Object Management Group that oversees UML evolution) was to have a simple textual language for specifying behavior with well-defined semantics, so that model was "pure" and semantically complete and system engineers could work at model level. For UAL to be of real use to engineers, RSA and RSA-RTE are enhanced as Model IDE with robust tooling for UAL code editing, translation to C++/Java, and model &amp; UAL code level debugging capabilities similar to modern programming IDEs.
+</p>
+
+<p>
+The project started with a one line description: build a standard action language in RSA/RSA-RTE. It gave me incredible opportunity to work on this project from conceptualization to execution and delivery:
+</p>
+
+<ul>
+	<li>Contribute in drafting IBM's proposal and then as a reviewer of standard drafts during standardization of UAL at Object Management Group</li>
+	<li>Collaborated with key customers to understand requirements and chart out the goals and iterative delivery plans</li>
+	<li>Define architecture of UAL features in RSA and RSA-RTE</li>
+	<li>Design and implement some of the key components such UAL compilation and translation framework</li>
+	<li>Lead a small team of 4 engineers to implement from scratch version 1.0 of the UAL tooling released in RSA/RSA-RTE 8.0 in Aug 2010</li>
+</ul>
+
+<p>
+Some of capabilities designed and developed by my team are:
+</p>
+
+<ul>
+<li><b>RSA</b>
+    <ul>
+	<li>UAL runtime definition consisting of UML model libraries</li>
+	<li>Extensible UAL compilation and translation framework</li>
+	<li>Extensible UAL translators for C++ and Java</li>
+	<li>UAL code snippet Editor and model based content completion assistant</li>
+	<li>Model Execution Framework</li>
+	<li>Extensible mechanism for UAL to target language mapping marker generation (functionally similar to line level debug symbols in traditional compilers, utilized for model level debugging)</li>
+    </ul>
+</li>
+<li><b>RSA-RTE</b>
+    <ul>
+	<li>Extensions to UAL C++ and Java translators for Real Time systems</li>
+	<li>UAL model simulation for Real Time systems with standard debugging constructs (e.g. break point, step over/in/out) at model and UAL code level</li>
+	<li>Model level debugging of generated C++ code, and event/message injection/tracing for Real Time systems</li>
+    </ul>
+</li>
+</ul>
+
+<p>
+My work in this project as lead, architect and engineer earned me Outstanding Technical Achievement Award (OTAA), one of the highest technical excellence awards at IBM, and I was also featured in the inaugural edition of I Drive Excellence series at IBM India Software Lab.
+</p>
+
+With: 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/sasikanthbharadwaj" data-format="click" data-text="Sasikanth Bharadwaj"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/saurabh500" data-format="click" data-text="Saurabh Singh"></script>, <a href="https://plus.google.com/101471801629484342649/about" target="_blank" rel="nofollow">Kalyan Prasad</a>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/janees" data-format="click" data-text="Janees Elamkulam"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/arushi-aggarwal/9/616/913" data-format="click" data-text="Arushi Aggarwal"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/alan-yeung/0/198/2bb" data-format="click" data-text="Alan Yeung"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/daniel-leroux/0/198/116" data-format="click" data-text="Daniel Leroux"></script>
+
+<h3>Product/Tool Info:</h3>
+
+<strong>Name:</strong> <a href="http://www.ibm.com/developerworks/rational/products/rsa/" target="_blank" rel="nofollow">Rational Software Architect</a><br/>
+<strong>Feature:</strong> <a href="http://pic.dhe.ibm.com/infocenter/rsahelp/v8/topic/com.ibm.xtools.model.ual.doc/topics/c_umlactionlanguage.html" target="_blank" rel="nofollow">UML Action Language</a> and <a href="http://pic.dhe.ibm.com/infocenter/rsarthlp/v8/topic/com.ibm.xtools.modeling.execution.doc/topics/t_ualexec.html" target="_blank" rel="nofollow">Model Execution and Debugging<br/>
+</a><strong>OS:</strong> Windows, Linux<br/>
+<strong>Official Web Site:</strong> <a href="http://www.ibm.com/developerworks/rational/products/rsa/" target="_blank" rel="nofollow">http://www.ibm.com/developerworks/rational/products/rsa/</a><br/>
+<strong>Download Link:</strong> <a href="http://www.ibm.com/developerworks/downloads/r/architect/" target="_blank" rel="nofollow">http://www.ibm.com/developerworks/downloads/r/architect/</a><br/>
+<strong>Date:</strong> Aug 2010<br/>
+
+<h3>Resources</h3>
+<ul>
+	<li><a href="http://www.omg.org/spec/ALF" target="_blank" rel="nofollow">UML Action Language Spec</a></li>
+	<li><a href="http://pic.dhe.ibm.com/infocenter/rsahelp/v8/topic/com.ibm.xtools.model.ual.doc/topics/c_umlactionlanguage.html" target="_blank" rel="nofollow">UML Action Language</a> in Rational Software Architect 8.0</li>
+	<li><a href="http://pic.dhe.ibm.com/infocenter/rsarthlp/v8/topic/com.ibm.xtools.modeling.execution.doc/topics/t_ualexec.html" target="_blank" rel="nofollow">Model Execution and Debugging</a> in Rational Software Architect Real Time Edition 8.0</li>
+	<li><a href="http://www.ibm.com/developerworks/rational/library/10/whats-new-in-rational-software-architect-8/" target="_blank" rel="nofollow">What's new in IBM Rational Software Architect 8.0</a></li>
+	<li>Rational Software Architect 8.0 <a href="http://pic.dhe.ibm.com/infocenter/rsahelp/v8/" target="_blank" rel="nofollow">Online Help</a></li>
+	<li>Rational Software Architect Real Time Edition 8.0 <a href="http://pic.dhe.ibm.com/infocenter/rsarthlp/v8/" target="_blank" rel="nofollow">Online Help</a></li>
+	<li><a href="https://www.ibm.com/developerworks/mydeveloperworks/wikis/form/anonymous/api/library/b7da455c-5c51-4706-91c9-dcca9923c303/document/910cd642-c59a-47d7-9739-7459941a9e2b/attachment/9ba9af70-22fa-4756-8128-5ec8a3a08c2d/media/uml%20actional%20language%20in%20rsa.pdf" target="_blank" rel="nofollow">Using the UML Action Language in Rational Software Architect</a></li>
+	<li><a href="https://www.ibm.com/developerworks/mydeveloperworks/wikis/form/anonymous/api/library/b7da455c-5c51-4706-91c9-dcca9923c303/document/910cd642-c59a-47d7-9739-7459941a9e2b/attachment/9f96a292-93e7-479b-8fdc-008a791c4d4f/media/simulation%20in%20rsa%20-%20simulating%20uml%20models.pdf" target="_blank" rel="nofollow">Model Simulation in Rational Software Architect:Simulating UML Models</a></li>
+</ul>
+
+<h3>Talks</h3>
+<ul>
+	<li>Next Level of MDD Maturity: Develop Executable Models using UML Action Language. Satish Chandra Gupta, Andreas Henriksson. In Innovate 2010, The Rational Software Conference. Orlando, Florida, USA. 6-10 June 2010.</li>
+</ul>

@@ -1,0 +1,27 @@
+{% if page.categories %}
+  {% assign category = page.categories[-1] %}
+  {% assign categoryposts = site.categories[category] %}
+  {% for post in categoryposts %}
+    {% if post.url == page.url %}
+      {% assign post_index0 = forloop.index0 %}
+      {% assign post_index1 = forloop.index %}
+    {% endif %}
+  {% endfor %}
+  {% for post in categoryposts %}
+    {% if post_index0 == forloop.index %}
+      {% assign next_post = post %}
+    {% endif %}
+    {% if post_index1 == forloop.index0 %}
+      {% assign prev_post = post %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="w3-row-padding w3-margin">
+<div class="w3-col s6">
+{% if prev_post %}<a class="w3-btn-floating-large w3-theme-l1 w3-hover-blue w3-right" href="{{ prev_post.url }}" title="{{ prev_post.title }}"><i class="fa fa-arrow-left"></i></a>{% else %}<i class="fa fa-arrow-left fa-inverse"></i>{% endif %}
+</div>
+<div class="w3-col s6">
+{% if next_post %}<a class="w3-btn-floating-large w3-theme-l1 w3-hover-blue w3-left" href="{{ next_post.url }}" title="{{ next_post.title }}"><i class="fa fa-arrow-right"></i></a>{% else %}<i class="fa fa-arrow-right fa-inverse w3-hide"></i>{% endif %}
+</div>
+</div>

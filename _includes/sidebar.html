@@ -1,0 +1,35 @@
+<aside>
+<div class="w3-col w3-container">
+{% assign twitter_url = site.data.socialmedias["twitter"].url | append: site.data.socialmedias["twitter"].user %}
+
+{% if page.path contains '_posts' %}
+{% include google-adsense.html %}
+{% endif %}
+
+<div class="w3-hide-large w3-hide-medium">
+<div style="display: inline-block; vertical-align: top; margin-top: -2px;">
+<div class="fb-follow" data-href="{{ site.data.socialmedias["facebook"].url | append: site.data.socialmedias["facebook"].user }}" data-layout="button" data-show-faces="false"></div>
+</div>
+<div style="display: inline-block; vertical-align: top;">
+<a class="twitter-follow-button" href="{{ twitter_url }}" data-show-count="false" data-show-screen-name="false"><!--Follow--></a>
+</div>
+<div style="display: inline-block; vertical-align: top;">
+<div class="g-follow" data-annotation="none" data-height="20" data-href="{{ site.data.socialmedias["googleplus"].url | append: site.data.socialmedias["googleplus"].user}}" data-rel="author"></div>
+</div>
+</div>
+
+{% if page.lang == "hi" %}
+<div class="fb-page" 
+  data-href="{{ site.data.socialmedias["facebook"].url | append: site.data.socialmedias["facebook"].page }}"
+  data-hide-cover="false"
+  data-show-facepile="false" 
+  data-show-posts="false">
+</div>
+{% endif %}
+
+<div>
+<a class="twitter-timeline" href="{{ twitter_url }}" data-widget-id="{{ site.data.socialmedias["twitter"].timelinewidgetid }}" data-chrome="nofooter"><!--Tweets by @{{ site.data.socialmedias["twitter"].user }}--></a>
+</div>
+
+</div>
+</aside>

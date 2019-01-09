@@ -1,0 +1,114 @@
+#Social Media
+
+facebook:
+  showprofile: true
+  url: "https://www.facebook.com/"
+  user: "scgupta1996"
+  page: "SatishChandraGupt"
+  color: "#3b5998"
+  font: "Helvetica, Arial, sans-serif"
+  fontweight: "bold"
+  faicon: "fa-facebook"
+  showshare: true
+  shareurlprefix: "//www.facebook.com/share.php?u="
+  sharetxtsuffix: "&t="
+  app_id: "270793689617543"
+  admins: "100001493108259"
+
+twitter:
+  showprofile: true
+  url: "//twitter.com/"
+  user: "scgupta"
+  color: "#55acee"
+  faicon: "fa-twitter"
+  showshare: true
+  shareurlprefix: "//twitter.com/intent/tweet?url="
+  sharetxtsuffix: "&text="
+  timelinewidgetid: "338702831265665024"
+
+googleplus:
+  showprofile: true
+  url: "//plus.google.com/"
+  user: "108270061172269489699"
+  color: "#dc4e41"
+  font: "Roboto, Arial, sans-serif"
+  fontweight: "bold"
+  faicon: "fa-google-plus"
+  showshare: true
+  shareurlprefix: "//plus.google.com/share?url="
+  sharetxtsuffix: "&title="
+
+linkedin:
+  showprofile: true
+  url: "//www.linkedin.com/in/"
+  user: "scgupta"
+  color: "#0077bf"
+  faicon: "fa-linkedin"
+  showshare: true
+  shareurlprefix: "//www.linkedin.com/shareArticle?url="
+  sharetxtsuffix: "&title="
+
+github:
+  showprofile: false
+  url: "//github.com/"
+  user: "scgupta"
+  color: "#333333"
+  faicon: "fa-github"
+  showshare: false
+
+reddit:
+  showprofile: false
+  color: "#ff4500"
+  faicon: "fa-reddit"
+  showshare: true
+  shareurlprefix: "//reddit.com/submit?url="
+  sharetxtsuffix: "&title="
+
+stumbleupon:
+  showprofile: false
+  color: "#eb4924"
+  faicon: "fa-stumbleupon"
+  showshare: false
+  shareurlprefix: "//www.stumbleupon.com/submit?url="
+  sharetxtsuffix: "&title="
+
+digg:
+  showprofile: false
+  color: "#005be2"
+  faicon: "fa-digg"
+  showshare: false
+  shareurlprefix: "//digg.com/submit?phase=2&url="
+  sharetxtsuffix: "&title="
+
+delicious:
+  showprofile: false
+  color: "#3399ff"
+  faicon: "fa-delicious"
+  showshare: false
+  shareurlprefix: "//delicious.com/post?url="
+  sharetxtsuffix: "&title="
+
+disqus:
+  showprofile: false
+  url: "//satishchandragupta.disqus.com/"
+  color: "#2e9fff"
+  faicon: "fa-comment-o"
+  font: "Arial, sans-serif"
+  fontweight: "bold"
+  showshare: false
+
+email:
+  showprofile: false
+  color: "grey"
+  faicon: "fa-envelope-o"
+  showshare: true
+  shareurlprefix: "mailto:?body="
+  sharetxtsuffix: "&subject="
+
+whatsapp:
+  showprofile: false
+  color: "#43d854"
+  faicon: "fa-whatsapp"
+  showshare: true
+  shareurlprefix: "whatsapp://send?text="
+  sharetxtsuffix: "%20"

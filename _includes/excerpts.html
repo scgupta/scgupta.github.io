@@ -1,0 +1,19 @@
+<div class="excerpt">
+{% for post in include.posts %}
+<div class="w3-row w3-margin-bottom">
+{% if post.image_thumbnail %}
+<div class="w3-col w3-hide-small m4 l3">
+<div class="w3-margin-right">
+<a href="{{ post.url }}"><img class="framedimg w3-margin-right" width="100%" src="{{ post.image_thumbnail }}" /></a>
+</div>
+</div>
+{% endif %}
+<div class="w3-col m8 l9">
+<h4 class="w3-margin-0"><a href="{{ post.url }}">{{ post.title }}</a></h4>
+<p class="w3-margin-0"><span class="w3-small">{{ post.date | date: "%-d %b %Y" }}:</span> {{ post.excerpt | strip_html | strip_newline | strip | truncate: 160 }}
+<a class="w3-btn w3-tiny w3-theme-l1 w3-hover-blue alignright" href="{{ post.url }}">Read More »</a>
+</p>
+</div>
+</div>
+{% endfor %}
+</div>

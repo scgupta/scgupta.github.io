@@ -1,0 +1,9 @@
+<ol id="toc"
+{% if page.lang == "hi" %}
+style="list-style-type: devanagari;"
+{% endif %}
+>
+{% for post in include.posts reversed %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ol>

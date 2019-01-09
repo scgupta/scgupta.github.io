@@ -1,0 +1,47 @@
+#Top Menu Bar
+
+- label: "Blog"
+  url: "/blog/"
+
+- label: "Projects"
+  url: "/projects/"
+  children:
+    - label: "Mobile App Energy Profiler"
+      url: "/projects/mobile-app-energy-profiler.html"
+    - label: "UML Action Language"
+      url: "/projects/uml-action-language.html"
+    - label: "PurifyPlus for AIX"
+      url: "/projects/purifyplus.html"
+    - label: "Java Memory Leak Analysis"
+      url: "/projects/leakbot-java-memory-leaks.html"
+    - label: "Software Concordance"
+      url: "/projects/software-concordance.html"
+
+- label: "Trekking"
+  url: "/trekking/"
+  children:
+    - label: "Things to pack"
+      url: "/blog/2013/06/17-trekking-equipment-packing-list.html"
+    - label: "Tapovan - Nandanvan Trek"
+      url: "/blog/2008/10/11-gomukh-tapovan-nandanvan-vasuki-taal.html"
+    - label: "Auden&#39;s Col - Mayali Pass Trek"
+      url: "/blog/2010/10/28-gangotri-kedartal-auden-col-mayali-pass-kedarnath.html"
+
+
+- label: "हिंदी"
+  url: "/hindi/"
+  children:
+    - label: "मन – प्राण : कविता संकलन"
+      url: "/hindi/manpraan/"
+    - label: "मध्याह्न : कविता संकलन"
+      url: "/hindi/madhyaahan/"
+    - label: "बेसबब : शायरी"
+      url: "/hindi/besabab/"
+    - label: "अन्य कविताएँ"
+      url: "/hindi/other/"
+    - label: "ब्लॉग"
+      url: "/hindi/blog/"
+    - label: "मेरी प्रिय कविताएँ"
+      url: "/hindi/my-favorite-hindi-poems.html"
+    - label: "मेरी अज़ीज़ ग़ज़लें"
+      url: "/hindi/my-favorite-ghazals.html"

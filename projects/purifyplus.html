@@ -1,0 +1,49 @@
+---
+title: PurifyPlus for AIX
+excerpt: "PurifyPlus is a runtime analysis tool to detect memory errors, performance bottlenecks, and code coverage in C/C++ programs."
+redirect_from:
+  - /projects/purifyplus/
+---
+
+<p>
+Rational <a href="http://www.ibm.com/developerworks/downloads/r/rpp/" target="_blank" rel="nofollow">PurifyPlus</a> is a runtime analysis tool to detect <a href="http://www.ibm.com/developerworks/rational/library/06/0822_satish-giridhar/" target="_blank" rel="nofollow">memory errors</a>, performance bottlenecks, and code coverage in C/C++ programs. It performs control and data flow analysis on program binaries and instruments them to call its runtime library for memory analysis and data collection.
+</p>
+
+<p>
+I implemented support for 64-bit binaries in Purify and PureCoverage for AIX, redesigned Purify/AIX runtime for robust interception of libc functions and system calls, implemented new and dynamic mechanism for identifying system calls in Purify, contributed in designing a mechanism for Purify to work with un-instrumented shared libraries, and several other features. I was also PurifyPlus AIX tech lead for two years. These features were part of 7.0 and later releases.
+</p>
+
+<p>
+With: 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/giridhars" data-format="click" data-text="Giridhar Murthy"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/gururaja-kowlali/6/a91/931" data-format="click" data-text="Gururaja Kowlali"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/shankha" data-format="click" data-text="Shankha Banerjee"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/in/kumarrangarajan" data-format="click" data-text="Kumar Rangarajan"></script>
+</p>
+
+<h3>Product/Tool Info:</h3>
+
+<strong>Name:</strong> <a href="http://www.ibm.com/developerworks/rational/products/purifyplus/" target="_blank" rel="nofollow">PurifyPlus</a><br/>
+<strong>OS:</strong> AIX<br/>
+<strong>Official Web Site:</strong> <a href="http://www.ibm.com/developerworks/rational/products/purifyplus/" target="_blank" rel="nofollow">http://www.ibm.com/developerworks/rational/products/purifyplus/</a><br/>
+<strong>Download Link:</strong> <a href="http://www.ibm.com/developerworks/downloads/r/rpp/" target="_blank" rel="nofollow">http://www.ibm.com/developerworks/downloads/r/rpp/</a><br/>
+
+<h3>Resources</h3>
+<ul>
+	<li>Download <a href="http://www.ibm.com/developerworks/downloads/r/rpp/" target="_blank" rel="nofollow">IBM Rational PurifyPlus</a></li>
+	<li>PurifyPlus <a href="http://www.ibm.com/developerworks/rational/products/purifyplus/" target="_blank" rel="nofollow">technical developer content</a> @ IBM DeveloperWorks</li>
+	<li>Articles
+<ul>
+	<li><a href="http://www.ibm.com/developerworks/rational/library/06/0822_satish-giridhar/" target="_blank" rel="nofollow">Navigating “C” in a “Leaky” Boat? Try Purify</a></li>
+	<li><a href="http://www.ibm.com/developerworks/rational/library/08/0205_gupta-gaurav/" target="_blank" rel="nofollow">Advanced features of IBM Rational Purify: Debugging with Purify</a></li>
+	<li><a href="http://www.ibm.com/developerworks/rational/library/08/0226_gupta-gaurav/" target="_blank" rel="nofollow">Advanced features of IBM Rational Purify: Customizing Purify instrumentation and reporting</a></li>
+	<li><a href="http://www.ibm.com/developerworks/rational/library/08/0513_gupta-gaurav/" target="_blank" rel="nofollow">Advanced features of IBM Rational Purify: Integrating Purify into software development and testing process</a></li>
+</ul>
+</li>
+	<li>PurifyPlus for JNI
+<ul>
+	<li><a href="http://java.sun.com/j2se/1.5.0/docs/guide/jni/" target="_blank" rel="nofollow">Java Native Interface specifications</a></li>
+	<li><a href="http://media.satishchandragupta.com/download/JNIexample-20080801.zip">Download</a> sample code demonstrating how to use PurifyPlus for JNI code. Please read README.txt for details and disclaimers.</li>
+</ul>
+</li>
+</ul>

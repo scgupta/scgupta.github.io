@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% assign permalink = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+{% capture lang %}{% if page.lang %}{{ page.lang }}{% else %}{{ "en" }}{% endif %}{% endcapture %}
+{% capture locale %}{% if page.locale %}{{ page.locale }}{% else %}{{ "en_US" }}{% endif %}{% endcapture %}
+{% capture sitetitle %}{% if lang == "hi" %}{{ site.title_hi }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
+<html lang="{{ lang }}" prefix="og: http://ogp.me/ns#">
+
+{% include head.html permalink=permalink lang=lang locale=locale sitetitle=sitetitle %}
+
+<body itemscope itemtype="http://schema.org/WebPage">
+
+{% include topmenu.html %}
+{% include breadcrumbs.html %}
+
+<div class="w3-row">
+<div class="w3-container w3-col m8">
+{{ content }}
+</div>
+
+<div class="w3-container w3-col m4">
+{% include sidebar.html %}
+</div>
+</div>
+
+{% include footer.html sitetitle=sitetitle %}
+{% include scripts.html permalink=permalink lang=lang locale=locale %}
+</body>
+</html>

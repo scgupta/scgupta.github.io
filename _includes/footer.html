@@ -1,0 +1,31 @@
+<footer>
+<div class="w3-container w3-padding w3-border w3-theme-l4">
+
+<div class="w3-left">
+<small>&copy; 2016 <a href="/">{{ include.sitetitle }}</a></small>
+</div>
+
+<div class="w3-right" itemscope itemtype="http://schema.org/Person">
+<link itemprop="name" content="{{ site.title }}">
+<link itemprop="url" href="/">
+{% for socialmedia in site.data.socialmedias %} {% if socialmedia[1].showprofile == true %}
+<a itemprop="sameAs" href="{{ socialmedia[1].user | prepend: socialmedia[1].url }}" title="@{{ socialmedia[0] }}" target="_blank"><span class="w3-hover-text-dark-grey" style="color: {{ socialmedia[1].color }};">
+<i class="fa {{ socialmedia[1].faicon }} fa-fw"></i>
+</span></a>
+{% endif %} {% endfor %}
+
+<a href="/about/" title="about"><span class="w3-hover-text-dark-grey" style="color: limegreen;">
+<i class="fa fa-paw fa-fw"></i>
+</span></a>
+
+<a href="/sitemap.html" title="sitemap"><span class="w3-hover-text-dark-grey" style="color: green;">
+<i class="fa fa-sitemap fa-fw"></i></a>
+</span></a>
+
+<a href="{{ "/feed.xml" | prepend: site.baseurl }}" title="RSS feed" target="_blank"><span class="w3-hover-text-dark-grey" style="color: #f26522;">
+<i class="fa fa-rss fa-fw"></i>
+</span></a>
+</div>
+
+</div>
+</footer>

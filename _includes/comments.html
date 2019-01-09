@@ -1,0 +1,56 @@
+<footer id="comments">
+
+<style>
+#tab-facebook:checked ~ #tab-facebook-content,
+#tab-googleplus:checked ~ #tab-googleplus-content,
+#tab-disqus:checked ~ #tab-disqus-content {
+    display: block;
+}
+</style>
+
+<div class="tabs w3-navbar w3-small w3-style-l1">
+
+  <label class="w3-text-grey"><i class="fa fa-comments fa-2x" style="vertical-align: middle;"></i> <span class="w3-hide-small w3-hide-medium" style="vertical-align: middle;">Comments:</span></label>
+
+  <!-- Radio button and lable for #tab-facebook -->
+  <input type="radio" name="tabs" id="tab-facebook" checked />
+  <label class="w3-hover-light-grey" for="tab-facebook">
+    <span class="fa-stack" style="color: {{ site.data.socialmedias.facebook.color }};">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa {{ site.data.socialmedias.facebook.faicon }} fa-stack-1x fa-inverse"></i>
+    </span><span class="w3-hide-small w3-hide-medium" style="font-family: {{ site.data.socialmedias.facebook.font }}; font-weight: {{ site.data.socialmedias.facebook.fontweight }}; color: {{ site.data.socialmedias.facebook.color }};"> Facebook</span>
+  </label>
+
+  <!-- Radio button and lable for #tab-googleplus -->
+  <input type="radio" name="tabs" id="tab-googleplus" />
+  <label class="w3-hover-light-grey" for="tab-googleplus">
+    <span class="fa-stack" style="color: {{ site.data.socialmedias.googleplus.color }};">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa {{ site.data.socialmedias.googleplus.faicon }} fa-stack-1x fa-inverse"></i>
+    </span><span class="w3-hide-small w3-hide-medium" style="font-family: {{ site.data.socialmedias.googleplus.font }}; font-weight: {{ site.data.socialmedias.googleplus.fontweight }}; color: {{ site.data.socialmedias.googleplus.color }};"> Google</span>
+  </label>
+
+  <!-- Radio button and lable for #tab-disqus -->
+  <input type="radio" name="tabs" id="tab-disqus" />
+  <label class="w3-hover-light-grey" for="tab-disqus">
+    <span class="fa-stack" style="color: {{ site.data.socialmedias.disqus.color }};">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa {{ site.data.socialmedias.disqus.faicon }} fa-stack-1x fa-inverse"></i>
+    </span><span class="w3-hide-small w3-hide-medium" style="font-family: {{ site.data.socialmedias.disqus.font }}; font-weight: {{ site.data.socialmedias.disqus.fontweight }}; color: {{ site.data.socialmedias.disqus.color }};"> DISQUS</span>
+  </label>
+
+  <div id="tab-facebook-content" class="tab-content">
+    <div class="fb-comments" data-href="{{ include.permalink }}" data-width="100%"></div>
+  </div> <!-- #tab-facebook-content -->
+
+  <div id="tab-googleplus-content" class="tab-content" style="width: 100%">
+    <div class="g-comments" data-href="{{ include.permalink }}" data-width="450" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"> </div>
+  </div> <!-- #tab-googleplus-content -->
+
+  <div id="tab-disqus-content" class="tab-content" style="width: 100%">
+    <div id="disqus_thread" style="height: 400px;"></div>
+  </div> <!-- #tab-disqus-content -->
+
+</div>
+
+<footer>

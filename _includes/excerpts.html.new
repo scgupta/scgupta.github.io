@@ -1,0 +1,13 @@
+<div class="excerpt w3-container">
+{% for post in include.posts %}
+<div class="w3-row">
+<h4 style="margin-bottom: 0;">{{ post.title }}</h4>
+<p class="w3-small" style="margin-top: 0;">
+{% if post.image_thumbnail %}
+<img class="framedimg alignleft w3-hide-small" width="25%" src="{{ post.image_thumbnail }}" />
+{% endif %}
+{{ post.date | date: "%-d %b %Y" }}: {{ post.excerpt | strip_html | strip_newline | strip | truncate: 200 }}
+<a class="w3-btn w3-tiny w3-theme-l1 w3-hover-blue alignright" href="{{ post.url }}">Read More »</a>
+</p>
+</div>
+{% endfor %}

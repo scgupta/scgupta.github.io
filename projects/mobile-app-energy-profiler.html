@@ -1,0 +1,88 @@
+---
+title: Mobile App Energy Profiler
+excerpt: "Profiling mobile applications to identify battery draining code using Visual Studio for Windows Phone and Windows."
+redirect_from:
+  - /projects/mobile-app-energy-profiler-wp8-w8/
+---
+
+<p>
+Unlike desktops, mobile devices are plugged into power supply for only short duration, and a long lasting battery is a key desirable characteristic for device users. Rogue apps are among the biggest reasons for smartphone battery drain and high network data usage cost. It is important for mobile applications to be energy efficient, and mobile application developers need to analyze the impact of their applications on the battery life as well as utilization of resources. Just like execution time and memory profilers expose performance and memory bottlenecks respectively, a mobile app energy profiler exposes energy bottlenecks. It provides useful insights about power consumption by various hardware components (e.g. display, network, CPU), and helps application developers in identifying offending events, activities and segments of code that are causing high energy footprint, and improve energy efficiency of their applications.
+</p>
+
+<p>
+Most of the recent research techniques consist of two phases. First, in training phase (one time effort), a power consumption model for a device is developed by executing various carefully designed sample applications, recording actual energy consumed (using external power meter), and correlating it with the hardware performance counters (HPC). Later, in profiling phase, energy consumption by an application is estimated by applying this model on HPC values collected during an execution of that application. Origin of some of this research can be traced back to reducing power cost in data centers, where power models for desktops were used in evaluating energy efficiency of an application running in the data center.
+</p>
+
+<p>
+A mobile app energy profiler consists of:
+</p>
+
+<ul>
+	<li><strong>Data Collection Agent:</strong> runs during profiling of an application on a device or a device emulator and collects HPC values (should be lightweight)</li>
+	<li><strong>Power Models:</strong> mathematical models for various components (such as display, network, CPU, GPU, GPS, camera, SSD) for various devices that correlate HPC values to power consumed</li>
+	<li><strong>Analysis Engine:</strong> applies a power model for a specific device on HPC values collected by the data collection agent during a specific execution of an application being profiled.</li>
+</ul>
+
+<p>
+Developed for Windows Phone 8, Windows 8. Read more details at <a href="http://blogs.msdn.com/b/visualstudio/archive/2012/10/30/introducing-windows-phone-sdk-8-0.aspx" target="_blank" rel="nofollow">battery profiler</a> in Visual Studio blog.
+</p>
+
+<p>
+With:
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/pushkar-chitnis/3/838/97b" data-format="click" data-text="Pushkar Chitnis"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/aman-kansal/3/924/241" data-format="click" data-text="Aman Kansal"></script>, 
+<script async type="IN/MemberProfile" data-id="http://www.linkedin.com/pub/ranveer-chandra/0/b9b/79b" data-format="click" data-text="Ranveer Chandra"></script>, 
+<script async type="IN/MemberProfile" data-id="http://in.linkedin.com/pub/pratap-lakshman/0/571/2b6" data-format="click" data-text="Pratap Lakshman"></script> 
+in collaboration with Visual Studio Profiler team.
+</p>
+
+<h3>Windows Phone 8</h3>
+
+<p>
+Released in <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402523.aspx" target="_blank" rel="nofollow">Windows Phone 8 SDK</a> as part of Visual Studio 2012 in Oct 2012.
+</p>
+
+<h3>Windows 8</h3>
+
+<p>
+Available in <a href="http://www.microsoft.com/visualstudio/eng/2013-downloads" target="_blank" rel="nofollow">Visual Studio 2013 preview</a>.
+</p>
+
+<p>
+Featured in <a href="http://channel9.msdn.com/Events/Build/2013/1-001" target="_blank" rel="nofollow">Microsoft Build 2013, Day 1 Keynote</a> talk (46:29 - 48:39):
+</p>
+<video width="320" height="240" poster="http://media.ch9.ms/ch9/dc22/e2f20af8-1b56-4e2a-8d55-d2700dbadc22/KEY01_Custom.jpg" controls="controls"><source src="http://media.ch9.ms/ch9/dc22/e2f20af8-1b56-4e2a-8d55-d2700dbadc22/KEY01_mid.mp4#t=2789,2919" type="video/mp4" /><source src="http://media.ch9.ms/ch9/dc22/e2f20af8-1b56-4e2a-8d55-d2700dbadc22/KEY01.webm" type="video/webm" /></video>
+
+<p>
+Covered in detail in <a href="http://channel9.msdn.com/Events/Build/2013/3-322" target="_blank" rel="nofollow">Visual Studio 2013 Diagnostics Tools</a> talk (24:53 - 38:40):
+</p>
+<video width="320" height="240" poster="http://media.ch9.ms/ch9/5e98/cc62f350-52c6-475d-beb3-d5cdcdbc5e98/3-322_512.jpg" controls="controls"><source src="http://media.ch9.ms/ch9/936e/27575600-aa2d-42ad-8a9c-f80c15e0936e/3-322_mid.mp4#t=1493,2320" type="video/mp4" /><source src="http://media.ch9.ms/ch9/936e/27575600-aa2d-42ad-8a9c-f80c15e0936e/3-322.webm" type="video/webm" /></video>
+
+<p>
+It has also been featured in a <a href="http://techcrunch.com/2013/06/26/new-microsoft-visual-studio-features-show-importance-of-windows-azure-developing-for-connected-devices/" target="_blank" rel="nofollow">TechCrunch article</a>.
+</p>
+
+<h3>Product/Tool Info:</h3>
+
+<strong>Name:</strong> <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402523.aspx" target="_blank" rel="nofollow">Windows Phone SDK 8.0</a> (<a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff630878.aspx" target="_blank" rel="nofollow">Visual Studio 2012</a>)<br/>
+<strong>Feature:</strong> <a href="http://blogs.msdn.com/b/visualstudio/archive/2012/10/30/introducing-windows-phone-sdk-8-0.aspx" target="_blank" rel="nofollow">Battery profiler</a> (<a href="http://blogs.msdn.com/cfs-filesystemfile.ashx/__key/communityserver-blogs-components-weblogfiles/00-00-01-29-92/3021.LP11-App-Monitoring.png" target="_blank" rel="nofollow">screen shot</a>)<br/>
+<strong>OS:</strong> Windows, Windows Phone 8.0<br/>
+<strong>Official Web Site:</strong> <a href="http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402523.aspx" target="_blank" rel="nofollow">http://msdn.microsoft.com/en-us/library/windowsphone/develop/ff402523.aspx</a><br/>
+<strong>Download Link:</strong> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=35471" target="_blank" rel="nofollow">http://www.microsoft.com/en-us/download/details.aspx?id=35471</a><br/>
+<strong>Date:</strong> Oct 2012<br/>
+
+<h3>Relevant Research</h3>
+
+<ul>
+	<li><b>Safari: Function-level Power Analysis using Automatic Instrumentation.</b> Shinan Wang, Youhuizi Li, Weisong Shi, Lingjun Fan, Abhishek Agrawal. In Proceedings of the 3rd International Conference on Energy-aware Computing (ICEAC 2012). IEEE. Cyprus, December, 2012. (<a href="http://www.cs.wayne.edu/~weisong/papers/wang12-safari.pdf" target="_blank" rel="nofollow">paper</a>)</li>
+	<li><b>Profiling Software for Energy Consumption.</b> Simon Schubert, Dejan Kostic, Willy Zwaenepoel and Kang Shin. In International Conference on Green Computing and Communications (GreenCom 2012). IEEE, Besançon, France, Nov 2012.</li>
+	<li><b>Empowering Developers to Estimate App Energy Consumption.</b> Radhika Mittal, Aman Kansal, and Ranveer Chandra. In 18th annual international conference on Mobile computing and networking (Mobicom '12). pp 317-328. ACM. Istanbul, Turkey, August 2012. (<a href="http://dx.doi.org/10.1145/2348543.2348583" target="_blank" rel="nofollow">paper</a>)</li>
+	<li><b>The Model Is Not Enough: Understanding Energy Consumption in Mobile Devices.</b> James Bornholt, Todd Mytkowicz, Kathryn S. McKinley. Poster in Hot Chips: A Symposium on High Performance Chips (Hot Chips 2012). San Jose, CA, USA, August 2012. (<a href="http://www.hotchips.org/wp-content/uploads/hc_archives/hc24/HC24-Posters/HC24.30.p40-Energy-Mobile-Bornhold-Australian-National.pdf" target="_blank" rel="nofollow">poster</a>, <a href="http://www.cs.utexas.edu/users/mckinley/papers/phone-hot-chips-2012.pdf" target="_blank" rel="nofollow">author copy</a>)</li>
+	<li><b>What is keeping my phone awake?: characterizing and detecting no-sleep energy bugs in smartphone apps.</b> Abhinav Pathak, Abhilash Jindal, Y. Charlie Hu, and Samuel P. Midkiff. In 10th international conference on Mobile systems, applications, and services (MobiSys '12). pp 267-280. ACM. Low Wood Bay, UK, June 2012. (<a href="http://doi.acm.org/10.1145/2307636.2307661" target="_blank" rel="nofollow">paper</a>)</li>
+	<li><b>Where is the energy spent inside my app?: fine grained energy accounting on smartphones with Eprof.</b> Abhinav Pathak, Y. Charlie Hu, and Ming Zhang. In 7th European conference on Computer Systems (EuroSys '12). pp 29-42. ACM. Bern, Switzerland, April, 2012. (<a href="http://doi.acm.org/10.1145/2168836.2168841" target="_blank" rel="nofollow">paper</a>, <a href="https://engineering.purdue.edu/~ychu/" target="_blank" rel="nofollow">more info on Eprof for Windows CE and Android</a>)</li>
+	<li><b>Fine-Grained Power Management Using Process-level Profiling.</b> Hui Chen, Youhuizi Li and Weisong Shi. Sustainable Computing: Informatics and Systems. Vol. 2, No. 1, pp. 33-42. March 2012 (<a href="http://www.cs.wayne.edu/~weisong/papers/chen12-ptopw.pdf" target="_blank" rel="nofollow">paper</a>)</li>
+	<li><b>ANEPROF: Energy Profiling for Android Java Virtual Machine and Applications.</b> Yi-Fan Chung, Chun-Yu Lin, Chung-Ta King. In 17th International Conference on Parallel and Distributed Systems (ICPADS 2011). pp 372-379. IEEE. Tainan, Taiwan, Dec 2011. (<a href="http://dx.doi.org/10.1109/ICPADS.2011.28" target="_blank" rel="nofollow">paper</a>)</li>
+	<li><b>Profiling resource usage for mobile applications: a cross-layer approach.</b> Feng Qian, Zhaoguang Wang, Alexandre Gerber, Zhuoqing Mao, Subhabrata Sen, and Oliver Spatscheck. In 9th international conference on Mobile systems, applications, and services (MobiSys '11). pp 321-334. ACM. Bethesda, MD, USA, July 2011. (<a href="http://doi.acm.org/10.1145/1999995.2000026" target="_blank" rel="nofollow">paper</a>, <a href="http://www.sigmobile.org/mobisys/2011/slides/profiling.pdf" target="_blank" rel="nofollow">slides</a>)</li>
+	<li><b>Fine-grained power modeling for smartphones using system call tracing.</b> Abhinav Pathak, Y. Charlie Hu, Ming Zhang, Paramvir Bahl, and Yi-Min Wang. In 6th conference on Computer systems (EuroSys '11). pp 153-168. ACM. Salzburg, Austria, April, 2011. (<a href="http://doi.acm.org/10.1145/1966445.1966460" target="_blank" rel="nofollow">paper</a>, <a href="http://research.microsoft.com/apps/video/default.aspx?id=144686" target="_blank" rel="nofollow">talk</a>)</li>
+	<li><b>Fine-grained energy profiling for power-aware application design.</b> Aman Kansal and Feng Zhao. SIGMETRICS Perform. Eval. Rev. Vol. 36, No. 2, pp 26-31. 2008. (<a href="http://doi.acm.org/10.1145/1453175.1453180" target="_blank" rel="nofollow">paper</a>)</li>
+</ul>

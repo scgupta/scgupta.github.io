@@ -1,0 +1,39 @@
+{% capture title %}{% if page.title %}{{ page.title | escape }} &bull; {% endif %}{{ include.sitetitle | escape }}{% endcapture %}
+{% capture description %}{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | strip | truncate: 160 }}{% else %}{{ site.description | strip_newlines | strip | truncate: 160 }}{% endif %}{% endcapture %}
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% if page.sitemap == false %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="canonical" href="{{ include.permalink }}">
+
+{% assign assetversion=20160418 %}
+
+{% if jekyll.environment == "production" %}
+  <link rel="stylesheet" type="text/css" href="{{ "/css/font-awesome.min.css" | prepend: "/font-awesome/4.5.0" | prepend: "https://maxcdn.bootstrapcdn.com" }}">
+  <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/scg.min.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
+<!--
+  <link rel="stylesheet" type="text/css" href="{{ "/w3.css" | prepend: "/lib" | prepend: "http://www.w3schools.com" }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/w3-theme-dark-grey.css" | prepend: "/lib" | prepend: "http://www.w3schools.com" }}">
+  <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/scg.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
+-->
+{% else %}
+  <link rel="stylesheet" type="text/css" href="{{ "/css/font-awesome.min.css" | prepend: "/font-awesome/4.5.0" | prepend: "/assets/lib" | prepend: site.asseturl }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/w3.css" | prepend: "/w3css" | prepend: "/assets/lib" | prepend: site.asseturl }}">
+  <link rel="stylesheet" type="text/css" href="{{ "/w3-theme-dark-grey.css" | prepend: "/w3css" | prepend: "/assets/lib" | prepend: site.asseturl }}">
+  <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/scg.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
+<!--
+  <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/scg.min.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
+-->
+{% endif %}
+
+{% include markuptags.html permalink=include.permalink lang=include.lang locale=include.locale title=title description=description %}
+
+  <!-- HTML5 shim and Respond.js for IE8 and below support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>

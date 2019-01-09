@@ -1,0 +1,33 @@
+---
+title: Sitemap
+excerpt: "Sitemap of Satish Chandra Gupta's website"
+redirect_from:
+  - /sitemap/
+---
+
+<div id="sitemap">
+
+<h2><a href="/"><i class="fa fa-home"></i></a>
+<i class="fa fa-angle-double-right"></i>
+</h2>
+<ul style="list-style-type: none;">
+<li><strong><a href="/about/">About</a></strong> <i class="fa fa-angle-double-right"></i>
+  <a href="/about/formalbio.html">Bio</a>
+| <a href="/about/informalbio.html">Informal Bio</a>
+| <a href="/about/publications.html">Publications</a>
+| <a href="/about/patents.html">Patents</a>
+</li>
+
+<!-- Generated Sitemap -->
+{% for menu in site.data.topmenu %}
+<li><strong><a href="{{ menu.url }}">{{ menu.label }}</a></strong>{% if menu.children %} <i class="fa fa-angle-double-right"></i>
+<ul style="list-style-type: none;">{% for submenu in menu.children %}
+<li><a href="{{ submenu.url }}">{{ submenu.label }}</a></li>
+{% endfor %}</ul>
+{% endif %}</li>
+{% endfor %}
+<!-- End: Generated Sitemap -->
+
+</ul>
+
+</div>

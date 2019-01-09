@@ -1,0 +1,38 @@
+---
+layout: default
+---
+{% assign permalink = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+<main>
+<article class="w3-container" itemscope itemtype="http://schema.org/BlogPosting">
+
+<header>
+<h1 itemprop="name headline">{{ page.title }}</h1>
+<p>{% if page.showdate == true %}<time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time>{% endif %}{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+</header>
+
+{% include socialshare.html permalink=permalink title=page.title %}
+
+<!-- Post Content -->
+<div itemprop="articleBody">
+{{ content }}
+</div>
+<!-- End: Post Content -->
+
+</article>
+</main>
+
+{% if jekyll.environment == "development" %}
+<div class="w3-container w3-hide-small">
+{% include socialshare-official.html permalink=permalink %}
+</div>
+{% endif %}
+
+{% if page.lang == "hi" %}
+{% include prev-next-tag.html %}
+{% else %}
+{% include prev-next-category.html %}
+{% endif %}
+
+<div class="w3-container">
+{% include comments.html permalink=permalink %}
+</div>

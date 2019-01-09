@@ -1,0 +1,108 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Satish Chandra Gupta
+title_hi: "सतीश चन्द्र गुप्त"
+#email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Satish Chandra Gupta finds bliss in Hindi poetry, solitude in Himalayas,
+  solace in computer programming, and humor in personal finance choices.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.satishchandragupta.com" # the base hostname & protocol for your site
+asseturl: "" # "http://cdn.satishchandragupta.com"
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+whitelist:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+
+# Global
+timezone: Asia/Kolkata
+encoding: utf-8
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      showdate: true
+  -
+    scope:
+      path: "hindi"
+    values:
+      lang: "hi"
+      locale: "hi_IN"
+  -
+    scope:
+      path: "blog/_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      category: blog
+      permalink: "/blog/:year/:month/:day-:title.html"
+  -
+    scope:
+      path: "hindi/_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      category: hindi
+      permalink: "/hindi/:year/:month/:day-:title.html"
+  -
+    scope:
+      path: "blog/_posts/trekking"
+      type: "posts"
+    values:
+      tag: "trekking"
+  -
+    scope:
+      path: "hindi/_posts/manpraan"
+      type: "posts"
+    values:
+      tag: "manpraan"
+      image: "https://3.bp.blogspot.com/-DsqgCN28WiQ/Vw-i69T3AaI/AAAAAAAAHJ4/iCl1DDIwlPka5daIjzpHJjBrNsuocwJCgCKgB/s320/ManPraanCover.jpg"
+  -
+    scope:
+      path: "hindi/_posts/madhyaahan"
+      type: "posts"
+    values:
+      tag: "madhyaahan"
+  -
+    scope:
+      path: "hindi/_posts/besabab"
+      type: "posts"
+    values:
+      tag: "besabab"
+  -
+    scope:
+      path: "hindi/_posts/other"
+      type: "posts"
+    values:
+      tag: "other"
+  -
+    scope:
+      path: "hindi/_posts/brihannala"
+      type: "posts"
+    values:
+      tag: "brihannala"
+      showdate: false
+      permalink: "/hindi/brihannala/sarg-:month/bhag-:day/:title.html"
