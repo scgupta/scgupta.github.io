@@ -45,6 +45,7 @@ defaults:
       type: "posts"
     values:
       showdate: true
+      author: Satish Chandra Gupta
   -
     scope:
       path: "hindi"
