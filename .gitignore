@@ -1,6 +1,7 @@
 _site
 .sass-cache
 .jekyll-metadata
+.vscode
 .*.sw?
 **/.DS_Store
 Gemfile.lock

@@ -20,16 +20,28 @@ asseturl: "" # "http://cdn.satishchandragupta.com"
 markdown: kramdown
 
 plugins:
-  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 whitelist:
-  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 # Global
 timezone: Asia/Kolkata
 encoding: utf-8
+
+# Exclude from processing
+exclude: 
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
 
 # Defaults
 defaults:
@@ -60,6 +72,14 @@ defaults:
       layout: "post"
       category: blog
       permalink: "/blog/:year/:month/:day-:title.html"
+  -
+    scope:
+      path: "tech/_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      category: tech
+      permalink: "/tech/:title.html"
   -
     scope:
       path: "hindi/_posts"

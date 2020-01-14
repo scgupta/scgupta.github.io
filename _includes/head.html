@@ -6,11 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% if page.sitemap == false %}<meta name="robots" content="noindex, nofollow">{% endif %}
   <title>{{ title }}</title>
+<!--
   <meta name="description" content="{{ description }}">
   <link rel="canonical" href="{{ include.permalink }}">
-
+-->
+{% seo title=false %}
 {% assign assetversion=20160418 %}
-
 {% if jekyll.environment == "production" %}
   <link rel="stylesheet" type="text/css" href="{{ "/css/font-awesome.min.css" | prepend: "/font-awesome/4.5.0" | prepend: "https://maxcdn.bootstrapcdn.com" }}">
   <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/scg.min.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
@@ -30,6 +31,15 @@
 {% endif %}
 
 {% include markuptags.html permalink=include.permalink lang=include.lang locale=include.locale title=title description=description %}
+
+{% if page.code == true %}
+<!--
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js?autoload=true" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/default.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+-->
+  <link rel="stylesheet" type="text/css" href="{{ assetversion | prepend: "/syntax-github.min.css?v=" | prepend: "/css" | prepend: "/assets/common" | prepend: site.asseturl }}">
+{% endif %}
 
   <!-- HTML5 shim and Respond.js for IE8 and below support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
