@@ -13,7 +13,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Satish Chandra Gupta finds bliss in Hindi poetry, solitude in Himalayas,
   solace in computer programming, and humor in personal finance choices.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.satishchandragupta.com" # the base hostname & protocol for your site
+url: "https://www.satishchandragupta.com" # the base hostname & protocol for your site
 asseturl: "" # "http://cdn.satishchandragupta.com"
 
 # Build settings
