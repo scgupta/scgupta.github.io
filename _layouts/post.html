@@ -7,7 +7,7 @@ layout: default
 
 <header>
 <h1 itemprop="name headline">{{ page.title }}</h1>
-{% if page.author %}<p><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span></p>{% endif %}
+{% if page.author %}<p><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ site.data.authors[page.author].name }}</span></span></p>{% endif %}
 <!-- • -->
 {% if page.showdate == true %}<p><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%-d %b %Y" }}</time></p>{% endif %}
 </header>

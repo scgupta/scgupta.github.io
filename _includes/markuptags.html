@@ -1,20 +1,2 @@
-  <!-- Object Graph Markup -->
-  <meta property="og:url" content="{{ include.permalink }}">
-  <meta property="og:title" content="{{ include.title }}">
-  <meta property="og:description" content="{{ include.description }}">
-  <meta property="og:site_name" content="{{ site.title | escape }}">
-  <meta property="og:locale" content="{{ include.locale }}">
-  {% if page.image %}<meta property="og:image" content="{{ page.image }}">{% endif %}
-
-  <!-- Facebook Object Graph Markup -->
-  <meta property="fb:app_id" content="{{ site.data.socialmedias['facebook'].app_id }}">
-  <!-- <meta property="fb:admins" content="{{ site.data.socialmedias['facebook'].admins }}"> -->
-
-  <!-- Twitter Cards Markup -->
-  <meta name="twitter:dnt" content="on">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site:id" content="@{{ site.data.socialmedias['twitter'].user }}">
-  <link rel="me" href="{{ site.data.socialmedias['twitter'].url | append: site.data.socialmedias['twitter'].user }}">
-
   <!- Google -->
   <link rel="author" href="{{ site.data.socialmedias['googleplus'].user | prepend: site.data.socialmedias['googleplus'].url }}">

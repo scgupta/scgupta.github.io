@@ -35,6 +35,22 @@ whitelist:
 timezone: Asia/Kolkata
 encoding: utf-8
 
+social:
+  name: Satish Chandra Gupta
+  links:
+    - https://twitter.com/scgupta
+    - https://www.facebook.com/scgupta1996
+    - https://www.linkedin.com/in/scgupta
+    - https://github.com/scgupta
+
+twitter:
+  username: scgupta
+  card: summary
+
+facebook:
+  app_id: 270793689617543
+  admins: 100001493108259
+
 # Exclude from processing
 exclude: 
   - CNAME
@@ -57,7 +73,7 @@ defaults:
       type: "posts"
     values:
       showdate: true
-      author: Satish Chandra Gupta
+      author: scgupta
   -
     scope:
       path: "hindi"
