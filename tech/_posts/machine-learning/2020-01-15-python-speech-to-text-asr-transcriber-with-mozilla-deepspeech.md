@@ -1,6 +1,6 @@
 ---
 title: How to build Python transcriber using Mozilla DeepSpeech
-excerpt: "Learn building audio transcriber for voice applications using PyAudio and DeepSpeech speech-to-text ASR API in less than 70 lines of Python code."
+excerpt: "Learn to build audio transcriber for voice applications using PyAudio and DeepSpeech speech-to-text ASR API in less than 70 lines of Python code."
 image: "https://2.bp.blogspot.com/-3GzQ4slzKHc/Xh6rFUwhslI/AAAAAAAASvI/CCbZYiV2y-s39kJFM5RrP8fW_ew0viGMgCKgBGAsYHg/s1600/mozilla-deepspeech-py-transcriber.png"
 image_thumbnail: "https://2.bp.blogspot.com/-3GzQ4slzKHc/Xh6rFUwhslI/AAAAAAAASvI/CCbZYiV2y-s39kJFM5RrP8fW_ew0viGMgCKgBGAsYHg/s320/mozilla-deepspeech-py-transcriber.png"
 tags:
@@ -9,7 +9,7 @@ tags:
 code: true
 ---
 
-Voice assistants are one of the hottest tech right now. Siri, Alexa, Google Assistant, all aim to help you talk to computers and not just touch and type. Automated Speech Recognition (ASR) and Natural Language Understanding / Processing (NLU / NLP) are the key technologies enabling it. If you are just-a-programmer like me, you might be itching to get a piece of action and hack something. You are at the right place; read on.
+Voice assistants are one of the hottest tech right now. Siri, Alexa, Google Assistant, all aim to help you talk to computers and not just touch and type. Automated Speech Recognition (ASR) and Natural Language Understanding (NLU/NLP) are the key technologies enabling it. If you are just-a-programmer like me, you might be itching to get a piece of action and hack something. You are at the right place; read on.
 
 Though these technologies are hard and the learning curve is steep, but are becoming increasingly accessible. Last month, Mozilla released [DeepSpeech 0.6](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="nofollow"} along with models for US English. It has smaller and faster models than ever before, and even has a [TensorFlow Lite](https://www.tensorflow.org/lite){:target="_blank" rel="nofollow"} model that [runs faster than real time on a single core of a Raspberry Pi 4](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="nofollow"}. There are several interesting aspects, but right now I am going to focus on its refreshingly [simple batch and stream APIs in C, .NET, Java, JavaScript, and Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="nofollow"} for converting speech to text. By the end of this blog post, you will build a voice transcriber. No kidding :-)
 
@@ -91,7 +91,7 @@ Once you have the model object, you can use either batch or streaming speech-to-
 
 ## Batch API
 
-To use batch API, the first step is to read the audio file:
+To use the batch API, the first step is to read the audio file:
 
 ~~~ python
 >>> import wave
@@ -108,7 +108,7 @@ To use batch API, the first step is to read the audio file:
 <class 'bytes'>
 ~~~
 
-As you can see that the speech sample rate of the wav file is 16000hz, same as the model’s sample rate. But the buffer is a byte array, whereas DeepSpeech model expects 16 bit int array. Let’s convert it:
+As you can see that the speech sample rate of the wav file is 16000hz, same as the model’s sample rate. But the buffer is a byte array, whereas DeepSpeech model expects 16-bit int array. Let’s convert it:
 
 ~~~ python
 >>> import numpy as np
@@ -159,7 +159,7 @@ your power is sufficient i said
 your power is sufficient i said
 ~~~
 
-Close stream and get final result:
+Close stream and get the final result:
 
 ~~~ python
 >>> text = model.finishStream(context)
@@ -170,7 +170,11 @@ your power is sufficient i said
 
 # Transcriber
 
-A transcriber consists of two parts: a producer that captures voice from microphone,, and a consumer that converts this speech stream to text. To capture audio, we will use [PortAudio](http://www.portaudio.com/){:target="_blank" rel="nofollow"}, a free, cross-platform, open-source, audio I/O library. You have to [download](http://www.portaudio.com/download.html){:target="_blank" rel="nofollow"} and install it. On macOS, you can install it using [brew](https://brew.sh/){:target="_blank" rel="nofollow"}:
+A transcriber consists of two parts: a producer that captures voice from microphone, and a consumer that converts this speech stream to text. These two execute in parallel. The audio recorder keeps producing chunks of the speech stream. The speech recognizer listens to this stream, consumes these chunks upon arrival and updates the transcribed text.
+
+![](https://1.bp.blogspot.com/-xD7_4J846Q4/Xh_3cC1uOgI/AAAAAAAASvs/pjwldFWADZEp241r3cc75MGZwSOQuDm0ACKgBGAsYHg/s1600/AudioTranscriber.png){:width="100%"}
+
+To capture audio, we will use [PortAudio](http://www.portaudio.com/){:target="_blank" rel="nofollow"}, a free, cross-platform, open-source, audio I/O library. You have to [download](http://www.portaudio.com/download.html){:target="_blank" rel="nofollow"} and install it. On macOS, you can install it using [brew](https://brew.sh/){:target="_blank" rel="nofollow"}:
 
 ~~~ bash
 $ brew install portaudio
@@ -214,7 +218,7 @@ print('Please start speaking, when done press Ctrl-C ...')
 stream.start_stream()
 ~~~
 
-Finally, you need to print final result and clean up when user ends recording by pressing Ctrl-C:
+Finally, you need to print the final result and clean up when a user ends recording by pressing Ctrl-C:
 
 ~~~ python
 try: 
