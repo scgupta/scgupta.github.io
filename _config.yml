@@ -67,6 +67,7 @@ defaults:
       type: "pages"
     values:
       layout: "page"
+      author: scgupta
   -
     scope:
       path: ""

@@ -2,10 +2,15 @@
 <div class="w3-col w3-container">
 {% assign twitter_url = site.data.socialmedias["twitter"].url | append: site.data.socialmedias["twitter"].user %}
 
-{% if page.path contains '_posts' %}
-{% include google-adsense.html %}
+{% if page.categories %}
+  {% assign category = page.categories[-1] %}
+{% else %}
+  {% assign category = "null" %}
 {% endif %}
 
+{% if category == "tech" %}
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="{{ site.data.authors[page.author].linkedin }}"><a class="LI-simple-link" href="https://in.linkedin.com/in/{{ site.data.authors[page.author].linkedin }}?trk=profile-badge" target="_blank">{{ site.data.authors[page.author].name }}</a></div>
+{% else %}
 <div class="w3-hide-large w3-hide-medium">
 <div style="display: inline-block; vertical-align: top; margin-top: -2px;">
 <div class="fb-follow" data-href="{{ site.data.socialmedias["facebook"].url | append: site.data.socialmedias["facebook"].user }}" data-layout="button" data-show-faces="false"></div>
@@ -27,9 +32,16 @@
 </div>
 {% endif %}
 
+{% comment %}
 <div>
 <a class="twitter-timeline" href="{{ twitter_url }}" data-widget-id="{{ site.data.socialmedias["twitter"].timelinewidgetid }}" data-chrome="nofooter"><!--Tweets by @{{ site.data.socialmedias["twitter"].user }}--></a>
 </div>
+{% endcomment %}
+{% endif %}
+
+{% if page.path contains '_posts' %}
+{% include google-adsense.html %}
+{% endif %}
 
 </div>
 </aside>

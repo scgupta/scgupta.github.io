@@ -172,7 +172,7 @@ your power is sufficient i said
 
 A transcriber consists of two parts: a producer that captures voice from microphone, and a consumer that converts this speech stream to text. These two execute in parallel. The audio recorder keeps producing chunks of the speech stream. The speech recognizer listens to this stream, consumes these chunks upon arrival and updates the transcribed text.
 
-![](https://1.bp.blogspot.com/-xD7_4J846Q4/Xh_3cC1uOgI/AAAAAAAASvs/pjwldFWADZEp241r3cc75MGZwSOQuDm0ACKgBGAsYHg/s1600/AudioTranscriber.png){:width="100%"}
+![](https://4.bp.blogspot.com/-q6QdwMp9bqQ/XiEs-A0Vk-I/AAAAAAAASw8/GXJ0ia7_KnAy5OCdbRvU28kMYaWl-6qQACKgBGAsYHg/s1600/AudioTranscriber.png){:width="100%"}
 
 To capture audio, we will use [PortAudio](http://www.portaudio.com/){:target="_blank" rel="nofollow"}, a free, cross-platform, open-source, audio I/O library. You have to [download](http://www.portaudio.com/download.html){:target="_blank" rel="nofollow"} and install it. On macOS, you can install it using [brew](https://brew.sh/){:target="_blank" rel="nofollow"}:
 
