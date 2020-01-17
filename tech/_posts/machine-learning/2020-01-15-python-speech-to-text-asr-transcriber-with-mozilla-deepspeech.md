@@ -1,8 +1,8 @@
 ---
 title: How to build Python transcriber using Mozilla DeepSpeech
 excerpt: "Learn to build audio transcriber for voice applications using PyAudio and DeepSpeech speech-to-text ASR API in less than 70 lines of Python code."
-image: "https://2.bp.blogspot.com/-3GzQ4slzKHc/Xh6rFUwhslI/AAAAAAAASvI/CCbZYiV2y-s39kJFM5RrP8fW_ew0viGMgCKgBGAsYHg/s1600/mozilla-deepspeech-py-transcriber.png"
-image_thumbnail: "https://2.bp.blogspot.com/-3GzQ4slzKHc/Xh6rFUwhslI/AAAAAAAASvI/CCbZYiV2y-s39kJFM5RrP8fW_ew0viGMgCKgBGAsYHg/s320/mozilla-deepspeech-py-transcriber.png"
+image: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mPhsIu3jAOspjCFY192Mpbe2JACKgBGAsYHg/s1600/mozilla-deepspeech-py-transcriber-slang.png"
+image_thumbnail: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mPhsIu3jAOspjCFY192Mpbe2JACKgBGAsYHg/s320/mozilla-deepspeech-py-transcriber-slang.png"
 tags:
   - "machine-learning"
   - "ASR"
