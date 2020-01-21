@@ -16,7 +16,10 @@ Though these technologies are hard and the learning curve is steep, but are beco
 
 # Let’s get started
 
-You need a computer with [Python 3.6.5+ installed](https://realpython.com/installing-python/){:target="_blank" rel="nofollow"}, good internet connection, and elementary Python programming skills. Even if you do not know Python, read along, it is not so hard. Let’s do needed setup:
+You need a computer with [Python 3.6.5+ installed](https://realpython.com/installing-python/){:target="_blank" rel="nofollow"}, good internet connection, and elementary Python programming skills. Even if you do not know Python, read along, it is not so hard.
+If you don't want to install anything, you can try out DeepSpeech APIs in the browser using this [code lab](https://colab.research.google.com/github/scgupta/yearn2learn/blob/master/speech/asr/deepspeech06/mozilla_deepspeech_api_notebook.ipynb){:target="_blank" rel="nofollow"}.
+
+Let’s do needed setup:
 
 ~~~ bash
 # Create virtual environment named ds06
@@ -235,7 +238,7 @@ except KeyboardInterrupt:
     print('Final text = {}'.format(text))
 ~~~
 
-That’s all it takes, just 66 lines of Python code to put it all together: [transcriber.py](https://gist.github.com/scgupta/1a22524c959f61d7effe57b449dba907){:target="_blank" rel="nofollow"}.
+That’s all it takes, just 66 lines of Python code to put it all together: [transcriber.py](https://github.com/scgupta/yearn2learn/blob/master/speech/asr/deepspeech06/transcriber.py){:target="_blank" rel="nofollow"}.
 
 
 # Recap
