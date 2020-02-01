@@ -14,7 +14,7 @@ Voice assistants are one of the hottest tech right now. Siri, Alexa, Google Assi
 Though these technologies are hard and the learning curve is steep, but are becoming increasingly accessible. Last month, Mozilla released [DeepSpeech 0.6](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="nofollow"} along with models for US English. It has smaller and faster models than ever before, and even has a [TensorFlow Lite](https://www.tensorflow.org/lite){:target="_blank" rel="nofollow"} model that [runs faster than real time on a single core of a Raspberry Pi 4](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="nofollow"}. There are several interesting aspects, but right now I am going to focus on its refreshingly [simple batch and stream APIs in C, .NET, Java, JavaScript, and Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="nofollow"} for converting speech to text. By the end of this blog post, you will build a voice transcriber. No kidding :-)
 
 
-# Let’s get started
+## Let’s get started
 
 You need a computer with [Python 3.6.5+ installed](https://realpython.com/installing-python/){:target="_blank" rel="nofollow"}, good internet connection, and elementary Python programming skills. Even if you do not know Python, read along, it is not so hard.
 If you don't want to install anything, you can try out DeepSpeech APIs in the browser using this [code lab](http://bit.ly/colab-mozilla-deepspeech-python){:target="_blank" rel="nofollow"}.
@@ -68,7 +68,7 @@ $ deepspeech --model deepspeech-0.6.0-models/output_graph.pb --lm deepspeech-0.6
 Examine the output of the last three commands, and you will see results _&ldquo;experience proof less&rdquo;_, _&ldquo;why should one halt on the way&rdquo;_, and _&ldquo;your power is sufficient i said&rdquo;_ respectively. You are all set.
 
 
-# DeepSpeech API
+## DeepSpeech API
 
 The API is quite simple. You first need to create a model object using the model files you downloaded:
 
@@ -92,7 +92,7 @@ You should add language model for better accuracy:
 
 Once you have the model object, you can use either batch or streaming speech-to-text API.
 
-## Batch API
+### Batch API
 
 To use the batch API, the first step is to read the audio file:
 
@@ -128,7 +128,7 @@ Run speech-to-text in batch mode to get the text:
 your power is sufficient i said
 ~~~
 
-## Streaming API
+### Streaming API
 
 Now let’s accomplish the same using streaming API. It consists of 3 steps: open session, feed data, close session.
 
@@ -171,7 +171,7 @@ your power is sufficient i said
 ~~~
 
 
-# Transcriber
+## Transcriber
 
 A transcriber consists of two parts: a producer that captures voice from microphone, and a consumer that converts this speech stream to text. These two execute in parallel. The audio recorder keeps producing chunks of the speech stream. The speech recognizer listens to this stream, consumes these chunks upon arrival and updates the transcribed text.
 
@@ -241,7 +241,7 @@ except KeyboardInterrupt:
 That’s all it takes, just 66 lines of Python code to put it all together: [ds-transcriber.py](https://github.com/scgupta/yearn2learn/blob/master/speech/asr/deepspeech06/ds-transcriber.py){:target="_blank" rel="nofollow"}.
 
 
-# Recap
+## Recap
 
 In this article, you had a quick introduction to batch and stream APIs of DeepSpeech 0.6, and learned how to marry it with PyAudio to create a speech transcriber. The ASR model used here is for US English speakers, accuracy will vary for other accents. By replacing the model for other languages or accents, the same code will work for that language/accent.
 

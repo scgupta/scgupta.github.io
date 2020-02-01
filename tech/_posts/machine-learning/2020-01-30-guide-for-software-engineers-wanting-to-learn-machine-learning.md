@@ -20,7 +20,7 @@ You see, for most of my working life, I have built compilers, program analysis a
 That is my story. Now about the first question: how can you learn and get into ML? Apart from programming, I also love to trek in the Himalayas. I see interesting parallels in my ML journey and high altitude treks. Through those parallels, I will explain how you can plan and go on an ML expedition.
 
 
-# A Trekking Expedition
+## A Trekking Expedition
 
 Typically a trek has following four stages.
 
@@ -38,7 +38,7 @@ Let's examine these four stages of the expedition to learn ML.
 
 ![My friends and I climbing to Auden's Col in Gangotri National Park, Uttarakhand Himalayas, India](https://3.bp.blogspot.com/-uwoEYY0iUYQ/XjUgU5D2txI/AAAAAAAAS6M/53OLr6ibp08mUScnyoOq5Fl3RtkmKmvzQCKgBGAsYHg/s1600/AudenColClimb.jpg){: width="100%" class="framedimg"}
 
-# Irresistible Allure
+## Irresistible Allure
 
 I mentioned earlier that I watched some of my colleague using machine learning to solve hard software engineering problems, that is how I was allured. But let's examine: is it worth or is all buzz just a passing fad.
 
@@ -57,7 +57,7 @@ Businesses are also increasingly relying on ML for fraud detection, pricing/fina
 
 It has exploded into our daily lives because of two reasons: a lot of data is being generated, and the availability of economical on-demand cloud computing. It is clear that ML is not just hype or passing fad. It is real, it is here and now. So the journey is worth it.
 
-# Study the Terrain
+## Study the Terrain
 
 Once you have decided to go on this journey, it is important to study the terrain starting with understanding the four buzz phrases.
 
@@ -73,7 +73,7 @@ AI is the broadest term including statistical as well as other techniques. ML is
 
 ![Relationship between Artificial Intelligence, Machine Learning, Deep Learning and Data Science](https://3.bp.blogspot.com/-lp5okaKB1zs/XjUjHd8duPI/AAAAAAAAS6k/IuMbrGXgH8sfz1LkvnD5p3D1zTsSrpQygCKgBGAsYHg/s1600/ml-trek-AI-ML-DL-DS-relationships.png){: width="100%" class="framedimg"}
 
-## Traditional Programs vs. Machine Learning
+### Traditional Programs vs. Machine Learning
 
 All these definitions are fine, but what is the difference between Machine Learning and traditional programs?
 
@@ -93,7 +93,7 @@ In machine learning, a programmer will prepare data set: a large number of email
 
 Now let's understand different kinds of problems that can be solved by machine learning or deep learning techniques.
 
-## Machine Learning
+### Machine Learning
 
 Machine Learning has three kinds of techniques:
 
@@ -135,7 +135,7 @@ I want to pause for a moment and emphasize that machine learning is not a magic 
 
 For supervised learning, it matters what you have trained your system for. For example, if you trained a classification system to distinguish between car, truck and motorcycle, it will not suddenly start differentiating, say, a red car from a blue car, just because now you want to. If your problem changes, labels in training data have to reflect that change, and you have to retrain the model.
 
-## Deep Learning
+### Deep Learning
 Deep Learning is a subset of machine learning using Deep Neural Network (DNN) models. These models have one input layer, one output layer, and several intermediate hidden layers. There are various specialised network designs suitable for different problems. Some examples are Convolutional Neural Network (CNN), Recurrent Neural Network (RNN), Long Short-Term Memory (LSTM) neural network. We will not get into details of various types of DNNs in this post.
 
 Problems being solved by DNNs are same: regression, classification, clustering etc. But DNNs are computation-intensive (and therefore expensive), so when do we use DNN? The difference is in the type of data being processed. While other machine learning techniques usually suffice for structured data, DNNs give better results on unstructured data. There are three kinds of unstructured data that DNNs are commonly used for: vision, natural language, and speech.
@@ -148,7 +148,7 @@ Problems being solved by DNNs are same: regression, classification, clustering e
 
 ![An example of Deep Neural Network (DNN)](https://3.bp.blogspot.com/-nJGVwGyw7Yg/XjUnjv3vFDI/AAAAAAAAS7E/hqn7DLuP4qgXDijdiNdNofh-90Ei2pJ6wCKgBGAsYHg/s1600/ml-trek-DNN.png){: width="100%" class="framedimg"}
 
-## Tools and Frameworks
+### Tools and Frameworks
 
 Python is the most popular language among machine learning practitioners, and there is a rich ecosystem of libraries and frameworks. 
 
@@ -158,11 +158,11 @@ For deep learning, TensorFlow and PyTorch (and Keras API) are most popular for b
 
 To deploy on the cloud, there are alternatives from all major cloud providers: Google Cloud AutoML, Amazon SageMaker, Azure ML.
 
-# Train Hard
+## Train Hard
 
 As you can see, machine learning is a vast terrain, a lot of ground to cover. And it is not easy. So you need to train hard. Good news is that it is the best time in human history to learn even advance topics of computer science on your own. You just need motivation and a computer with a good internet connection. There is no dearth of good articles, tutorials, and excellent and affordable online courses. I reiterate, if you are motivated to learn machine learning on your own, there wasn't a better time ever.
 
-## Online Courses, Tutorials, Resources
+### Online Courses, Tutorials, Resources
 
 I am listing a few courses that I am fond of, but there are so many other very good and useful online resources.
 
@@ -173,17 +173,17 @@ I am listing a few courses that I am fond of, but there are so many other very g
 - Cloud: Google [Cloud AutoML](https://cloud.google.com/automl/){:target="_blank" rel="nofollow"}, Amazon [SageMaker](https://docs.aws.amazon.com/sagemaker/){:target="_blank" rel="nofollow"}, Microsoft [Azure ML](https://docs.microsoft.com/en-us/azure/machine-learning/){:target="_blank" rel="nofollow"}
 - [Kaggle](https://www.kaggle.com/){:target="_blank" rel="nofollow"}
 
-## Books
+### Books
 
 Once you get familiar, you might want to pick some of these books for strengthening your foundation in theory. These are some of the best books from some of the most respected professors, and are available online, free of cost, legally.
 
-- [The Elements of Statistical Learning, by Hastie, Tibshirani, Friedman](https://web.stanford.edu/~hastie/ElemStatLearn/){:target="_blank" rel="nofollow"}
-- [An Introduction to Statistical Learning, by James, Witten, Hastie, Tibshirani](http://faculty.marshall.usc.edu/gareth-james/ISL/){:target="_blank" rel="nofollow"}
-- [Deep Learning, by Goodfellow, Bengio, Courville, Bach](https://www.deeplearningbook.org/){:target="_blank" rel="nofollow"}
-- [Pattern Recognition and Machine Learning, by Bishop](https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book){:target="_blank" rel="nofollow"}
-- [Machine Learning Yearning, by Andrew Ng](https://www.deeplearning.ai/machine-learning-yearning/){:target="_blank" rel="nofollow"}
+- [The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/){:target="_blank" rel="nofollow"}, by Hastie, Tibshirani, Friedman
+- [An Introduction to Statistical Learning](http://faculty.marshall.usc.edu/gareth-james/ISL/){:target="_blank" rel="nofollow"}, by James, Witten, Hastie, Tibshirani
+- [Deep Learning](https://www.deeplearningbook.org/){:target="_blank" rel="nofollow"}, by Goodfellow, Bengio, Courville, Bach
+- [Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/#!prml-book){:target="_blank" rel="nofollow"}, by Bishop
+- [Machine Learning Yearning](https://www.deeplearning.ai/machine-learning-yearning/){:target="_blank" rel="nofollow"}, by Andrew Ng
 
-# Check Your Gears
+## Check Your Gears
 
 As you about to begin your journey of mastering machine learning, it is time to check your gears, and get a hang of the map and compass.
 
@@ -195,7 +195,7 @@ Data scientists are strong in mathematics, they are expert in playing with data 
 
 At the same time, do remember your strengths as a software engineer. You have strong programming skills, you are expert in building highly scalable applications with continues develop-test-deploy pipeline that runs 24x7 with automated monitoring and alerting. Data scientists might not necessarily appreciate these aspects and the need for establishing guarantees of continuous functioning and correctness of ML models in production systems. Typically they built batch programs for a given dataset, which may require significant (re)work and engineering to take it to production. So your skills complement data scientists and are highly valuable. You just have to adapt those to the world of machine learning, and infuse engineering discipline and rigor into it. Both data science and software engineers need to develop a better understanding of the other and keep moving towards top-right quadrant. That is your compass.
 
-# Adventure Begins
+## Adventure Begins
 
 ![](https://4.bp.blogspot.com/-lNNKCjUkQhI/XjUpLBxj5WI/AAAAAAAAS7Y/GAHYAoY5TxwoAdhzgvdDhCmfrW3ZhRp8QCKgBGAsYHg/s1600/start-trek-may-the-force-be-with-you.png){: width="30%" class="alignright"}
 
