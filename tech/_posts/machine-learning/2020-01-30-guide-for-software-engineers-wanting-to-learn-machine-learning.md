@@ -9,16 +9,13 @@ tags:
 
 ![](https://3.bp.blogspot.com/-rCFTH5ZdyC8/XjUYg5ADI5I/AAAAAAAAS5I/eTIQdL9X0HgNhreStCLuAhTSPA1epqtDwCKgBGAsYHg/s1600/star-trek-ScottyMeetsJaylah-StarTrekBeyond.jpg){: width="100%" class="framedimg"}
 
-This question is posed to me quite often:
+You are a Software Engineer. You notice buzzwords of Artificial Intelligence, Machine Learning, Deep Learning, Data Science all around. You wonder what these phrases mean, whether all this is for real and useful or is yet another hype and passing fad.
 
-> I am a software engineer. There is buzz about data science, machine learning, artificial intelligence, etc. all around. How can I learn and get into it? How did you do it?
+You want to figure out how it is changing or will change the computer/IT industry, and why you should care, if at all. You google about it, you read various articles, blogs and tutorials. You get some idea, but are also overwhelmed by the enormous wealth of math, tools, frameworks you discover.
 
-My story is that I got ambushed and crash-landed into it like engineer Scotty of USS Enterprise in the movie Star Trek Beyond. Later, I got rescued by aliens and they taught me how to survive in the wild. It's true! Seriously!
+You wish if someone could give an overview, say, a map and compass suitable for an engineer, to help you embark on the journey of mastering it all. This blog post is for you.
 
-You see, for most of my working life, I have built compilers, program analysis and programming tools, and IDEs. While working at Microsoft Research, I saw my colleagues applying machine learning (ML) and statistics to solve program analysis, dev tools, and software engineering problems. The success of these techniques surprised me. AlexNet happened around the same time. I was intrigued, and since then I have been learning slowly, but steadily.
-
-That is my story. Now about the first question: how can you learn and get into ML? Apart from programming, I also love to trek in the Himalayas. I see interesting parallels in my ML journey and high altitude treks. Through those parallels, I will explain how you can plan and go on an ML expedition.
-
+Just like you, I am a software engineer, and have been through that journey. Hopefully, my experience is relevant and useful in helping you chart out your own course. Apart from programming, I also love to trek in the Himalayas. I see interesting parallels in my ML journey and high altitude treks. Through those parallels, I will explain how you can plan and go on an ML expedition.
 
 ## A Trekking Expedition
 
@@ -40,7 +37,7 @@ Let's examine these four stages of the expedition to learn ML.
 
 ## Irresistible Allure
 
-I mentioned earlier that I watched some of my colleague using machine learning to solve hard software engineering problems, that is how I was allured. But let's examine: is it worth or is all buzz just a passing fad.
+Like a vast number of engineers, I am not formally trained in Machine Learning. For most of my working life, I  built compilers, program analysis and programming tools, and IDEs; something very different Machine Learning. But while working at Microsoft Research, I saw my colleagues applying Machine Learning and statistics to solve hard program analysis, dev tools, and software engineering problems. The success of these techniques allured me. But let's examine: is it really worth your while or is all buzz just a passing fad.
 
 The four most common buzz words are Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Data Science (DS). Let's check out [Google Trends](https://trends.google.com/trends/explore?date=all&q=Machine%20Learning,Data%20Science,Artificial%20intelligence,Deep%20Learning){:target="_blank" rel="nofollow"} for these phrases, as the saying goes: In God we trust; others must provide data.
 
