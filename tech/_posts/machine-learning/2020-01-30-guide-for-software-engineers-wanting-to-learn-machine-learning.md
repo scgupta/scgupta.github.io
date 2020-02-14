@@ -1,15 +1,18 @@
 ---
 title: An Engineer's trek into Machine Learning
 excerpt: "A guide for software engineers wanting to learn data science, machine learning,  and deep learning, with intro to the basics and list of online resources."
-image: "https://3.bp.blogspot.com/-rCFTH5ZdyC8/XjUYg5ADI5I/AAAAAAAAS5I/eTIQdL9X0HgNhreStCLuAhTSPA1epqtDwCKgBGAsYHg/s1600/star-trek-ScottyMeetsJaylah-StarTrekBeyond.jpg"
-image_thumbnail: "https://3.bp.blogspot.com/-R1S1dcdh7EM/XjUZDuzGA9I/AAAAAAAAS5g/aTb4DfSwDTgTdVSY2U87QVLXJCRmFLZgQCKgBGAsYHg/s320/star-trek-ScottyMeetsJaylah-StarTrekBeyond.jpg"
+image: "https://4.bp.blogspot.com/-vTTgpLbLNIY/XkYUrf4G00I/AAAAAAAATDU/VfLiDGPsFzI12RhX_kTV4JiTEY9yopqiQCKgBGAsYHg/s1600/AC_Day11_367.JPG"
+image_thumbnail: "https://4.bp.blogspot.com/-vTTgpLbLNIY/XkYUrf4G00I/AAAAAAAATDU/VfLiDGPsFzI12RhX_kTV4JiTEY9yopqiQCKgBGAsYHg/s320/AC_Day11_367.JPG"
 tags:
   - "machine-learning"
+  - "data-science"
+  - "deep-learning"
+  - "artificial-intelligence"
 ---
 
-![](https://3.bp.blogspot.com/-rCFTH5ZdyC8/XjUYg5ADI5I/AAAAAAAAS5I/eTIQdL9X0HgNhreStCLuAhTSPA1epqtDwCKgBGAsYHg/s1600/star-trek-ScottyMeetsJaylah-StarTrekBeyond.jpg){: width="100%" class="framedimg"}
+![](https://4.bp.blogspot.com/-vTTgpLbLNIY/XkYUrf4G00I/AAAAAAAATDU/VfLiDGPsFzI12RhX_kTV4JiTEY9yopqiQCKgBGAsYHg/s1600/AC_Day11_367.JPG){: width="100%" class="framedimg"}
 
-You are a Software Engineer. You notice buzzwords of Artificial Intelligence, Machine Learning, Deep Learning, Data Science all around. You wonder what these phrases mean, whether all this is for real and useful or is yet another hype and passing fad.
+You are a Software Engineer. You notice Artificial Intelligence, Machine Learning, Deep Learning, Data Science buzzwords all around. You wonder what these phrases mean, whether all this is for real and useful or is yet another hype and passing fad.
 
 You want to figure out how it is changing or will change the computer/IT industry, and why you should care, if at all. You google about it, you read various articles, blogs and tutorials. You get some idea, but are also overwhelmed by the enormous wealth of math, tools, frameworks you discover.
 
@@ -33,13 +36,11 @@ And then the adventure begins!
 
 Let's examine these four stages of the expedition to learn ML.
 
-![My friends and I climbing to Auden's Col in Gangotri National Park, Uttarakhand Himalayas, India](https://3.bp.blogspot.com/-uwoEYY0iUYQ/XjUgU5D2txI/AAAAAAAAS6M/53OLr6ibp08mUScnyoOq5Fl3RtkmKmvzQCKgBGAsYHg/s1600/AudenColClimb.jpg){: width="100%" class="framedimg"}
-
 ## Irresistible Allure
 
-Like a vast number of engineers, I am not formally trained in Machine Learning. For most of my working life, I  built compilers, program analysis and programming tools, and IDEs; something very different Machine Learning. But while working at Microsoft Research, I saw my colleagues applying Machine Learning and statistics to solve hard program analysis, dev tools, and software engineering problems. The success of these techniques allured me. But let's examine: is it really worth your while or is all buzz just a passing fad.
+Like a vast number of engineers, I am not formally trained in Machine Learning. For most of my working life, I  built compilers, program analysis and programming tools, and IDEs; something very different from Machine Learning. But while working at Microsoft Research, I saw my colleagues applying Machine Learning and statistics to solve hard program analysis, dev tools, and software engineering problems. The success of these techniques allured me. But let's examine: is it really worth your while or is all his buzz just a passing fad?
 
-The four most common buzz words are Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Data Science (DS). Let's check out [Google Trends](https://trends.google.com/trends/explore?date=all&q=Machine%20Learning,Data%20Science,Artificial%20intelligence,Deep%20Learning){:target="_blank" rel="nofollow"} for these phrases, as the saying goes: In God we trust; others must provide data.
+The four most common buzzwords are Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Data Science (DS). Let's check out [Google Trends](https://trends.google.com/trends/explore?date=all&q=Machine%20Learning,Data%20Science,Artificial%20intelligence,Deep%20Learning){:target="_blank" rel="nofollow"} for these phrases, as the saying goes: In God we trust; others must provide data.
 
 ![Google Trends for Artificial Intelligence (AI), Machine Learning (ML), Deep Learning (DL), Data Science (DS)](https://4.bp.blogspot.com/-vAkyT8B2rnA/XjUhdPqHgoI/AAAAAAAAS6Y/SHLFtsK-CiQfEFkr6UL6mexBcX3GIkf1gCKgBGAsYHg/s1600/ml-trek-google-trends.png){: width="100%" class="framedimg"}
 
@@ -190,7 +191,7 @@ As software engineers, deterministic logic has been ingrained in us, but machine
 
 Data scientists are strong in mathematics, they are expert in playing with data and designing efficient models. These might not be exactly your forte, but you need to slowly develop these capabilities. Without that, a model will remain a black box. Improving the understanding of workings of ML models (with the help of courses and books listed earlier) and adapting engineer practices to ML is your map.
 
-At the same time, do remember your strengths as a software engineer. You have strong programming skills, you are expert in building highly scalable applications with continues develop-test-deploy pipeline that runs 24x7 with automated monitoring and alerting. Data scientists might not necessarily appreciate these aspects and the need for establishing guarantees of continuous functioning and correctness of ML models in production systems. Typically they built batch programs for a given dataset, which may require significant (re)work and engineering to take it to production. So your skills complement data scientists and are highly valuable. You just have to adapt those to the world of machine learning, and infuse engineering discipline and rigor into it. Both data science and software engineers need to develop a better understanding of the other and keep moving towards top-right quadrant. That is your compass.
+At the same time, do remember your strengths as a software engineer. You have strong programming skills, you are expert in building highly scalable applications with continues develop-test-deploy pipeline that runs 24x7 with automated monitoring and alerting. Data scientists might not necessarily appreciate these aspects and the need for establishing guarantees of continuous functioning and correctness of ML models in production systems. Typically they built batch programs for a given dataset, which may require significant (re)work and engineering to take it to production. So your skills complement data scientists and are highly valuable. You just have to adapt those to the world of machine learning, and infuse engineering discipline and rigor into it. Both data scientists and software engineers need to develop a better understanding of the other and keep moving towards top-right quadrant. That is your compass.
 
 ## Adventure Begins
 

@@ -5,7 +5,9 @@ image: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mP
 image_thumbnail: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mPhsIu3jAOspjCFY192Mpbe2JACKgBGAsYHg/s320/mozilla-deepspeech-py-transcriber-slang.png"
 tags:
   - "machine-learning"
-  - "ASR"
+  - "speech-recognition"
+  - "deep-speech"
+  - "python"
 code: true
 ---
 
