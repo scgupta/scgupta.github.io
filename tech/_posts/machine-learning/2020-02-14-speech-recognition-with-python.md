@@ -1,8 +1,8 @@
 ---
-title: Speech Recognition with Python
-excerpt: "Speech Recognition options: Google, Amazon, Azure, IBM Watson cloud services; or self-hosted Mozilla DeepSpeech, FaceBook wav2letter, Kaldi, CMU Sphinx."
-image: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mPhsIu3jAOspjCFY192Mpbe2JACKgBGAsYHg/s1600/mozilla-deepspeech-py-transcriber-slang.png"
-image_thumbnail: "https://3.bp.blogspot.com/-Um4CzvPw_wo/XiGZJT3QHbI/AAAAAAAASzg/oTh6tU8mPhsIu3jAOspjCFY192Mpbe2JACKgBGAsYHg/s320/mozilla-deepspeech-py-transcriber-slang.png"
+title: "From the diary of a Python charmer: How to make it dance to your speech"
+excerpt: "Compare 9 most prominent automatic speech recognition engines. Learn which one is best for your needs, and how to use it in Python programs."
+image: "https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s1600/speech-recognition-with-python-snake.png"
+image_thumbnail: "https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s320/speech-recognition-with-python-snake.png"
 tags:
   - "machine-learning"
   - "speech-recognition"
@@ -10,34 +10,72 @@ tags:
 code: true
 ---
 
-Speech technologies have been evolving rapidly for the last couple of years, and are transitioning from the realm of science to engineering. With the growing popularity of voice assistants like Alexa, Siri and Google Assistant, several apps (e.g., [YouTube](https://medium.com/slanglabs/voice-in-apps-youtube-25bcc288ac4c){:target="_blank"}, [Gana](https://medium.com/slanglabs/voice-in-apps-gaana-1f6e2d8b026b){:target="_blank"}, [Paytm Travel](https://medium.com/slanglabs/voice-in-apps-paytm-travel-5bee6aea76dc){:target="_blank"}, [My Jio](https://medium.com/slanglabs/voice-in-apps-my-jio-5dc8f2e298d){:target="_blank"}) are beginning to have functionalities controlled by voice. Programmers are increasingly evaluating how to [augment apps with voice experience](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank"}, and Automated Speech Recognition (ASR) is the necessary first step in processing voice.
+![](https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s1600/speech-recognition-with-python-snake.png){: width="100%" class="framedimg"} 
 
-There are two kinds of speech recognition alternatives:
+Speech technologies have been evolving rapidly for the last couple of years, and are transitioning from the realm of science to engineering.
+With the growing popularity of voice assistants like Alexa, Siri and Google Assistant, several apps (e.g., [YouTube](https://medium.com/slanglabs/voice-in-apps-youtube-25bcc288ac4c){:target="_blank"}, [Gana](https://medium.com/slanglabs/voice-in-apps-gaana-1f6e2d8b026b){:target="_blank"}, [Paytm Travel](https://medium.com/slanglabs/voice-in-apps-paytm-travel-5bee6aea76dc){:target="_blank"}, [My Jio](https://medium.com/slanglabs/voice-in-apps-my-jio-5dc8f2e298d){:target="_blank"}) are beginning to have functionalities controlled by voice.
+Programmers are increasingly evaluating how to [augment apps with voice experience](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank"}.
 
-- **Services** that run on the cloud, and are accessed either through REST endpoints or libraries in popular programming languages. Examples are cloud speech services from Google, Amazon, Microsoft, and IBM.
-- **Software** packages that can be self-hosted, or run locally on the machine (not requiring network connection) as desired. These come with flexibility or overhead (depending upon perspective) of needing to have either download pre-trained models, or you can train on your data as per need, and deploy and manage it. Examples are CMU Sphinx, Kaldi, Mozilla DeepSpeech, and Facebook wav2letter.
+Automated Speech Recognition (ASR) is the necessary first step in processing voice. In ASR, an audio file or speech spoken to a microphone is processed and converted to text, therefore it is also known as Speech-to-Text (STT). Then this text is fed to a Natural Language Processing/Understanding (NLP/NLU) to understand and extract key information (such as intentions, sentiments), and then appropriate action is taken. There are also stand-alone applications of ASR, e.g. transcribing dictation, or producing real-time subtitles for videos.
 
-Since all speech cloud services have Python libraries, and all ASR software packages have Python binding, I will be using Python in the article. Other popular options are using Java or JavaScript, though some ASR packages do not have JavaScript bindings.
+## Service vs. Software
 
-> Another reason for choosing Python is that this article contains several code samples. While reading, you can run the code using its [Colab companion](https://colab.research.google.com/github/scgupta/yearn2learn/blob/master/speech/asr/python_speech_recognition_notebook.ipynb){:target="_blank"} in the browser. It does not require anything to be installed on your computer.
+You have to decide is whether to use Speech-to-Text SaaS on the cloud or host your own ASR system. Based on that choice, you will either pick one of the cloud speech service providers or pick one of the software packages.
 
-Speech Recognition APIs are of two types:
+**Service** is the easiest way to start. You sigh-up for a SaaS, get key/credentials, and you are all set to use it in your code, either through HTTP endpoints or libraries in the programming languages of your choice. However, for reasonable large usage, it typically cost more money.
 
-- **Batch:** The full audio file is passed as a parameter, and speech-to-text transcribing is done in one shot.
-- **Streaming:** The chunks of the audio buffer are repeatedly passed on, and intermediate results are accessible.
+**Software** packages offer you full control as you are hosting it, and also the possibility of creating smaller models tailored for your application, and deploying it on-device/edge without needing network connectivity. But it requires expertise and upfront efforts to train and deploy the models.
 
-All software packages support batch mode, and some support streaming mode too.
+![](https://3.bp.blogspot.com/-C9CX13JCM4U/Xkifra78mKI/AAAAAAAATEs/b8w9Ixz4PRcnnX2rSh6zNpZeiKRoaQq6gCKgBGAsYHg/s1600/asr-service-vs-software.png){: class="framedimg"}
 
-One common use case is to collect audio from microphone and passes on the buffer to the speech recognition API. Invariably, in such transcribers, the microphone is accessed though [PyAudio](https://people.csail.mit.edu/hubert/pyaudio/){:target="_blank" rel="nofollow"}, which is implemented over [PortAudio](http://www.portaudio.com/){:target="_blank" rel="nofollow"}.
+It is a reversible choice. For example, you can start with a cloud service, and if needed, move to your own deployment of a software package; and vice versa. You can design your code to limit the blast-radius of such reversal, as well as in case if you migrate to another SaaS or software package.
 
-In the rest of this article, you will learn using batch and streaming APIs of:
+## Batch vs. Streaming
 
-- **Services:** Google, Microsoft, IBM cloud services (and resources for Amazon and Nuance as there is no python library for the desired use cases)
-- **Software:** CPU Sphinx, Mozilla Deep Speech (and resources of Kaldi and Facebook wav2letter, as these do not come with a pip intsall and installation process is more involved)
+You need to determine whether your application requires batch ASR or streaming ASR.
 
-You will also learn about Python `SpeechRecognition` package that provides abstraction over batch API of several could services and software packages.
+**Batch:** If you have audio recordings that need to transcribe it offline, then batch processing will suffice as well more economical. In batch API, an audio file is passed as a parameter, and speech-to-text transcribing is done in one shot.
+
+**Streaming:** If you need to process speech in realtime (e.g. in voice-controlled applications, video subtitles), you will need streaming API. In the case of streaming API, it is repeatedly invoked with available chunks of the audio buffer. It may send interim results, but the final result is available at the end.
+
+All services and software packages have batch APIs, but some lack streaming APIs at the moment. So if you have a streaming application, that eliminates some of the choices.
+
+## Choice of Python
+
+Most speech services provide libraries in popular programming languages. In the worst case, you can always use HTTP endpoints. Same is true for speech packages, these come with bindings in various programming languages. In the worst case, you can create bindings yourself. So there is no constraint of using Python.
+
+> I am choosing Python for this article because most speech cloud services and ASR software packages have Python libraries. Also, you can run code snippets of the article using its Colab companion in the browser, without requiring anything to be installed on your computer.
+
+One common use case is to collect audio from microphone and pass on the buffer (batch or streaming) to the speech recognition API. Invariably, in such transcribers, the microphone is accessed though PyAudio, which is implemented over PortAudio. But since the microphone is not accessible on Colab, we simplify it. We will use a complete audio file to examine batch API. And for streaming API, we will break an audio file into chunks and simulate stream.
+
+## How to best use the rest of the article
+
+Following services and software packages are covered.
+
+**Services:**
+
+- Google Speech-to-Text
+- Microsoft Azure Speech
+- IBM Watson Speech to Test
+- Amazon Transcribe
+- Nuance
+
+**Software:**
+
+- CMU Sphinx
+- Mozilla DeepSpeech
+- Kaldi
+- Facebook wav2letter
+
+Code samples are not provided for Amazon Transcribe, Nuance, Kaldi, and Facebook wav2letter due to some peculiarity or limitation (listed in their respective sections). Instead, links to code samples and resources are given.
+
+The next section has the common utility functions and test cases. The last section covers Python `SpeechRecognition` package that provides an abstraction over batch API of several could services and software packages.
+
+If you want to have an overview of all services and software packages, then please open the Colab, and execute the code as you read this post. If you are interested only in a specific service or package, directly jump to that section. But in either case, do play with the code in Colab to explore it better.
 
 Let's plunge into the code.
+
+---
 
 ## Common Setup
 
@@ -76,7 +114,7 @@ TESTCASES = [
 ]
 ~~~
 
-Also write some utility functions. The `read_wav_file()` takes the path to the audio file, and returns the buffer bytes and sample rate:
+Also, write some utility functions. The `read_wav_file()` takes the path to the audio file, and returns the buffer bytes and sample rate:
 
 ~~~ python
 def read_wav_file(filename) -> Tuple[bytes, int]:
@@ -88,7 +126,7 @@ def read_wav_file(filename) -> Tuple[bytes, int]:
     return buffer, rate
 ~~~
 
-The `simulate_stream()` is useful for simulating steam to try streaming APIs. Usually there will be an audio source like mic. At regular intervals, mic will generate a speech chunk, which has to be passed to the streaming API. The `simulate_stream()` function helps avoiding all that complexity and to focus on the APIs. It takes an audio buffer and batch size, and *generates* chunks of that size. Notice the `yield buf` statement in following:
+The `simulate_stream()` is useful for simulating steam to try streaming APIs. Usually, there will be an audio source like a microphone. At regular intervals, the microphone will generate a speech chunk, which has to be passed to the streaming API. The `simulate_stream()` function helps to avoid all that complexity and to focus on the APIs. It takes an audio buffer and batch size, and *generates* chunks of that size. Notice the `yield buf` statement in the following:
 
 ~~~ python
 def simulate_stream(buffer: bytes, batch_size: int = 4096):
@@ -104,6 +142,8 @@ def simulate_stream(buffer: bytes, batch_size: int = 4096):
 ---
 
 ## Google Speech-to-Text Cloud Service
+
+![Clustering](https://1.bp.blogspot.com/-yGaN4SLPvlg/XkilwaO9gEI/AAAAAAAATFA/o8FGrVJjiDoeGEqf2N7Oi2bYcCTWYuO6QCKgBGAsYHg/s1600/Google-Cloud-Speech.png){: width="25%" class="framedimg alignleft"}
 
 Google has [speech-to-text](https://cloud.google.com/speech-to-text/docs){:target="_blank" rel="nofollow"} as one of the Google Cloud services. It has [libraries](https://cloud.google.com/speech-to-text/docs/reference/libraries){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It supports both batch and stream modes. Please open the [Colab](https://colab.research.google.com/github/scgupta/yearn2learn/blob/master/speech/asr/python_speech_recognition_notebook.ipynb#scrollTo=7dlm4CWyQPeR){:target="_blank"}, and execute the code as you read this post. And also play with the code.
 
@@ -253,11 +293,13 @@ google-cloud-streaming-stt: "experience proves this"
 
 ## Microsoft Azure Speech Cloud Service
 
+![Clustering](https://1.bp.blogspot.com/-O3wB1GGbMro/XkimgPKvsfI/AAAAAAAATFI/j3cMevYvJ2YzIbbeLZd6CCfHOF0EVLcuACKgBGAsYHg/s1600/Microsoft-Azure-Speech-to-Text.png){: width="25%" class="framedimg alignleft"}
+
 Microsoft Azure [Speech Services](https://azure.microsoft.com/en-in/services/cognitive-services/speech-services/){:target="_blank" rel="nofollow"} have [Speech to Text](https://azure.microsoft.com/en-in/services/cognitive-services/speech-to-text/){:target="_blank" rel="nofollow"} service.
 
 ### Setup
 
-Install azure speech package:
+Install Azure speech package:
 
 ~~~ bash
 $ pip3 install azure-cognitiveservices-speech
@@ -374,6 +416,8 @@ azure-streaming-stt: "Experience proves this."
 
 ## IBM Watson Speech to Text Cloud Service
 
+![Clustering](https://4.bp.blogspot.com/-QMZoIEzqhDs/XkimgPDd8HI/AAAAAAAATFI/aLGvVgJLapAT1BRZbNMx1HDCRgH15VBbgCKgBGAsYHg/s1600/IBM-Watson.png){: width="25%" class="framedimg alignleft"}
+
 IBM [Watson Speech to Text](https://www.ibm.com/in-en/cloud/watson-speech-to-text){:target="_blank" rel="nofollow"} is ASR service with .NET, Go, JavaScript, [Python](https://cloud.ibm.com/apidocs/speech-to-text/speech-to-text?code=python){:target="_blank" rel="nofollow"}, Ruby, Swift and Unity API libraries, as well as REST endpoints. It has rich documentation.
 
 ### Setup
@@ -433,14 +477,13 @@ watson-batch-stt: "your power is sufficient I set "
 
 ### Streaming API
 
-Watson's streaming API works over websocket, and takes a little bit of work to set it all up. It has following steps:
+Watson's streaming API works over WebSocket, and takes a little bit of work to set it all up. It has the following steps:
 
-- Create a `RecognizeCallback` object to receive speech recognition notifications and results.
-- Create a buffer `Queue`. Audio chunks produces by mic (or stream simulator) should be written to this queue, and watson reads and consumes the chunks.
-- Start a thread in which speech recognition (along with websocket communication) executes.
-- Start mic or speech simulator, to start producing audio chunks
+- Create a `RecognizeCallback` object for receiving speech recognition notifications and results.
+- Create a buffer queue. Audio chunks produced by the microphone (or stream simulator) should be written to this queue, and Watson reads and consumes the chunks.
+- Start a thread in which speech recognition (along with WebSocket communication) executes.
+- Start microphone or speech simulator, to start producing audio chunks
 - Upon completion, join the speech recognition thread (i.e. wait till it completes).
-
 
 ~~~ python
 import json
@@ -550,7 +593,7 @@ for t in TESTCASES:
     ))
 ~~~
 
-Output produded:
+Output produced:
 
 ~~~
 audio file="audio/2830-3980-0043.wav"    expected text="experience proves this"
@@ -570,27 +613,33 @@ watson-cloud-streaming-stt: "experience proves this "
 
 ## Amazon Transcribe Cloud Service
 
-[Amazon Transcribe](https://aws.amazon.com/transcribe/){:target="_blank" rel="nofollow"} is a [speech-to-text](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started.html){:target="_blank" rel="nofollow"} AWS cloud service with [libraries](https://aws.amazon.com/transcribe/resources/){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It has a [batch](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-python.html){:target="_blank" rel="nofollow"} speech-to-text API (also available as [command line](https://docs.aws.amazon.com/cli/latest/reference/transcribe/start-transcription-job.html){:target="_blank" rel="nofollow"}), but it requires audio file to be either in S3 bucket, or be available on http. It also has streaming API on [websocket](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html){:target="_blank" rel="nofollow"} and [HTTP/2](https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html){:target="_blank" rel="nofollow"}. Here is an [example with AWS Java SDK](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-streaming.html){:target="_blank" rel="nofollow"}, but no Python bindings (of course, a Python socket library can be used, but it will require getting into [low level event stream encoding](https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html){:target="_blank" rel="nofollow"}).
+![Clustering](https://1.bp.blogspot.com/-Lx_7dsyO7-s/XkimgM8xRZI/AAAAAAAATFI/85tQK1fIW5ogajM-13qGmkoSY-k3Su_owCKgBGAsYHg/s1600/amazon-social-transcribe.jpg){: width="25%" class="framedimg alignleft"}
+
+[Amazon Transcribe](https://aws.amazon.com/transcribe/){:target="_blank" rel="nofollow"} is a [speech-to-text](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started.html){:target="_blank" rel="nofollow"} AWS cloud service with [libraries](https://aws.amazon.com/transcribe/resources/){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It has a [batch](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-python.html){:target="_blank" rel="nofollow"} speech-to-text API (also available as [command line](https://docs.aws.amazon.com/cli/latest/reference/transcribe/start-transcription-job.html){:target="_blank" rel="nofollow"}), but it requires the audio file to be either in S3 bucket, or be available over HTTP. It also has a streaming API on [WebSocket](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html){:target="_blank" rel="nofollow"} and [HTTP/2](https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html){:target="_blank" rel="nofollow"}. Here is an [example with AWS Java SDK](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-streaming.html){:target="_blank" rel="nofollow"}, but no Python bindings (of course, a Python socket library can be used, but it will require getting into [low-level event stream encoding](https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html){:target="_blank" rel="nofollow"}).
 
 Amazon Transcribe Python APIs currently do not facilitate use cases covered in this notebook, and therefore code samples are not included here.
 
 ---
 
 ## Nuance
+
+![Clustering](https://2.bp.blogspot.com/-otX2dmaQulI/XkimgKn98EI/AAAAAAAATFI/BjR8l10TgJUI8IJR88mfCnAUi3vyITl6gCKgBGAsYHg/s1600/Nuance-Dragon.png){: width="25%" class="framedimg alignleft"}
  
-Nuance is most probably oldest [commercial speech recognition products](https://www.nuance.com/mobile/speech-recognition-solutions.html){:target="_blank" rel="nofollow"}, even customised for various domains and industries. They do have [Python bindings](https://nuancedev.github.io/samples/http/python/){:target="_blank" rel="nofollow"} for a speech recognition service. Here is a [code sample](https://github.com/NuanceDev/ndev-python-http-cli/blob/master/ndev/asr.py){:target="_blank" rel="nofollow"} in their GitHub repo.
+Nuance is most probably the oldest [commercial speech recognition products](https://www.nuance.com/mobile/speech-recognition-solutions.html){:target="_blank" rel="nofollow"}, even customised for various domains and industries. They do have [Python bindings](https://nuancedev.github.io/samples/http/python/){:target="_blank" rel="nofollow"} for a speech recognition service. Here is a [code sample](https://github.com/NuanceDev/ndev-python-http-cli/blob/master/ndev/asr.py){:target="_blank" rel="nofollow"} in their GitHub repo.
  
-I could not figure out a way to create a developer account. I hope there is a way to get a limited free trial credits similar to other products, and get the credentials needed to access the services.
+I could not figure out a way to create a developer account. I hope there is a way to get a limited period free trial credits similar to other products, and get the credentials needed to access the services.
 
 ---
 
 ## CMU Sphinx Library
 
-[CMUSphinx](https://cmusphinx.github.io/){:target="_blank" rel="nofollow"} has been around for quite some time, and has been adapting to advancements in ASR technologies. [PocketSphinx](https://github.com/cmusphinx/pocketsphinx-python){:target="_blank" rel="nofollow"} is speech-to-text decoder software package.
+![Clustering](https://3.bp.blogspot.com/-UH8R1gJuEhY/XkimgKzfTFI/AAAAAAAATFI/UF17oQqC_sAxZA49ctDcchjIt4_Wk0QqwCKgBGAsYHg/s1600/cmu-sphinx-wav.png){: width="25%" class="framedimg alignleft"}
+
+[CMUSphinx](https://cmusphinx.github.io/){:target="_blank" rel="nofollow"} has been around for quite some time, and has been adapting to advancements in ASR technologies. [PocketSphinx](https://github.com/cmusphinx/pocketsphinx-python){:target="_blank" rel="nofollow"} is speech-to-text decoder Python package.
 
 ### Setup
 
-First install [swig](http://www.swig.org/){:target="_blank" rel="nofollow"}. On MacOS, you can install using `brew`:
+First, install [swig](http://www.swig.org/){:target="_blank" rel="nofollow"}. On macOS, you can install using `brew`:
 
 ~~~ bash
 $ brew install swig
@@ -611,7 +660,7 @@ $ pip3 install pocketsphinx
 $ pip3 list | grep pocketsphinx
 ~~~
 
-### Create Decoder Object
+### Create a Decoder Object
 
 Whether you use batch or streaming API, you will require a decoder object:
 
@@ -631,7 +680,7 @@ decoder = pocketsphinx.Decoder(config)
 
 ### Batch API
 
-Batch API is expectedly simple, just couple of lines of code:
+Batch API is expectedly simple, just a couple of lines of code:
 
 ~~~ python
 def sphinx_batch_stt(filename: str, lang: str, encoding: str) -> str:
@@ -663,7 +712,7 @@ audio file="audio/8455-210777-0068.wav"    expected text="your power is sufficie
 sphinx-batch-stt: "your paris sufficient i said"
 ~~~
 
-Notice the errors in transcription. With more training data, it typically improve.
+Notice the errors in transcription. With more training data, it typically improves.
 
 
 ### Streaming API
@@ -695,11 +744,13 @@ for t in TESTCASES:
 
 ## Mozilla DeepSpeech
 
+![Clustering](https://2.bp.blogspot.com/-RVIupURDNUI/XkimgGEjH-I/AAAAAAAATFI/yzty4qVV1UYHbbC9rITrRuWI6zYu27GswCKgBGAsYHg/s1600/Mozilla-DeepSpeech-logo.png){: width="25%" class="framedimg alignleft"}
+
 Mozilla released [DeepSpeech 0.6](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="nofollow"} software package in December 2019 with [APIs](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="nofollow"} in C, Java, .NET, [Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="nofollow"}, and JavaScript, including support for TensorFlow Lite models for use on edge devices.
 
 ### Setup
 
-You can install DeepSpeech with pip (make it `deepspeech-gpu==0.6.0` if you want to use GPU in colab runtime or on your machine):
+You can install DeepSpeech with pip (make it `deepspeech-gpu==0.6.0` if you want to use GPU in Colab runtime or on your machine):
 
 ~~~ bash
 $ pip install deepspeech==0.6.0
@@ -723,9 +774,9 @@ $ deepspeech --model deepspeech-0.6.0-models/output_graph.pb --lm deepspeech-0.6
 $ deepspeech --model deepspeech-0.6.0-models/output_graph.pb --lm deepspeech-0.6.0-models/lm.binary --trie ./deepspeech-0.6.0-models/trie --audio ./audio/8455-210777-0068.wav
 ~~~
 
-### Create Model Object
+### Create a Model Object
 
-First step is to read the model files and create DeepSpeech model object.
+The first step is to read the model files and create DeepSpeech model object.
 
 ~~~ python
 import deepspeech
@@ -777,7 +828,7 @@ deepspeech-batch-stt: "your power is sufficient i said"
 
 ### Streaming API
 
-DeepSpeech streaming API requires creation of a stream-context and use to repeadly feed chunk of audio:
+DeepSpeech streaming API requires creating a stream-context and use it repeatedly to feed chunks of audio:
 
 ~~~ python
 def deepspeech_streaming_stt(filename: str, lang: str, encoding: str) -> str:
@@ -824,26 +875,28 @@ deepspeech-streaming-stt: "experience proof less"
 ---
 
 ## Kaldi
+
+![Clustering](https://1.bp.blogspot.com/-hCAFOfb6zZ4/XkimgFgUy6I/AAAAAAAATFI/JlQQuFsgXzshePAPp-2j6XBoZWdqpXEBwCKgBGAsYHg/s1600/Kaldi-ASR.png){: width="25%" class="framedimg alignleft"}
  
 [Kaldi](https://kaldi-asr.org/doc/about.html){:target="_blank" rel="nofollow"} is a very popular software toolkit speech recognition among the research community. It is designed to experiment with different research ideas and possibilities. It has a rich collection of various possible techniques and alternatives. The learning curve is steeper compared to other alternatives discussed in the code lab.
  
 [PyKaldi](https://pykaldi.github.io/){:target="_blank" rel="nofollow"} provides [Python bindings](https://pykaldi.github.io/api/kaldi.asr.html){:target="_blank" rel="nofollow"}. Please do take a look at [README](https://github.com/pykaldi/pykaldi){:target="_blank" rel="nofollow"} of their GitHub repo.
  
-There is no pre-build PyPI ready to use package, and you have to build it from source or from conda. Neither options suit the Colab environment.
+There is no pre-build PyPI ready to use package, and you have to build it either from source or from Conda. Neither options suit the Colab environment.
 
 ---
 
 ## Facebook wav2letter
  
-[Facebook wav2letter@anywhere](https://ai.facebook.com/blog/online-speech-recognition-with-wav2letteranywhere/){:target="_blank" rel="nofollow"} released  in January 2020. It boasts a fully convolutional (CNN) acoustic model instead of recurrent neural network (RNN) that is used by others solutions. It is very promising, include for use in edge devices. It has [Python bindings](https://github.com/facebookresearch/wav2letter/wiki/Python-bindings){:target="_blank" rel="nofollow"} for its [inference framework](https://github.com/facebookresearch/wav2letter/wiki/Inference-Framework){:target="_blank" rel="nofollow"}.
+[Facebook wav2letter@anywhere](https://ai.facebook.com/blog/online-speech-recognition-with-wav2letteranywhere/){:target="_blank" rel="nofollow"} released  in January 2020. It boasts a fully convolutional (CNN) acoustic model instead of a recurrent neural network (RNN) that is used by other solutions. It is very promising, include for use in edge devices. It has [Python bindings](https://github.com/facebookresearch/wav2letter/wiki/Python-bindings){:target="_blank" rel="nofollow"} for its [inference framework](https://github.com/facebookresearch/wav2letter/wiki/Inference-Framework){:target="_blank" rel="nofollow"}.
  
-Like Kaldi, this also does not provide a PyPI package, and needs to be build and installed from [source](https://github.com/facebookresearch/wav2letter/){:target="_blank" rel="nofollow"}.
+Like Kaldi, this also does not provide a PyPI package, and needs to build and installe from [source](https://github.com/facebookresearch/wav2letter/){:target="_blank" rel="nofollow"}.
 
 ---
 
 ## SpeechRecognition Python Package
 
-The [SpeechRecognition](https://pypi.org/project/SpeechRecognition/){:target="_blank" rel="nofollow"} package provide a nice abstraction over several solutions. In this notebook we explore using CMU Sphinx (i.e. model running locally on the machine), and Google (i.e. service accessed over the network/cloud), but both through SpeechRecognition package APIs. It can be installed using pip:
+The [SpeechRecognition](https://pypi.org/project/SpeechRecognition/){:target="_blank" rel="nofollow"} package provides a nice abstraction over several solutions. We already explored using Google service and CMU Sphinxpackage. Now we will use these through SpeechRecognition package APIs. It can be installed using pip:
 
 ~~~ bash
 $ pip3 install SpeechRecognition
@@ -851,7 +904,7 @@ $ pip3 install SpeechRecognition
 
 ### Batch API
 
-SpeechRecognition has only batch API. First step to create an audio record, eithher from a file or from mic, and the second step is to call `recognize_<speech engine name>` function. It currently has APIs for [CMU Sphinx, Google, Microsoft, IBM, Houndify, and Wit](https://github.com/Uberi/speech_recognition){:target="_blank" rel="nofollow"}. Let's checkout using one cloud service (Google) and one software package (Sphinx) through SpeechRecognition abstraction.
+SpeechRecognition has only batch API. The first step to create an audio record, either from a file or from a microphone, and the second step is to call `recognize_<speech engine name>` function. It currently has APIs for [CMU Sphinx, Google, Microsoft, IBM, Houndify, and Wit](https://github.com/Uberi/speech_recognition){:target="_blank" rel="nofollow"}. Let's checkout using one cloud service (Google) and one software package (Sphinx) through SpeechRecognition abstraction.
 
 ``` python
 import speech_recognition as sr
@@ -911,22 +964,10 @@ google: "your power is sufficient I said"
 
 ### API for other providers
 
-For other speech recognition providers, you will need to create API credentials, which you have to pass to `recognize_<speech engine name>` function, you can checkout [this example](https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py){:target="_blank" rel="nofollow"}.
+For other speech recognition providers, you will need to create API credentials, which you have to pass to `recognize_<speech engine name>` function, you can check out [this example](https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py){:target="_blank" rel="nofollow"}.
 
-It also has a nice abstraction for Microphone, implemented over PyAudio/PortAudio. Here is an example to capture input from mic in [batch](https://github.com/Uberi/speech_recognition/blob/master/examples/microphone_recognition.py){:target="_blank" rel="nofollow"} and continously in [background](https://github.com/Uberi/speech_recognition/blob/master/examples/background_listening.py){:target="_blank" rel="nofollow"}.
+It also has a nice abstraction for Microphone, implemented over PyAudio/PortAudio. Check out examples to capture input from the microphone in [batch](https://github.com/Uberi/speech_recognition/blob/master/examples/microphone_recognition.py){:target="_blank" rel="nofollow"} and continuously in the [background](https://github.com/Uberi/speech_recognition/blob/master/examples/background_listening.py){:target="_blank" rel="nofollow"}.
 
 ---
 
-## Recap
-
-This post covered various available speech recognition:
-
-- Services: Google, Azure, Watson
-- Software: CMU Sphinx, Mozilla DeepSpeech
-
-All of these have two kind of Speech-to-Text APIs:
-
-- Batch: the audio data is fed in one go
-- Streaming: the audio data is fed in chunks (very useful for transcribing microphone input)
-
-The Python SpeechRecognition package provides abstraction over several speech recognition services and softwares.
+> Hope you enjoyed reading it. Which ASR engine did you like the most, and Why? Please share it in comments.
