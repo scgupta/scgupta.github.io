@@ -12,7 +12,7 @@ code: true
 
 ![](https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s1600/speech-recognition-with-python-snake.png){: width="100%" class="framedimg"} 
 
-Speech technologies have been evolving rapidly for the last couple of years, and are transitioning from the realm of science to engineering.
+Speech recognition technologies have been evolving rapidly for the last couple of years, and are transitioning from the realm of science to engineering.
 With the growing popularity of voice assistants like Alexa, Siri and Google Assistant, several apps (e.g., [YouTube](https://medium.com/slanglabs/voice-in-apps-youtube-25bcc288ac4c){:target="_blank"}, [Gana](https://medium.com/slanglabs/voice-in-apps-gaana-1f6e2d8b026b){:target="_blank"}, [Paytm Travel](https://medium.com/slanglabs/voice-in-apps-paytm-travel-5bee6aea76dc){:target="_blank"}, [My Jio](https://medium.com/slanglabs/voice-in-apps-my-jio-5dc8f2e298d){:target="_blank"}) are beginning to have functionalities controlled by voice.
 Programmers are increasingly evaluating how to [augment apps with voice experience](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank"}.
 
@@ -871,6 +871,8 @@ inetrim text: experience pro
 inetrim text: experience proof les
 deepspeech-streaming-stt: "experience proof less"
 ~~~
+
+Check out how to write a [Python transcriber that converts microphone input to text](/tech/python-speech-to-text-asr-transcriber-with-mozilla-deepspeech.html).
 
 ---
 

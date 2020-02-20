@@ -249,3 +249,4 @@ In this article, you had a quick introduction to batch and stream APIs of DeepSp
 
 Did you enjoy building it? Any feedback, improvements, suggestions? What other voice application would you like to build? Do let me know in the comments. Thanks for reading.
 
+Check out [Python APIs of 9 most prominent automatic speech recognition engines](/tech/speech-recognition-with-python.html).
