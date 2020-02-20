@@ -1,6 +1,6 @@
 ---
-title: "From the notebook of a Python charmer: How to make it dance to your speech"
-excerpt: "Compare 9 most prominent automatic speech recognition engines. Learn which one is best for your needs, and how to use it in Python programs."
+title: "Speech Recognition with Python: Comparing 9 most prominent alternatives"
+excerpt: "Google Speech-to-Text, Amazon Transcribe, Microsoft Azure Speech, Watson, Nuance, CMU Sphinx, Kaldi, DeepSpeech, Facebook wav2letter. Which is best for you?"
 image: "https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s1600/speech-recognition-with-python-snake.png"
 image_thumbnail: "https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s320/speech-recognition-with-python-snake.png"
 tags:
