@@ -145,7 +145,7 @@ def simulate_stream(buffer: bytes, batch_size: int = 4096):
 
 ![](https://1.bp.blogspot.com/-yGaN4SLPvlg/XkilwaO9gEI/AAAAAAAATFA/o8FGrVJjiDoeGEqf2N7Oi2bYcCTWYuO6QCKgBGAsYHg/s1600/Google-Cloud-Speech.png){: width="25%" class="framedimg alignleft"}
 
-Google has [speech-to-text](https://cloud.google.com/speech-to-text/docs){:target="_blank" rel="nofollow"} as one of the Google Cloud services. It has [libraries](https://cloud.google.com/speech-to-text/docs/reference/libraries){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It supports both batch and stream modes. Please open the [Colab](https://colab.research.google.com/github/scgupta/yearn2learn/blob/master/speech/asr/python_speech_recognition_notebook.ipynb#scrollTo=7dlm4CWyQPeR){:target="_blank"}, and execute the code as you read this post. And also play with the code.
+Google has [speech-to-text](https://cloud.google.com/speech-to-text/docs){:target="_blank" rel="nofollow"} as one of the Google Cloud services. It has [libraries](https://cloud.google.com/speech-to-text/docs/reference/libraries){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It supports both batch and stream modes. Please open the [Colab](http://bit.ly/colab-speech-recognition-python){:target="_blank"}, and execute the code as you read this post. And also play with the code.
 
 ### Setup
 
