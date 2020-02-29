@@ -39,7 +39,7 @@ There is no perfect choice for the programming language that ticks all of the ab
 
 Microservice architecture facilitates each service to independently choose the programming language and framework, and there is no need to standardize on one. However, a heterogeneous system adds DevOps and infra overheads, which we wanted to avoid as we were just a couple of guys hacking the system. With time, our team and platform grew and now has microservices in Go-lang and JavaScript too.
 
-<figure class="framedimg">
+<figure class="aligncenter">
   <img src="https://3.bp.blogspot.com/-ENaoxjvdQnY/XlO9AdZGdWI/AAAAAAAATlA/DsdA5x4prWwGrDasG7QNO7oAZTAqg8qoACKgBGAsYHg/s1600/py-microservice-why-python.png" class="framedimg" >
   <figcaption class="aligncenter">Comparison of Programming Languages. 😀: Great, 😊: Nice, 😐: Ok, 😓: Bad.</figcaption>
 </figure>
@@ -61,7 +61,7 @@ We evaluated three Python Web Frameworks: [Django](https://www.djangoproject.com
 
 In recent time, more AsyncIO Python web frameworks are emerging: [Sanic](https://sanic.readthedocs.io/){:target="_blank" rel="nofollow"}, [Vibora](https://vibora.io/){:target="_blank" rel="nofollow"}, [Quart](https://pgjones.gitlab.io/quart/){:target="_blank" rel="nofollow"}, [FastAPI](https://fastapi.tiangolo.com/){:target="_blank" rel="nofollow"}. Even [Django is beginning to support async](https://docs.djangoproject.com/en/3.0/topics/async/){:target="_blank" rel="nofollow"}.
 
-<figure class="framedimg">
+<figure class="aligncenter">
   <img src="https://1.bp.blogspot.com/-67Hf2dkOCu8/XlPC_dbiF4I/AAAAAAAATlM/Ek4gCFvMOnIF-C0NiPzhc6xABLYlQGnxQCKgBGAsYHg/s1600/py-microservice-why-tornado.png" class="framedimg" >
   <figcaption class="aligncenter">Comparison of Python Web Frameworks. 😀: Great, 😊: Nice, 😐: Ok, 😓: Bad.</figcaption>
 </figure>
@@ -76,7 +76,7 @@ Threads follow the model of **preemptive multitasking**. Each thread executes on
 
 In **cooperative multitasking**, there is a queue of tasks. When a task is scheduled for execution, it executes till a point of its choice (typically an IO wait) and yields control back to the event loop scheduler, which puts it the waiting queue, and schedules another task. At any time, only one task is executing, but it gives an appearance of concurrency.
 
-<figure class="framedimg">
+<figure class="aligncenter">
   <img src="https://4.bp.blogspot.com/-XOcn-AXmQqs/XlPED6V1XTI/AAAAAAAATlY/gIZubD7Fllkb0xWwZih_yy2qvADvCImlgCKgBGAsYHg/s1600/py-microservice-cooperative-multitasking.png" class="framedimg" >
   <figcaption class="aligncenter">Preemptive Multitasking vs. Cooperative Multitasking.</figcaption>
 </figure>
@@ -158,7 +158,7 @@ There are three types of tests:
 
 We wrote integration tests both for Service Layer to test business logic, as well for Web Framework Layer to test the functioning of REST endpoints in Tornado server.
 
-<figure class="framedimg">
+<figure class="aligncenter">
   <img src="https://1.bp.blogspot.com/-6T77KXkI7p8/XlPGRDOGDsI/AAAAAAAATlk/6sGk8Zxe8pUnPPMBk_yFuX0rYhPWrZlCwCKgBGAsYHg/s1600/py-microservice-framework-seperation-testing.png" class="framedimg" >
   <figcaption class="aligncenter">Tests for Tornado and Service Layers.</figcaption>
 </figure>
