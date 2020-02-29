@@ -13,14 +13,15 @@ code: true
 ![](https://1.bp.blogspot.com/-lTzrc8o_iCw/Xkie0L8_ueI/AAAAAAAATEU/Cplxbh-4RwgHc54eT6tkFxaMbtdgB_tegCKgBGAsYHg/s1600/speech-recognition-with-python-snake.png){: width="100%" class="framedimg"} 
 
 Speech recognition technologies have been evolving rapidly for the last couple of years, and are transitioning from the realm of science to engineering.
-With the growing popularity of voice assistants like Alexa, Siri and Google Assistant, several apps (e.g., [YouTube](https://medium.com/slanglabs/voice-in-apps-youtube-25bcc288ac4c){:target="_blank"}, [Gana](https://medium.com/slanglabs/voice-in-apps-gaana-1f6e2d8b026b){:target="_blank"}, [Paytm Travel](https://medium.com/slanglabs/voice-in-apps-paytm-travel-5bee6aea76dc){:target="_blank"}, [My Jio](https://medium.com/slanglabs/voice-in-apps-my-jio-5dc8f2e298d){:target="_blank"}) are beginning to have functionalities controlled by voice.
-Programmers are increasingly evaluating how to [augment apps with voice experience](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank"}.
+With the growing popularity of voice assistants like Alexa, Siri and Google Assistant, several apps (e.g., [YouTube](https://medium.com/slanglabs/voice-in-apps-youtube-25bcc288ac4c){:target="_blank"}, [Gana](https://medium.com/slanglabs/voice-in-apps-gaana-1f6e2d8b026b){:target="_blank"}, [Paytm Travel](https://medium.com/slanglabs/voice-in-apps-paytm-travel-5bee6aea76dc){:target="_blank"}, [My Jio](https://medium.com/slanglabs/voice-in-apps-my-jio-5dc8f2e298d){:target="_blank"}) are beginning to have functionalities controlled by voice. At Slang Labs, we are building a platform for programmers to easily [augment existing apps with voice experiences](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank"}.
 
 Automated Speech Recognition (ASR) is the necessary first step in processing voice. In ASR, an audio file or speech spoken to a microphone is processed and converted to text, therefore it is also known as Speech-to-Text (STT). Then this text is fed to a Natural Language Processing/Understanding (NLP/NLU) to understand and extract key information (such as intentions, sentiments), and then appropriate action is taken. There are also stand-alone applications of ASR, e.g. transcribing dictation, or producing real-time subtitles for videos.
 
+We are interested in ASR and NLU in general, and their efficacy in the voice-to-action loop in apps in particular. Our Android and Web SDKs provide simple APIs suitable from the perspective of app programmers, while Slang platform handles the burden of the complexity of stitching together ASR, NLU and Text-to-Speech (TTS). But, naturally, we are curious about the state of art in ASR, NLU and TTS even though we do not expose these parts of our tech stack as separate SaaS offerings. This exploration of existing ASR solutions is the result of that curiosity.
+
 ## Service vs. Software
 
-You have to decide is whether to use Speech-to-Text SaaS on the cloud or host your own ASR system. Based on that choice, you will either pick one of the cloud speech service providers or pick one of the software packages.
+There are two possibilities: make calls to Speech-to-Text SaaS on the cloud or host one of the ASR software package in your application.
 
 **Service** is the easiest way to start. You sigh-up for a SaaS, get key/credentials, and you are all set to use it in your code, either through HTTP endpoints or libraries in the programming languages of your choice. However, for reasonable large usage, it typically cost more money.
 
