@@ -1,8 +1,8 @@
 ---
 title: "Architecting High-Throughput Low-Latency Big Data Pipeline on Cloud for Analytics and Machine Learning"
 excerpt: "Scalable and efficient data pipelines are as important for the success of analytics, data science, and machine learning as reliable supply lines are for winning a war."
-image: "https://2.bp.blogspot.com/-HfCovz_p7cw/Xl0xoGc6cYI/AAAAAAAAToc/kq0678maYuggObFMNvLgyM_LzULDxK3nACKgBGAsYHg/s1600/BigDataPipeline-Architecture-scgupta.png"
-image_thumbnail: "https://2.bp.blogspot.com/-HfCovz_p7cw/Xl0xoGc6cYI/AAAAAAAAToc/kq0678maYuggObFMNvLgyM_LzULDxK3nACKgBGAsYHg/s320/BigDataPipeline-Architecture-scgupta.png"
+image: "https://2.bp.blogspot.com/-LhyoCiRyjxc/Xl_nyu6KZEI/AAAAAAAATrs/2tGY-fRMaAAAHQSAKBYmZecDhSJDnQpCwCKgBGAsYHg/s1600/BigDataPipeline-Architecture.png"
+image_thumbnail: "https://2.bp.blogspot.com/-LhyoCiRyjxc/Xl_nyu6KZEI/AAAAAAAATrs/2tGY-fRMaAAAHQSAKBYmZecDhSJDnQpCwCKgBGAsYHg/s320/BigDataPipeline-Architecture.png"
 tags:
   - "machine-learning"
   - "data-science"
@@ -19,7 +19,7 @@ In this article, you will examine desired characteristics from the engineering *
 ## Perspective
 
 <figure class="aligncenter">
-  <img src="https://2.bp.blogspot.com/-BYfJjFTMFMI/Xl0xoPp2UMI/AAAAAAAAToc/YOOZx0JxBaMnZ0epkmuE2GtX51gfr37cQCKgBGAsYHg/s1600/BigDataPipeline-Perspective-scgupta.png" class="framedimg" width="50%" >
+  <img src="https://1.bp.blogspot.com/-HiKuS7HoEcA/Xl_nymu3PAI/AAAAAAAATrs/WTH4QHNUihARj5H_3r9t_HBYDyWcCS3LwCKgBGAsYHg/s1600/BigDataPipeline-Perspective.png" class="framedimg" width="50%" >
   <figcaption class="aligncenter">Perspective: View depends on the vantage point.</figcaption>
 </figure>
 
@@ -41,7 +41,7 @@ The complete reality can be constructed only by grasping different perspectives 
 ## Pipeline
 
 <figure class="aligncenter">
-  <img src="https://1.bp.blogspot.com/-KLWSU2riJLY/Xl0xoI1x3nI/AAAAAAAAToc/AcFrTLPAc6otY3lqiU8nqW3GC9T4n4_VgCKgBGAsYHg/s1600/BigDataPipeline-Pipeline-scgupta.png" class="framedimg" width="50%" >
+  <img src="https://3.bp.blogspot.com/-Jtf8ejaeJ3I/Xl_nyhLOIHI/AAAAAAAATrs/H6gMYdTr-YcZMmp7QnZ9U03Z6wA6a8HcQCKgBGAsYHg/s1600/BigDataPipeline-Pipeline.png" class="framedimg" width="50%" >
   <figcaption class="aligncenter">Pipeline: Well oiled data pipeline is a must for the success of machine learning.</figcaption>
 </figure>
 
@@ -67,7 +67,7 @@ Data pipeline has five stages grouped into three heads:
 **Presentation:** The insights are delivered through dashboards, emails, SMS, push notification, and microservices. The ML model inference is exposed as microservices.
 
 <figure class="aligncenter">
-  <img src="https://3.bp.blogspot.com/-8ym2pLKA2J4/Xl0xoA6i0bI/AAAAAAAAToc/-ZjBwd9KVUoQNFBjs3WjO_3tc1FY4VD3gCKgBGAsYHg/s1600/BigDataPipeline-Stages-scgupta.png" class="framedimg" width="100%" >
+  <img src="https://3.bp.blogspot.com/-zX9Z5_aQiPU/Xl_nysJ6wvI/AAAAAAAATrs/we75i54R78oY-UjR_0FSNfo0zvTSckldgCKgBGAsYHg/s1600/BigDataPipeline-Conceptual.png" class="framedimg" width="100%" >
   <figcaption class="aligncenter">Stages in a data pipeline</figcaption>
 </figure>
 
@@ -92,7 +92,7 @@ Having a well maintained Data Warehouse with catalogues and schema, accessibly t
 ## Possibilities
 
 <figure class="aligncenter">
-  <img src="https://3.bp.blogspot.com/--pmqYtRaR1Q/Xl0xoGFBCJI/AAAAAAAAToc/OiGOYklGm_w8eT11u6n-t2OwgK5ZqS0xQCKgBGAsYHg/s1600/BigDataPipeline-Possibilities-scgupta.png" class="framedimg" width="50%" >
+  <img src="https://2.bp.blogspot.com/-RnQO0Avxfk8/Xl_nynDPlkI/AAAAAAAATrs/VPbfmv-wW64I_iECFYMMNXfBJGxbVdX2gCKgBGAsYHg/s1600/BigDataPipeline-Possibilities.png" class="framedimg" width="50%" >
   <figcaption class="aligncenter">Possibilities: Architecture is a trade-off between performance and cost. There are six options sown in this image to make a triangular tent shape. From top left to bottom right, the amount of glue needed to make the tent decreases. Which one will you choose to do in prod? Notice that the base of the triangle is smaller than the other side, and the light blue piece is a rectangle and not a square.</figcaption>
 </figure>
 
@@ -117,7 +117,7 @@ The underlying assumption in the lambda architecture is that the source data mod
 The figure above shows one possible architecture using open source technologies to materialise all stages of the pipeline. The preparation and computation stages are quite often merged to optimise compute operations.
 
 <figure class="aligncenter">
-  <img src="https://2.bp.blogspot.com/-HfCovz_p7cw/Xl0xoGc6cYI/AAAAAAAAToc/kq0678maYuggObFMNvLgyM_LzULDxK3nACKgBGAsYHg/s1600/BigDataPipeline-Architecture-scgupta.png" class="framedimg" width="100%" >
+  <img src="https://2.bp.blogspot.com/-LhyoCiRyjxc/Xl_nyu6KZEI/AAAAAAAATrs/2tGY-fRMaAAAHQSAKBYmZecDhSJDnQpCwCKgBGAsYHg/s1600/BigDataPipeline-Architecture.png" class="framedimg" width="100%" >
   <figcaption class="aligncenter">An architecture of the data pipeline using open source technologies</figcaption>
 </figure>
 
@@ -140,17 +140,17 @@ With the advent of [serverless computing](https://en.wikipedia.org/wiki/Serverle
 Possible serverless architectures of data pipeline on Amazon Web Services, Microsoft Azure, and Google Cloud are shown below.
 
 <figure class="aligncenter">
-  <img src="https://4.bp.blogspot.com/-vJGU8DM2YHI/Xl0xoOPE16I/AAAAAAAAToc/8XPcJQie34oS6zWln9J1McBrodmMyofkQCKgBGAsYHg/s1600/BigDataPipeline-AWS-scgupta.png" class="framedimg" width="100%" >
+  <img src="https://3.bp.blogspot.com/-KJcUTrUPLXo/Xl_nysua7kI/AAAAAAAATrs/5Kmrx9DW3hsUqBL_9T9Ez2tH-V3GWAOXgCKgBGAsYHg/s1600/BigDataPipeline-AWS.png" class="framedimg" width="100%" >
   <figcaption class="aligncenter">Serverless data pipeline architecture on Amazon Web Services (AWS)</figcaption>
 </figure>
 
 <figure class="aligncenter">
-  <img src="https://4.bp.blogspot.com/-Hi5APJVldL0/Xl0xoJqov0I/AAAAAAAAToc/BhaHt6glkUEW8w_YKddlkWbeOi6BHsOhgCKgBGAsYHg/s1600/BigDataPipeline-Azure-scgupta.png" class="framedimg" width="100%" >
+  <img src="https://2.bp.blogspot.com/-C7mZX5Sfqh0/Xl_nyl476tI/AAAAAAAATrs/SFPBR9HQ3BsCOeMj7RmUrCsScD7mb9RDACKgBGAsYHg/s1600/BigDataPipeline-Azure.png" class="framedimg" width="100%" >
   <figcaption class="aligncenter">Serverless data pipeline architecture on Microsoft Azure</figcaption>
 </figure>
 
 <figure class="aligncenter">
-  <img src="https://4.bp.blogspot.com/-DuGjMeNxyLM/Xl0xoF59yxI/AAAAAAAAToc/zwMnNUUwTakBm_ZwvafsXLUtb2Lh-2XZACKgBGAsYHg/s1600/BigDataPipeline-GC-scgupta.png" class="framedimg" width="100%" >
+  <img src="https://1.bp.blogspot.com/-GG4oe6NS_gw/Xl_nytqF00I/AAAAAAAATrs/MPwSqn5w8NA4OTp7_U5i0SRC5_7emV43ACKgBGAsYHg/s1600/BigDataPipeline-GC.png" class="framedimg" width="100%" >
   <figcaption class="aligncenter">Serverless data pipeline architecture on Google Cloud</figcaption>
 </figure>
 
@@ -159,7 +159,7 @@ Possible serverless architectures of data pipeline on Amazon Web Services, Micro
 ## Production
 
 <figure class="aligncenter">
-  <img src="https://1.bp.blogspot.com/-x5lX6wVZjU0/Xl0xoMXKIdI/AAAAAAAAToc/xvRf88dpfPsTqv3NgGX2N3TMt60AuAyjACKgBGAsYHg/s1600/BigDataPipeline-Production-scgupta.png" class="framedimg" width="50%" >
+  <img src="https://1.bp.blogspot.com/-3YdHo1CYcKo/Xl_nylyK-MI/AAAAAAAATrs/U7KZblPuP-AvWDKD3Ubbh_vzcrC1KisowCKgBGAsYHg/s1600/BigDataPipeline-Production.png" class="framedimg" width="50%" >
   <figcaption class="aligncenter">In production: simplicity quite often trumps cleverness. You may notice that the option chosen to make the triangular tent shape is not the one needing the least amount of glue. How the needed parts will be produced, and the simplicity of the overall operation is important for reducing the potential for errors.</figcaption>
 </figure>
 
