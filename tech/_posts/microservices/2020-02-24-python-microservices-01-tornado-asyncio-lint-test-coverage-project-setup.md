@@ -198,8 +198,8 @@ The directory `addrservice` is  for the source code of the service, and the dire
 Using a virtual environment is one of the best practices, especially when you work on multiple projects. Create one for this project, and install the dependencies from `requirements.txt` :
 
 ~~~ bash
-$ python3 -m venv env
-$ source env/bin/activate
+$ python3 -m venv .venv
+$ source ./.venv/bin/activate
 $ pip install --upgrade pip
 $ pip3 install -r ./requirements.txt
 ~~~
