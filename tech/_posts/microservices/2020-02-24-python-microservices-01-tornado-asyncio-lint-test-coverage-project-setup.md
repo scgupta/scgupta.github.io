@@ -1,5 +1,5 @@
 ---
-title: "How to build, test and profile microservices in Python: choices, key concepts and project setup"
+title: "Python Microservices: Choices, Key Concepts and Project Setup"
 excerpt: "Tornado, with AsyncIO APIs, is an efficient framework for building IO-bound Python microservices. Learn key concepts. Set up lint, test, code coverage."
 image: "https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s1600/py-microservice-tornado-title-image.png"
 image_thumbnail: "https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s320/py-microservice-tornado-title-image.png"
@@ -170,7 +170,7 @@ We wrote integration tests both for Service Layer to test business logic, as wel
 Clone the [GitHub repo](https://github.com/scgupta/tutorial-python-microservice-tornado) and inspect the content:
 
 ~~~ bash
-$ git clone git@github.com:scgupta/tutorial-python-microservice-tornado.git
+$ git clone https://github.com/scgupta/tutorial-python-microservice-tornado.git
 
 $ cd tutorial-python-microservice-tornado
 $ git checkout 01setup

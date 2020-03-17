@@ -1,5 +1,5 @@
 ---
-title: "How to build, test and profile microservices in Python: REST endpoints and unit tests with Tornado"
+title: "Python Microservices: Build and Test REST endpoints with Tornado"
 excerpt: "Learn to implement Tornado HTTP endpoints as a layer on business logic. Tune it to assist debugging, and write unit and integration tests."
 image: "https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s1600/py-microservice-tornado-title-image.png"
 image_thumbnail: "https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s320/py-microservice-tornado-title-image.png"
@@ -55,7 +55,7 @@ By the end of this blog post, you will know how to implement and test these endp
 Clone the [GitHub repo](https://github.com/scgupta/tutorial-python-microservice-tornado) and inspect the content:
 
 ~~~ bash
-$ git clone git@github.com:scgupta/tutorial-python-microservice-tornado.git
+$ git clone https://github.com/scgupta/tutorial-python-microservice-tornado.git
 
 $ cd tutorial-python-microservice-tornado
 $ git checkout 02tornado
@@ -407,7 +407,7 @@ Let's run the server and try some requests.
 
 ### Run the server
 
-~~~ shell
+~~~ bash
 $ python3 addrservice/tornado/server.py --port 8080 --config ./configs/addressbook-local.yaml --debug
 
 Starting Address Book on port 8080 ...
@@ -417,7 +417,7 @@ Starting Address Book on port 8080 ...
 
 There is no `/xyz` endpoint, so it returns 404:
 
-~~~ shell
+~~~ bash
 $ curl -i http://localhost:8080/xyz
 
 HTTP/1.1 404 Unknown Endpoint
@@ -434,7 +434,7 @@ Vary: Accept-Encoding
 
 Add an address entry, the returned location is the id to query later:
 
-~~~ shell
+~~~ bash
 $ curl -i -X POST http://localhost:8080/addresses -d '{"name": "Bill Gates"}'
 
 HTTP/1.1 201 Created
@@ -450,7 +450,7 @@ Vary: Accept-Encoding
 
 Use the `id` in the Location field in the previous request to query it:
 
-~~~ shell
+~~~ bash
 $ curl -i -X GET http://localhost:8080/addresses/66fdbb78e79846849608b2cfe244a858
 
 HTTP/1.1 200 OK
@@ -468,7 +468,7 @@ Vary: Accept-Encoding
 
 Let's change the name:
 
-~~~ shell
+~~~ bash
 $ curl -i -X PUT http://localhost:8080/addresses/66fdbb78e79846849608b2cfe244a858 -d '{"name": "William Henry Gates III"}'
 
 HTTP/1.1 204 No Content
@@ -479,7 +479,7 @@ Vary: Accept-Encoding
 
 ### List all addresses
 
-~~~ shell
+~~~ bash
 $ curl -i -X GET http://localhost:8080/addresses
 
 HTTP/1.1 200 OK
@@ -495,7 +495,7 @@ Vary: Accept-Encoding
 
 ### Delete the address
 
-~~~ shell
+~~~ bash
 $ curl -i -X DELETE http://localhost:8080/addresses/66fdbb78e79846849608b2cfe244a858
 
 HTTP/1.1 204 No Content
@@ -506,7 +506,7 @@ Vary: Accept-Encoding
 
 ### Verify address is deleted
 
-~~~ shell
+~~~ bash
 $ curl -i -X GET http://localhost:8080/addresses
 
 HTTP/1.1 200 OK
@@ -713,7 +713,7 @@ class TestAddressServiceApp(AddressServiceTornadoAppTestSetup):
 
 Let's run these tests:
 
-~~~ shell
+~~~ bash
 # All tests
 $ ./run.py test
 
@@ -726,7 +726,7 @@ $ ./run.py test --suite integration
 
 Let's check code coverage:
 
-~~~ shell
+~~~ bash
 $ coverage run --source=addrservice \
     --omit="addrservice/tornado/server.py" \
     --branch ./run.py test
@@ -746,7 +746,7 @@ As you can see, it is pretty good coverage.
 
 Notice that `addrservice/tornado/server.py` was omitted from code coverage. It has the code that runs the HTTP server, but Tornado test infra has its own mechanism of running the HTTP server. This is the only file that can not be covered by unit and integration tests. Including it will skew the overall coverage metrics.
 
-~~~ shell
+~~~ bash
 $ coverage run --source=addrservice --branch ./run.py test
 
 $ coverage report
