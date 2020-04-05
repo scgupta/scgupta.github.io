@@ -5,14 +5,14 @@
    $ brew install ruby
    ```
 
-   Install [bundler](http://bundler.io/)
-   ```
-   $ gem install bundler
-   ```
-
    Add following line in ~/.gemrc
    ```
    gem: --user-install
+   ```
+
+   Install [bundler](http://bundler.io/)
+   ```
+   $ gem install bundler
    ```
 
    Check your ruby environment
@@ -23,7 +23,7 @@
 
    If not, update your PATH in .bashrc
    ```
-   export PATH="/usr/local/lib/ruby/gems/2.5.0:${PATH}"
+   export PATH="/usr/local/lib/ruby/gems/2.7.0/bin:${PATH}"
    ```
 
 2. Change directory to where you have cloned the repo.

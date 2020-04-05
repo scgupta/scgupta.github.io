@@ -7,6 +7,7 @@ tags:
   - "microservices"
   - "python"
   - "tornado"
+canonical_url: https://www.slanglabs.in/blog/python-microservices-03-effective-canonical-logging-across-services
 code: true
 ---
 
@@ -17,71 +18,81 @@ code: true
   <figcaption class="aligncenter">Image by <a href="https://pixabay.com/users/fitschen-3851757/" target="_blank" rel="nofollow">Friedrich Frühling</a> from <a href="https://pixabay.com/photos/shell-tree-rings-annual-rings-1361911/" target="_blank" rel="nofollow">Pixabay</a></figcaption>
 </figure>
 
-Nature is a meticulous logger, and its logs are beautiful. Calcium carbonate layers in a seashell are nature's log of ocean temperature, water quality, and food supply. Annual rings in tree cambium are nature's log of dry and rainy seasons and forest fires. Fossils in the layers in sedimentary rocks are nature's log of the flora and fauna life that existed at the time.
+Nature is a meticulous logger, and its logs are beautiful. Calcium carbonate layers in a seashell are nature’s log of ocean temperature, water quality, and food supply. Annual rings in tree cambium are nature’s log of dry and rainy seasons and forest fires. Fossils in the layers in sedimentary rocks are nature’s log of the flora and fauna life that existed at the time.
 
-In software projects, logs, like tests, are often afterthoughts. But at [Slang Labs](https://slanglabs.in){:target="_blank" rel="nofollow"}, we take inspiration from nature's elegance and meticulousness. Each log entry in our microservices is a fossil record of a request. It is designed for timely and effective use in raising alerts and swift diagnosis of issues.
+In software projects, logs, like tests, are often afterthoughts. But at [Slang Labs](https://slanglabs.in){:target="_blank" rel="nofollow"}, we take inspiration from nature's elegance and meticulousness.
 
-This blog post captures the essence of our logging tactics. You will learn how to design and implement effective canonical logging across microservices.
+We are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="nofollow"}* to make interaction with their mobile and web apps more natural by adding *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="nofollow"}*. The platform is powered by a collection of microservices. Each log entry a microservice emits is a fossil record of a request. Logs are designed for timely and effective use in raising alerts and swift diagnosis of issues.
+
+This blog post captures the essence of our logging tactics:
+
+- **Requirements:** what we needed from logging, and why.
+- **Implementation:** how we implemented these requirements in Python and Tornado.
+- **Testing:** how we examine logs manually, and if needed in the unit and integration tests.
 
 ---
 
 ## Requirements
 
-### Use off-the-shelf tools
+### We want to use off-the-shelf log tools.
 
-Programmers love to write code and build tools. But we don't suffer Not Invented Here syndrome.
+Programmers love to write code and build tools. But we don’t suffer Not Invented Here syndrome. No glory in reinventing the wheel.
 
-> No glory in reinventing the wheel.
+We wanted to use existing log processing tools. These tools work on various log formats: [Syslog](https://tools.ietf.org/html/rfc5424){:target="_blank" rel="nofollow"}, [Common Log Format](https://httpd.apache.org/docs/current/logs.html#common){:target="_blank" rel="nofollow"}, [W3 Extended Log File Format](https://www.w3.org/TR/WD-logfile.html){:target="_blank" rel="nofollow"}, and JSON log formats.
 
-Existing log processing tools work on various log formats: [Syslog](https://tools.ietf.org/html/rfc5424){:target="_blank" rel="nofollow"}, [Common Log Format](https://httpd.apache.org/docs/current/logs.html#common){:target="_blank" rel="nofollow"}, [W3 Extended Log File Format](https://www.w3.org/TR/WD-logfile.html){:target="_blank" rel="nofollow"}, and JSON log formats.
+We needed a structured logging format that is reasonably human-readable for manual examination. We found [Logfmt](https://github.com/kr/logfmt){:target="_blank" rel="nofollow"}, that encodes as a string of *key-value* pairs, offers a good balance.
 
-We wanted a structured logging format that is reasonably human-readable for manual examination. We found [Logfmt](https://github.com/kr/logfmt){:target="_blank" rel="nofollow"}, that encodes as a string of *key-value* pairs, offers a good balance.
-
-### Fast manual diagnosis
+### We want to diagnose an issue quickly.
 
 While debugging issues, we realized that combing through logs is time-consuming. It is because logs for a request are scattered and interleaved with logs for other requests.
 
-> Natural Neural Nets are lazy.
+We liked the idea of [canonical log lines](https://brandur.org/canonical-log-lines){:target="_blank" rel="nofollow"}: *consolidating* all log info in a **single log entry for each request**. For each incoming request, our microservices emit a single logline at the time of sending the response.
 
-We liked the idea of [canonical log lines](https://brandur.org/canonical-log-lines){:target="_blank" rel="nofollow"}: consolidating all log info in a **single log entry for each request**. For each incoming request, our microservices emit a single logline at the time of sending the response.
-
-### Debug across microservices
+### We want to debug across microservices.
 
 We need to diagnose the **complete life** of a request as it passes through many microservices.
 
 We assign a request id at the beginning and pass it along to the other services. It is sent as an attribute in the HTTP header, or a query parameter, or in the body payload.
 
-> It is common sense.
-
 The request-id is used to string together all calls made to internal microservices.
 
-### Multicast Logs
+### We want to multicast logs.
 
-Logs are useful for debugging. But we also use it for analytics, dashboards, and automating alters.
+Logs are useful for debugging. But we also use it for analytics, dashboards, monitoring, and alerts.
 
-> More is never enough!
-
-We desired the ability to integrate with **multiple tools**. We prefer using logger configuration to channel log entries to multiple stores. Glue code, if any, must be localized.
+We desired the ability to integrate with multiple tools. We prefer using logger **configuration** to channel log entries to multiple stores. Glue code, if any, must be localized.
 
 ---
 
 ## Implementation
+
+Logging implementation has the following pieces:
+
+- **Log Context:** utility functions to maintain context (key-value map) during the life of a request.
+- **Log Format:** utility function that examines the accumulated context and emits a canonical log entry in logfmt format.
+- **Tornado Request Handlers:** wiring various Tornado hooks to use these utility functions.
+- **Tornado Server:** replacing the default task factory with the one that maintains and switches context while processing concurrent requests.
+- **Log Configuration:** setting log multicast to various destinations.
+
 
 Enough of talk.
 
 > Talk is cheap. Show me the code.
 > - Linus Torvalds
 
-Get the source code:
+### Get the source code:
 
 ~~~ bash
 $ git clone https://github.com/scgupta/tutorial-python-microservice-tornado.git
+
 $ cd tutorial-python-microservice-tornado
-$ git checkout 03logging
+$ git checkout -b <branch> tag-03-logging
+
 $ python3 -m venv .venv
 $ source ./.venv/bin/activate
 $ pip install --upgrade pip
 $ pip3 install -r ./requirements.txt
+
 $ tree .
 .
 ├── LICENSE
@@ -109,11 +120,13 @@ $ tree .
 $ ./run.py test
 ~~~
 
-### Log Context
+### Log Context utility functions:
 
-A context is maintained throughout the life of a request. At any stage, more key-value pairs can be added to the context. All these pairs are logged in single entry at the time of sending the response.
+A context is maintained throughout the life of a request. At any stage, more key-value pairs can be added to the context. All these pairs are logged in a single entry at the time of sending the response.
 
 We use [aiotask-context](https://github.com/Skyscanner/aiotask-context){:target="_blank" rel="nofollow"} package for that. Other alternatives are [aiocontext](https://aiocontext.readthedocs.io/en/latest/introduction.html){:target="_blank" rel="nofollow"}, and [tasklocals](https://github.com/vkryachko/tasklocals){:target="_blank" rel="nofollow"}. There is also [contextvars](https://docs.python.org/3/library/contextvars.html){:target="_blank" rel="nofollow"} standard Python package if you are using Python 3.7+.
+
+The complexity of the context management is encapsulated in easy to use utility functions to get and set key-value pairs in the context.
 
 ~~~ python
 # addrservice/utils/logutils.py
@@ -138,7 +151,7 @@ def clear_log_context() -> None:
     log_context.clear()
 ~~~
 
-### Log formating
+### Log Formatting utility function:
 
 Python [logfmt](https://pypi.org/project/logfmt/0.1/){:target="_blank" rel="nofollow"} package does the heavy lifting of emitting the log. It takes a dictionary, and convert it to a string consisting of *key=value*"* pairs.
 
@@ -174,9 +187,11 @@ def log(
     )
 ~~~
 
-### Tornado Request Handlers
+### Tornado Request Handlers:
 
-Tornado provides various hooks to shape logging and error reporting behavior.
+It is time to use the context and log format utility functions.
+
+We use [Tornado to develop microservices](/tech/python-microservices-02-tornado-rest-unit-integration-tests.html){:target="_blank"}. It provides various hooks to shape logging and error reporting behavior.
 
 It has a [`log_function`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings){:target="_blank" rel="nofollow"} setting to pass a function, that Tornado calls at the end of every request to log the result. We implement this method to emit a log entry for the request. It includes all *key-value* pairs in the context.
 
@@ -285,7 +300,13 @@ class BaseRequestHandler(tornado.web.RequestHandler):
             )
 ~~~
 
-### Tornado Server
+This completes the wiring in Tornado request handlers for logging canonical log entry in logfmt format for each request for all successful responses, errors, and uncaught exceptions.
+
+At all locations, information is stuffed in the key-value form in the task context. At the time of sending the response, Tornado calls `log_function`, which unpacks the context, and logs it in logfmt.
+
+### Tornado Server:
+
+Tornado and asyncio work on the principle of [cooperative multitasking](/tech/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup.html){:target="_blank"}. Multiple requests (with associated context) can exist at a given time. So the context has to be preserved across interleaving of these requests.
 
 The `aiotask_context` requires a different task factory to be set for the `asyncio` event loop. It must be done while starting the HTTP server.
 
@@ -307,7 +328,15 @@ def run_server(
     # ... Rest of the method
 ~~~
 
-### Log Configuration for Log Multicast
+### Log Configuration for multicasting:
+
+Python's standard [logging](https://docs.python.org/3/library/logging.html){:target="_blank" rel="nofollow"} package documentation has an excellent [HOWTO](https://docs.python.org/3/howto/logging.html){:target="_blank" rel="nofollow"} guide and [Cookbook](https://docs.python.org/3/howto/logging-cookbook.html){:target="_blank" rel="nofollow"}. These are rich sources of information, and doesn't leave much to add. Following are some of the best practices:
+
+- Do NOT use ROOT logger directly through `logging.debug()`, `logging.error()` methods directly because it is easy to overlook their default behavior.
+- Do NOT use module loggers of variety `logging.getLogger(__name__)` because any complex project will require controlling logging through configuration (see next point). These may cause surprise if you forget to set `disable_existing_loggers` to false or overlook how modules are loaded and initialized. If use at all, call `logging.getLogger(__name__)` inside function, rather than outside at the beginning of a module.
+- `dictConfig` (in `yaml`) offers right balance of versatility and flexibility compared to `ini`-based `fileConfig` or doing it in code. Specifying logger in config files allows you to use different logging levels and infra in prod deployment, stage deployments, and local debugging (with increasingly more logs).
+
+Each log entry has to be relayed to multiple data-store destinations. This can be achieved by setting the log configuration for the Python logging package. It has to be a yaml file using the format defined by the logging.config package.
 
 Log configuration is in a yaml file. It uses the format required by the [`logging.config`](https://docs.python.org/3/library/logging.config.html){:target="_blank" rel="nofollow"} package.
 
@@ -366,6 +395,8 @@ logging:
       - console
 ~~~
 
+Notice that this configuration not just defines a logger `addrservice` for this service, but also modifies behavior of Tornado's general logger. There are several pre-defined [handlers](https://docs.python.org/3/library/logging.handlers.html){:target="_blank" rel="nofollow"}. Here the `SteamHandler` and `RotatingFileHandler` are being used to write to console and log files respectively.
+
 The first thing the server does is reading this config and setting up the loggers.
 
 ~~~ python
@@ -392,7 +423,13 @@ def main(args=parse_args()):
 
 ---
 
-## Putting it all together
+## Manual Testing
+
+In the previous section, we wired the logging to use logfmt format, maintain a context for each request, emit log only at the end, and multicast the logs to many destinations.
+
+Logs are processed in real-time. Entries are grouped based on the presence and value of keys (from key-value pairs). We have a dashboard showing various kinds of errors in all services. When any threshold is breached, we get automated alters.
+
+That automation deserves a separate blog post in its own right. Here we will examine only the log output. It looks like a row in a NoSQL data store. Let’s see it in action.
 
 ### Start the server
 
@@ -440,7 +477,7 @@ time="2020-03-17 12:56:32,784" logger="addrservice" level="INFO" file="logutils.
 
 ---
 
-## Running Tests
+## Unit and Integration Tests
 
 Tests are configured to be quiet:
 
@@ -497,7 +534,7 @@ WARNING:addrservice:req_id="1c959a77f9de4f7e87e384a174fb6fbe" method="POST" uri=
 
 ---
 
-## Takeaways
+## Summary
 
 For effective logging in microservices, you should:
 

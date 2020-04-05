@@ -1,5 +1,5 @@
 ---
-title: "Architecting High-Throughput Low-Latency Big Data Pipeline on Cloud for Analytics and Machine Learning"
+title: "Scalable Efficient Big Data Pipelines Architecture"
 excerpt: "Scalable and efficient data pipelines are as important for the success of analytics, data science, and machine learning as reliable supply lines are for winning a war."
 image: "https://2.bp.blogspot.com/-LhyoCiRyjxc/Xl_nyu6KZEI/AAAAAAAATrs/2tGY-fRMaAAAHQSAKBYmZecDhSJDnQpCwCKgBGAsYHg/s1600/BigDataPipeline-Architecture.png"
 image_thumbnail: "https://2.bp.blogspot.com/-LhyoCiRyjxc/Xl_nyu6KZEI/AAAAAAAATrs/2tGY-fRMaAAAHQSAKBYmZecDhSJDnQpCwCKgBGAsYHg/s320/BigDataPipeline-Architecture.png"

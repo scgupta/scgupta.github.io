@@ -58,7 +58,7 @@ Clone the [GitHub repo](https://github.com/scgupta/tutorial-python-microservice-
 $ git clone https://github.com/scgupta/tutorial-python-microservice-tornado.git
 
 $ cd tutorial-python-microservice-tornado
-$ git checkout 02tornado
+$ git checkout -b <branch> tag-02-microservice
 
 $ tree .
 .
@@ -435,7 +435,7 @@ Vary: Accept-Encoding
 Add an address entry, the returned location is the id to query later:
 
 ~~~ bash
-$ curl -i -X POST http://localhost:8080/addresses -d '{"name": "Bill Gates"}'
+$ curl -i -X POST http://localhost:8080/addresses -d '{"full_name": "Bill Gates"}'
 
 HTTP/1.1 201 Created
 Server: TornadoServer/6.0.3
@@ -461,7 +461,7 @@ Etag: "5496aee01a83cf2386641b2c43540fc5919d621e"
 Content-Length: 22
 Vary: Accept-Encoding
 
-{"name": "Bill Gates"}
+{"full_name": "Bill Gates"}
 ~~~
 
 ### Update the address entry
@@ -469,7 +469,7 @@ Vary: Accept-Encoding
 Let's change the name:
 
 ~~~ bash
-$ curl -i -X PUT http://localhost:8080/addresses/66fdbb78e79846849608b2cfe244a858 -d '{"name": "William Henry Gates III"}'
+$ curl -i -X PUT http://localhost:8080/addresses/66fdbb78e79846849608b2cfe244a858 -d '{"full_name": "William Henry Gates III"}'
 
 HTTP/1.1 204 No Content
 Server: TornadoServer/6.0.3
@@ -490,7 +490,7 @@ Etag: "5601e676f3fa4447feaa8d2dd960be163af7570a"
 Content-Length: 73
 Vary: Accept-Encoding
 
-{"66fdbb78e79846849608b2cfe244a858": {"name": "William Henry Gates III"}}
+{"66fdbb78e79846849608b2cfe244a858": {"full_name": "William Henry Gates III"}}
 ~~~
 
 ### Delete the address

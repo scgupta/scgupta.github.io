@@ -173,7 +173,7 @@ Clone the [GitHub repo](https://github.com/scgupta/tutorial-python-microservice-
 $ git clone https://github.com/scgupta/tutorial-python-microservice-tornado.git
 
 $ cd tutorial-python-microservice-tornado
-$ git checkout 01setup
+$ git checkout -b <branch> tag-01-project-setup
 
 $ tree .
 .
