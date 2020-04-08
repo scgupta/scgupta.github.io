@@ -7,7 +7,7 @@ tags:
   - "microservices"
   - "python"
   - "tornado"
-canonical_url: https://www.slanglabs.in/blog/python-microservices-03-effective-canonical-logging-across-services
+canonical_url: "https://www.slanglabs.in/blog/python-microservices-03-effective-canonical-logging-across-services"
 code: true
 ---
 

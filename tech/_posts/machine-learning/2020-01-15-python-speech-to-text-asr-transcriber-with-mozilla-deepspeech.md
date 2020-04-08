@@ -8,6 +8,7 @@ tags:
   - "speech-recognition"
   - "deep-speech"
   - "python"
+canonical_url: "https://www.slanglabs.in/blog/how-to-build-python-transcriber-using-mozilla-deepspeech"
 code: true
 ---
 
