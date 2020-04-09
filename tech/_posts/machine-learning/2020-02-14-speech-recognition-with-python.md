@@ -7,6 +7,7 @@ tags:
   - "machine-learning"
   - "speech-recognition"
   - "python"
+canonical_url: "https://www.slanglabs.in/blog/automatic-speech-recognition-in-python-programs"
 code: true
 ---
 
