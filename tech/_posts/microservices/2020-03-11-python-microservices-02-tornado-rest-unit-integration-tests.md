@@ -15,7 +15,7 @@ code: true
 
 ![](https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s1600/py-microservice-tornado-title-image.png){: width="100%" class="framedimg"}
 
-At SlangLabs, we are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="nofollow"}* to easily and quickly add multilingual, multimodal *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="nofollow"}* to their mobile and web apps. Think of an assistant like Alexa or Siri, but *[running inside your app and tailored for your app](https://www.youtube.com/watch?v=TMhGGIAc0f0){:target="_blank" rel="nofollow"}*.
+At SlangLabs, we are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="noopener nofollow"}* to easily and quickly add multilingual, multimodal *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="noopener nofollow"}* to their mobile and web apps. Think of an assistant like Alexa or Siri, but *[running inside your app and tailored for your app](https://www.youtube.com/watch?v=TMhGGIAc0f0){:target="_blank" rel="noopener nofollow"}*.
 
 The platform is powered by a collection of microservices. For implementing these services, we chose [Tornado because it has AsyncIO APIs](/tech/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup.html). It is not heavyweight. Yet, it is mature and has a number of configurations, hooks, and a nice testing framework.
 
@@ -30,7 +30,7 @@ This blog post covers some of the best practices we learned while building these
 
 ## Application REST Endpoints
 
-As an example, we will but a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete){:target="_blank" rel="nofollow"} microservice for an address-book using Tornado:
+As an example, we will but a [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete){:target="_blank" rel="noopener nofollow"} microservice for an address-book using Tornado:
 
 - **Create an address:** `POST /addresses`  
 Returns HTTP status 201 upon adding successfully, and 400 if request body payload is malformed. The request body should have the new address entry in JSON format. The id the newly created address is sent back in the Location attribute of the header of the HTTP response.
@@ -45,7 +45,7 @@ Returns 200, and the response body with all addresses in the address book.
 
 In case of an error (i.e. when return status code is 4xx or 5xx), the response body has JSON describing the error.
 
-You may want to refer to the list of [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status){:target="_blank" rel="nofollow"}, and [best practices for REST API design](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/){:target="_blank" rel="nofollow"}.
+You may want to refer to the list of [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status){:target="_blank" rel="noopener nofollow"}, and [best practices for REST API design](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/){:target="_blank" rel="noopener nofollow"}.
 
 By the end of this blog post, you will know how to implement and test these endpoints.
 
@@ -158,7 +158,7 @@ In the `AddressBookService` class uses an in-memory dictionary to store the addr
 
 ## Tornado Web Framework
 
-[Tornado](https://www.tornadoweb.org/){:target="_blank" rel="nofollow"} is a Python web framework with [asyncio](https://docs.python.org/3/library/asyncio.html){:target="_blank" rel="nofollow"} APIs (if needed, please review [asyncio cooperative multitasking concepts](/tech/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup.html){:target="_blank" rel="nofollow"}).
+[Tornado](https://www.tornadoweb.org/){:target="_blank" rel="noopener nofollow"} is a Python web framework with [asyncio](https://docs.python.org/3/library/asyncio.html){:target="_blank" rel="noopener nofollow"} APIs (if needed, please review [asyncio cooperative multitasking concepts](/tech/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup.html){:target="_blank" rel="noopener nofollow"}).
 
 For implementing a service, you need to define following in Tornado:
 
@@ -267,13 +267,13 @@ class BaseRequestHandler(tornado.web.RequestHandler):
 
 The `BaseRequestHandler` utilizes the following Tornado hooks:
 
-- **[write_error](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.write_error){:target="_blank" rel="nofollow"} method:** to send a JSON error message instead of HTTP,
-- **[serve_traceback](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings){:target="_blank" rel="nofollow"} setting:** to send exception traceback in debug mode,
-- **[initialize](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.initialize){:target="_blank" rel="nofollow"} method:** to get the needed objects (like the underlying AddressBookService that has the business logic).
+- **[write_error](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.write_error){:target="_blank" rel="noopener nofollow"} method:** to send a JSON error message instead of HTTP,
+- **[serve_traceback](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings){:target="_blank" rel="noopener nofollow"} setting:** to send exception traceback in debug mode,
+- **[initialize](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.initialize){:target="_blank" rel="noopener nofollow"} method:** to get the needed objects (like the underlying AddressBookService that has the business logic).
 
 You will see how initialize and serve_traceback are tied to the handlers in the next section.
 
-These handlers define a set of valid endpoint URLs. A default handler can be defined to handle all invalid URLs. The [`prepare`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.prepare){:target="_blank" rel="nofollow"} method is called for all HTTP methods.
+These handlers define a set of valid endpoint URLs. A default handler can be defined to handle all invalid URLs. The [`prepare`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.prepare){:target="_blank" rel="noopener nofollow"} method is called for all HTTP methods.
 
 ~~~ python
 # addrservice/tornado/app.py
@@ -338,16 +338,16 @@ In the debug mode, `serve_traceback` is set True. When an exception happens, the
 The application (that has routes to various request handlers) is started as an HTTP server with following steps:
 
 - Start `AddressBook` (business logic) service
-- Create an HTTP server ([`app.listen`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.listen){:target="_blank" rel="nofollow"})
-- Start asyncio event loop ([`loop.run_forever`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_forever){:target="_blank" rel="nofollow"})
+- Create an HTTP server ([`app.listen`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.listen){:target="_blank" rel="noopener nofollow"})
+- Start asyncio event loop ([`loop.run_forever`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.run_forever){:target="_blank" rel="noopener nofollow"})
 
 When the server is stopped, the server is stopped and all pending requests are completed:
 
-- Stop asyncio event loop ([`loop.stop`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.stop){:target="_blank" rel="nofollow"})
-- Stop HTTP server ([`http_server.stop`](https://www.tornadoweb.org/en/stable/tcpserver.html#tornado.tcpserver.TCPServer.stop){:target="_blank" rel="nofollow"})
-- Complete all pending requests ([`loop.shutdown_asyncgens`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.shutdown_asyncgens){:target="_blank" rel="nofollow"})
+- Stop asyncio event loop ([`loop.stop`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.stop){:target="_blank" rel="noopener nofollow"})
+- Stop HTTP server ([`http_server.stop`](https://www.tornadoweb.org/en/stable/tcpserver.html#tornado.tcpserver.TCPServer.stop){:target="_blank" rel="noopener nofollow"})
+- Complete all pending requests ([`loop.shutdown_asyncgens`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.shutdown_asyncgens){:target="_blank" rel="noopener nofollow"})
 - Stop `AddressBook` service
-- Close the event loop ([`loop.close`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.close){:target="_blank" rel="nofollow"})
+- Close the event loop ([`loop.close`](https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.close){:target="_blank" rel="noopener nofollow"})
 
 
 ~~~ python
@@ -536,11 +536,11 @@ Vary: Accept-Encoding
 
 ## Tornado Testing Framework
 
-Manual testing is tedious and error-prone. Tornado provides [testing](https://www.tornadoweb.org/en/stable/testing.html){:target="_blank" rel="nofollow"} infrastructure. It starts the HTTP server and runs the tests. It does necessary plumbing to route the HTTP requests to the server it started.
+Manual testing is tedious and error-prone. Tornado provides [testing](https://www.tornadoweb.org/en/stable/testing.html){:target="_blank" rel="noopener nofollow"} infrastructure. It starts the HTTP server and runs the tests. It does necessary plumbing to route the HTTP requests to the server it started.
 
-Test classes should inherit from [`AsyncHTTPTestCase`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncHTTPTestCase){:target="_blank" rel="nofollow"}, and implement a [`get_app`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncHTTPTestCase.get_app){:target="_blank" rel="nofollow"} method, which returns the `tornado.web.Application`. It is similar to what is done in `server.py`. Code duplication can be kept at a minimum by reusing `make_addrservice_app` function in `get_app`.
+Test classes should inherit from [`AsyncHTTPTestCase`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncHTTPTestCase){:target="_blank" rel="noopener nofollow"}, and implement a [`get_app`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncHTTPTestCase.get_app){:target="_blank" rel="noopener nofollow"} method, which returns the `tornado.web.Application`. It is similar to what is done in `server.py`. Code duplication can be kept at a minimum by reusing `make_addrservice_app` function in `get_app`.
 
-Tornado creates a new `IOLoop` for each test. When it is not appropriate to use a new loop, you should override [`get_new_ioloop`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncTestCase.get_new_ioloop){:target="_blank" rel="nofollow"} method.
+Tornado creates a new `IOLoop` for each test. When it is not appropriate to use a new loop, you should override [`get_new_ioloop`](https://www.tornadoweb.org/en/stable/testing.html#tornado.testing.AsyncTestCase.get_new_ioloop){:target="_blank" rel="noopener nofollow"} method.
 
 ~~~ python
 # tests/unit/tornado_app_handlers_test.py

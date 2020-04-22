@@ -73,9 +73,9 @@ Data pipeline has five stages grouped into three heads:
 
 ### Data Lake vs. Data Warehouse
 
-[Data Lake](https://en.wikipedia.org/wiki/Data_lake){:target="_blank" rel="nofollow"} contains all data in its natural/raw form as it was received usually in blobs or files. [Data Warehouse](https://en.wikipedia.org/wiki/Data_warehouse){:target="_blank" rel="nofollow"} stores cleaned and transformed data along with catalogue and schema. The data in both the lake and warehouse can be structured (relational), semi-structured, binary, and even real-time event streams.
+[Data Lake](https://en.wikipedia.org/wiki/Data_lake){:target="_blank" rel="noopener nofollow"} contains all data in its natural/raw form as it was received usually in blobs or files. [Data Warehouse](https://en.wikipedia.org/wiki/Data_warehouse){:target="_blank" rel="noopener nofollow"} stores cleaned and transformed data along with catalogue and schema. The data in both the lake and warehouse can be structured (relational), semi-structured, binary, and even real-time event streams.
 
-It is a matter of choice whether the lake and the warehouse are kept physically in different stores, or the warehouse is materialised through some kind of interface (e.g. [Hive](https://hive.apache.org/){:target="_blank" rel="nofollow"} queries) over the lake. The choice is driven by speed requirements and cost constraints.
+It is a matter of choice whether the lake and the warehouse are kept physically in different stores, or the warehouse is materialised through some kind of interface (e.g. [Hive](https://hive.apache.org/){:target="_blank" rel="noopener nofollow"} queries) over the lake. The choice is driven by speed requirements and cost constraints.
 
 > No matter which approach is followed, it is important to retain the raw data for audit, testing and debugging purposes.
 
@@ -124,18 +124,18 @@ The figure above shows one possible architecture using open source technologies 
 Key components of the architecture are the following:
 
 - **HTTP / MQTT Endpoints** for ingesting data, and also for serving the results. There is an abundance of choices of frameworks and technologies for this.
-- **Pub/Sub Message Queue** for ingesting high-volume streaming data. [Kafka](https://kafka.apache.org/){:target="_blank" rel="nofollow"} is currently the de-facto choice.  It is battle-proven to scale to high event ingestion rate.
-- **Low-Cost High-Volume Data Store** for data lake (and data warehouse), [Hadoop HDFS](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html){:target="_blank" rel="nofollow"} or cloud blob storage like [AWS S3](https://aws.amazon.com/s3/){:target="_blank" rel="nofollow"}.
-- **Query and Catalog Infrastructure** for converting a data lake to a data warehouse, Apache [Hive](https://hive.apache.org/){:target="_blank" rel="nofollow"} is a popular query language choice.
-- **Map-Reduce Batch Compute** engine for high throughput processing, e.g. [Hadoop Map-Reduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html){:target="_blank" rel="nofollow"}, Apache [Spark](https://spark.apache.org/){:target="_blank" rel="nofollow"}.
-- **Stream Compute** for latency-sensitive processing, e.g. Apache [Storm](https://storm.apache.org/){:target="_blank" rel="nofollow"}, Apache [Flink](https://flink.apache.org/){:target="_blank" rel="nofollow"}. Apache [Beam](https://spark.apache.org/){:target="_blank" rel="nofollow"} is an emerging choice for writing compute data-flow, and can be deployed on a Spark batch runner or Flink stream runner.
-- **Machine Learning Frameworks** for data science and ML. [Scikit-Learn](https://scikit-learn.org/){:target="_blank" rel="nofollow"}, [TensorFlow](https://www.tensorflow.org/){:target="_blank" rel="nofollow"}, and [PyTorch](https://pytorch.org/){:target="_blank" rel="nofollow"} are a popular choice for implementing machine learning.
+- **Pub/Sub Message Queue** for ingesting high-volume streaming data. [Kafka](https://kafka.apache.org/){:target="_blank" rel="noopener nofollow"} is currently the de-facto choice.  It is battle-proven to scale to high event ingestion rate.
+- **Low-Cost High-Volume Data Store** for data lake (and data warehouse), [Hadoop HDFS](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsUserGuide.html){:target="_blank" rel="noopener nofollow"} or cloud blob storage like [AWS S3](https://aws.amazon.com/s3/){:target="_blank" rel="noopener nofollow"}.
+- **Query and Catalog Infrastructure** for converting a data lake to a data warehouse, Apache [Hive](https://hive.apache.org/){:target="_blank" rel="noopener nofollow"} is a popular query language choice.
+- **Map-Reduce Batch Compute** engine for high throughput processing, e.g. [Hadoop Map-Reduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html){:target="_blank" rel="noopener nofollow"}, Apache [Spark](https://spark.apache.org/){:target="_blank" rel="noopener nofollow"}.
+- **Stream Compute** for latency-sensitive processing, e.g. Apache [Storm](https://storm.apache.org/){:target="_blank" rel="noopener nofollow"}, Apache [Flink](https://flink.apache.org/){:target="_blank" rel="noopener nofollow"}. Apache [Beam](https://spark.apache.org/){:target="_blank" rel="noopener nofollow"} is an emerging choice for writing compute data-flow, and can be deployed on a Spark batch runner or Flink stream runner.
+- **Machine Learning Frameworks** for data science and ML. [Scikit-Learn](https://scikit-learn.org/){:target="_blank" rel="noopener nofollow"}, [TensorFlow](https://www.tensorflow.org/){:target="_blank" rel="noopener nofollow"}, and [PyTorch](https://pytorch.org/){:target="_blank" rel="noopener nofollow"} are a popular choice for implementing machine learning.
 - **Low-Latency Data Stores** for storing the results. There are too many well-established choices of data stores depending on data type, performance, scale and cost to cover here.
-- **Deployment** orchestration options are [Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html){:target="_blank" rel="nofollow"}, [Kubernetes](https://kubernetes.io){:target="_blank" rel="nofollow"} / [Kubeflow](https://www.kubeflow.org){:target="_blank" rel="nofollow"}.
+- **Deployment** orchestration options are [Hadoop YARN](https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/YARN.html){:target="_blank" rel="noopener nofollow"}, [Kubernetes](https://kubernetes.io){:target="_blank" rel="noopener nofollow"} / [Kubeflow](https://www.kubeflow.org){:target="_blank" rel="noopener nofollow"}.
 
 ### Architecture: Serverless
 
-With the advent of [serverless computing](https://en.wikipedia.org/wiki/Serverless_computing){:target="_blank" rel="nofollow"}, it is possible to start quickly by avoiding DevOps needed for resource allocation for managing scale. Collection happens on edge devices, so nothing changes for that stage. The rest of the stages can be replaced with their serverless counterparts from a cloud service provider.
+With the advent of [serverless computing](https://en.wikipedia.org/wiki/Serverless_computing){:target="_blank" rel="noopener nofollow"}, it is possible to start quickly by avoiding DevOps needed for resource allocation for managing scale. Collection happens on edge devices, so nothing changes for that stage. The rest of the stages can be replaced with their serverless counterparts from a cloud service provider.
 
 Possible serverless architectures of data pipeline on Amazon Web Services, Microsoft Azure, and Google Cloud are shown below.
 

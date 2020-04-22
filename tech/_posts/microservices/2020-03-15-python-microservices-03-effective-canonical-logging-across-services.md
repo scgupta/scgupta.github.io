@@ -15,14 +15,14 @@ code: true
 
 <figure class="aligncenter">
   <img src="https://2.bp.blogspot.com/-d7uBujsQa7k/XnDo8nhxKqI/AAAAAAAAT2E/l9oVZPtBaUUkg2j8uijPnN0sirqx4R5eQCKgBGAsYHg/s1600/shell-1361911.jpg" alt="Seashell and annual rings in a tree log" width="100%" class="framedimg" >
-  <figcaption class="aligncenter">Image by <a href="https://pixabay.com/users/fitschen-3851757/" target="_blank" rel="nofollow">Friedrich Frühling</a> from <a href="https://pixabay.com/photos/shell-tree-rings-annual-rings-1361911/" target="_blank" rel="nofollow">Pixabay</a></figcaption>
+  <figcaption class="aligncenter">Image by <a href="https://pixabay.com/users/fitschen-3851757/" target="_blank" rel="noopener nofollow">Friedrich Frühling</a> from <a href="https://pixabay.com/photos/shell-tree-rings-annual-rings-1361911/" target="_blank" rel="noopener nofollow">Pixabay</a></figcaption>
 </figure>
 
 Nature is a meticulous logger, and its logs are beautiful. Calcium carbonate layers in a seashell are nature’s log of ocean temperature, water quality, and food supply. Annual rings in tree cambium are nature’s log of dry and rainy seasons and forest fires. Fossils in the layers in sedimentary rocks are nature’s log of the flora and fauna life that existed at the time.
 
-In software projects, logs, like tests, are often afterthoughts. But at [Slang Labs](https://slanglabs.in){:target="_blank" rel="nofollow"}, we take inspiration from nature's elegance and meticulousness.
+In software projects, logs, like tests, are often afterthoughts. But at [Slang Labs](https://slanglabs.in){:target="_blank" rel="noopener nofollow"}, we take inspiration from nature's elegance and meticulousness.
 
-We are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="nofollow"}* to make interaction with their mobile and web apps more natural by adding *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="nofollow"}*. The platform is powered by a collection of microservices. Each log entry a microservice emits is a fossil record of a request. Logs are designed for timely and effective use in raising alerts and swift diagnosis of issues.
+We are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="noopener nofollow"}* to make interaction with their mobile and web apps more natural by adding *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="noopener nofollow"}*. The platform is powered by a collection of microservices. Each log entry a microservice emits is a fossil record of a request. Logs are designed for timely and effective use in raising alerts and swift diagnosis of issues.
 
 This blog post captures the essence of our logging tactics:
 
@@ -38,15 +38,15 @@ This blog post captures the essence of our logging tactics:
 
 Programmers love to write code and build tools. But we don’t suffer Not Invented Here syndrome. No glory in reinventing the wheel.
 
-We wanted to use existing log processing tools. These tools work on various log formats: [Syslog](https://tools.ietf.org/html/rfc5424){:target="_blank" rel="nofollow"}, [Common Log Format](https://httpd.apache.org/docs/current/logs.html#common){:target="_blank" rel="nofollow"}, [W3 Extended Log File Format](https://www.w3.org/TR/WD-logfile.html){:target="_blank" rel="nofollow"}, and JSON log formats.
+We wanted to use existing log processing tools. These tools work on various log formats: [Syslog](https://tools.ietf.org/html/rfc5424){:target="_blank" rel="noopener nofollow"}, [Common Log Format](https://httpd.apache.org/docs/current/logs.html#common){:target="_blank" rel="noopener nofollow"}, [W3 Extended Log File Format](https://www.w3.org/TR/WD-logfile.html){:target="_blank" rel="noopener nofollow"}, and JSON log formats.
 
-We needed a structured logging format that is reasonably human-readable for manual examination. We found [Logfmt](https://github.com/kr/logfmt){:target="_blank" rel="nofollow"}, that encodes as a string of *key-value* pairs, offers a good balance.
+We needed a structured logging format that is reasonably human-readable for manual examination. We found [Logfmt](https://github.com/kr/logfmt){:target="_blank" rel="noopener nofollow"}, that encodes as a string of *key-value* pairs, offers a good balance.
 
 ### We want to diagnose an issue quickly.
 
 While debugging issues, we realized that combing through logs is time-consuming. It is because logs for a request are scattered and interleaved with logs for other requests.
 
-We liked the idea of [canonical log lines](https://brandur.org/canonical-log-lines){:target="_blank" rel="nofollow"}: *consolidating* all log info in a **single log entry for each request**. For each incoming request, our microservices emit a single logline at the time of sending the response.
+We liked the idea of [canonical log lines](https://brandur.org/canonical-log-lines){:target="_blank" rel="noopener nofollow"}: *consolidating* all log info in a **single log entry for each request**. For each incoming request, our microservices emit a single logline at the time of sending the response.
 
 ### We want to debug across microservices.
 
@@ -124,7 +124,7 @@ $ ./run.py test
 
 A context is maintained throughout the life of a request. At any stage, more key-value pairs can be added to the context. All these pairs are logged in a single entry at the time of sending the response.
 
-We use [aiotask-context](https://github.com/Skyscanner/aiotask-context){:target="_blank" rel="nofollow"} package for that. Other alternatives are [aiocontext](https://aiocontext.readthedocs.io/en/latest/introduction.html){:target="_blank" rel="nofollow"}, and [tasklocals](https://github.com/vkryachko/tasklocals){:target="_blank" rel="nofollow"}. There is also [contextvars](https://docs.python.org/3/library/contextvars.html){:target="_blank" rel="nofollow"} standard Python package if you are using Python 3.7+.
+We use [aiotask-context](https://github.com/Skyscanner/aiotask-context){:target="_blank" rel="noopener nofollow"} package for that. Other alternatives are [aiocontext](https://aiocontext.readthedocs.io/en/latest/introduction.html){:target="_blank" rel="noopener nofollow"}, and [tasklocals](https://github.com/vkryachko/tasklocals){:target="_blank" rel="noopener nofollow"}. There is also [contextvars](https://docs.python.org/3/library/contextvars.html){:target="_blank" rel="noopener nofollow"} standard Python package if you are using Python 3.7+.
 
 The complexity of the context management is encapsulated in easy to use utility functions to get and set key-value pairs in the context.
 
@@ -153,9 +153,9 @@ def clear_log_context() -> None:
 
 ### Log Formatting utility function:
 
-Python [logfmt](https://pypi.org/project/logfmt/0.1/){:target="_blank" rel="nofollow"} package does the heavy lifting of emitting the log. It takes a dictionary, and convert it to a string consisting of *key=value*"* pairs.
+Python [logfmt](https://pypi.org/project/logfmt/0.1/){:target="_blank" rel="noopener nofollow"} package does the heavy lifting of emitting the log. It takes a dictionary, and convert it to a string consisting of *key=value*"* pairs.
 
-A log function encapsulates all this processing. It adheres to [Python logger API](https://docs.python.org/3/library/logging.html#logging.Logger.debug){:target="_blank" rel="nofollow"}. In case of an exception, it stores `exc_info` traceback in logs.
+A log function encapsulates all this processing. It adheres to [Python logger API](https://docs.python.org/3/library/logging.html#logging.Logger.debug){:target="_blank" rel="noopener nofollow"}. In case of an exception, it stores `exc_info` traceback in logs.
 
 ~~~ python
 # addrservice/utils/logutils.py
@@ -193,7 +193,7 @@ It is time to use the context and log format utility functions.
 
 We use [Tornado to develop microservices](/tech/python-microservices-02-tornado-rest-unit-integration-tests.html){:target="_blank"}. It provides various hooks to shape logging and error reporting behavior.
 
-It has a [`log_function`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings){:target="_blank" rel="nofollow"} setting to pass a function, that Tornado calls at the end of every request to log the result. We implement this method to emit a log entry for the request. It includes all *key-value* pairs in the context.
+It has a [`log_function`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.Application.settings){:target="_blank" rel="noopener nofollow"} setting to pass a function, that Tornado calls at the end of every request to log the result. We implement this method to emit a log entry for the request. It includes all *key-value* pairs in the context.
 
 ~~~ python
 # addrservice/tornado/app.py
@@ -220,8 +220,8 @@ def log_function(handler: tornado.web.RequestHandler) -> None:
 
 Other hooks are:
 
-- [`write_error`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.write_error){:target="_blank" rel="nofollow"} to customize the error response. Information about the error is added to the log context.
-- [`log_exception`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.log_exception){:target="_blank" rel="nofollow"} to log uncaught exceptions. It can be overwritten to log in logfmt format.
+- [`write_error`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.write_error){:target="_blank" rel="noopener nofollow"} to customize the error response. Information about the error is added to the log context.
+- [`log_exception`](https://www.tornadoweb.org/en/stable/web.html#tornado.web.RequestHandler.log_exception){:target="_blank" rel="noopener nofollow"} to log uncaught exceptions. It can be overwritten to log in logfmt format.
 
 These functions are overridden in the base request handler. A `req_id` is assigned to the incoming request, and stored in the log context.
 
@@ -330,7 +330,7 @@ def run_server(
 
 ### Log Configuration for multicasting:
 
-Python's standard [logging](https://docs.python.org/3/library/logging.html){:target="_blank" rel="nofollow"} package documentation has an excellent [HOWTO](https://docs.python.org/3/howto/logging.html){:target="_blank" rel="nofollow"} guide and [Cookbook](https://docs.python.org/3/howto/logging-cookbook.html){:target="_blank" rel="nofollow"}. These are rich sources of information, and doesn't leave much to add. Following are some of the best practices:
+Python's standard [logging](https://docs.python.org/3/library/logging.html){:target="_blank" rel="noopener nofollow"} package documentation has an excellent [HOWTO](https://docs.python.org/3/howto/logging.html){:target="_blank" rel="noopener nofollow"} guide and [Cookbook](https://docs.python.org/3/howto/logging-cookbook.html){:target="_blank" rel="noopener nofollow"}. These are rich sources of information, and doesn't leave much to add. Following are some of the best practices:
 
 - Do NOT use ROOT logger directly through `logging.debug()`, `logging.error()` methods directly because it is easy to overlook their default behavior.
 - Do NOT use module loggers of variety `logging.getLogger(__name__)` because any complex project will require controlling logging through configuration (see next point). These may cause surprise if you forget to set `disable_existing_loggers` to false or overlook how modules are loaded and initialized. If use at all, call `logging.getLogger(__name__)` inside function, rather than outside at the beginning of a module.
@@ -338,7 +338,7 @@ Python's standard [logging](https://docs.python.org/3/library/logging.html){:tar
 
 Each log entry has to be relayed to multiple data-store destinations. This can be achieved by setting the log configuration for the Python logging package. It has to be a yaml file using the format defined by the logging.config package.
 
-Log configuration is in a yaml file. It uses the format required by the [`logging.config`](https://docs.python.org/3/library/logging.config.html){:target="_blank" rel="nofollow"} package.
+Log configuration is in a yaml file. It uses the format required by the [`logging.config`](https://docs.python.org/3/library/logging.config.html){:target="_blank" rel="noopener nofollow"} package.
 
 The config defines two log formats:
 
@@ -395,7 +395,7 @@ logging:
       - console
 ~~~
 
-Notice that this configuration not just defines a logger `addrservice` for this service, but also modifies behavior of Tornado's general logger. There are several pre-defined [handlers](https://docs.python.org/3/library/logging.handlers.html){:target="_blank" rel="nofollow"}. Here the `SteamHandler` and `RotatingFileHandler` are being used to write to console and log files respectively.
+Notice that this configuration not just defines a logger `addrservice` for this service, but also modifies behavior of Tornado's general logger. There are several pre-defined [handlers](https://docs.python.org/3/library/logging.handlers.html){:target="_blank" rel="noopener nofollow"}. Here the `SteamHandler` and `RotatingFileHandler` are being used to write to console and log files respectively.
 
 The first thing the server does is reading this config and setting up the loggers.
 

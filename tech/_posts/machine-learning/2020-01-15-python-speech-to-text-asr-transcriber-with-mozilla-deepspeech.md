@@ -14,13 +14,13 @@ code: true
 
 Voice assistants are one of the hottest tech right now. Siri, Alexa, Google Assistant, all aim to help you talk to computers and not just touch and type. Automated Speech Recognition (ASR) and Natural Language Understanding (NLU/NLP) are the key technologies enabling it. If you are just-a-programmer like me, you might be itching to get a piece of action and hack something. You are at the right place; read on.
 
-Though these technologies are hard and the learning curve is steep, but are becoming increasingly accessible. Last month, Mozilla released [DeepSpeech 0.6](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="nofollow"} along with models for US English. It has smaller and faster models than ever before, and even has a [TensorFlow Lite](https://www.tensorflow.org/lite){:target="_blank" rel="nofollow"} model that [runs faster than real time on a single core of a Raspberry Pi 4](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="nofollow"}. There are several interesting aspects, but right now I am going to focus on its refreshingly [simple batch and stream APIs in C, .NET, Java, JavaScript, and Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="nofollow"} for converting speech to text. By the end of this blog post, you will build a voice transcriber. No kidding :-)
+Though these technologies are hard and the learning curve is steep, but are becoming increasingly accessible. Last month, Mozilla released [DeepSpeech 0.6](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="noopener nofollow"} along with models for US English. It has smaller and faster models than ever before, and even has a [TensorFlow Lite](https://www.tensorflow.org/lite){:target="_blank" rel="noopener nofollow"} model that [runs faster than real time on a single core of a Raspberry Pi 4](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="noopener nofollow"}. There are several interesting aspects, but right now I am going to focus on its refreshingly [simple batch and stream APIs in C, .NET, Java, JavaScript, and Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="noopener nofollow"} for converting speech to text. By the end of this blog post, you will build a voice transcriber. No kidding :-)
 
 
 ## Let’s get started
 
-You need a computer with [Python 3.6.5+ installed](https://realpython.com/installing-python/){:target="_blank" rel="nofollow"}, good internet connection, and elementary Python programming skills. Even if you do not know Python, read along, it is not so hard.
-If you don't want to install anything, you can try out DeepSpeech APIs in the browser using this [code lab](http://bit.ly/colab-mozilla-deepspeech-python){:target="_blank" rel="nofollow"}.
+You need a computer with [Python 3.6.5+ installed](https://realpython.com/installing-python/){:target="_blank" rel="noopener nofollow"}, good internet connection, and elementary Python programming skills. Even if you do not know Python, read along, it is not so hard.
+If you don't want to install anything, you can try out DeepSpeech APIs in the browser using this [code lab](http://bit.ly/colab-mozilla-deepspeech-python){:target="_blank" rel="noopener nofollow"}.
 
 Let’s do needed setup:
 
@@ -180,7 +180,7 @@ A transcriber consists of two parts: a producer that captures voice from microph
 
 ![](https://4.bp.blogspot.com/-q6QdwMp9bqQ/XiEs-A0Vk-I/AAAAAAAASw8/GXJ0ia7_KnAy5OCdbRvU28kMYaWl-6qQACKgBGAsYHg/s1600/AudioTranscriber.png){:width="100%"}
 
-To capture audio, we will use [PortAudio](http://www.portaudio.com/){:target="_blank" rel="nofollow"}, a free, cross-platform, open-source, audio I/O library. You have to [download](http://www.portaudio.com/download.html){:target="_blank" rel="nofollow"} and install it. On macOS, you can install it using [brew](https://brew.sh/){:target="_blank" rel="nofollow"}:
+To capture audio, we will use [PortAudio](http://www.portaudio.com/){:target="_blank" rel="noopener nofollow"}, a free, cross-platform, open-source, audio I/O library. You have to [download](http://www.portaudio.com/download.html){:target="_blank" rel="noopener nofollow"} and install it. On macOS, you can install it using [brew](https://brew.sh/){:target="_blank" rel="noopener nofollow"}:
 
 ~~~ bash
 $ brew install portaudio
@@ -192,7 +192,7 @@ $ brew install portaudio
 $ pip3 install pyaudio
 ~~~
 
-PyAudio has two modes: blocking, where data has to read (pulled) from the stream; and [non-blocking, where a callback function](https://people.csail.mit.edu/hubert/pyaudio/docs/#pyaudio.Stream.__init__){:target="_blank" rel="nofollow"} is passed to PyAudio for feeding (pushing) the audio data stream. The non-blocking mechanism suits transcriber. The data buffer processing code using DeepSpeech streaming API has to be wrapped in a call back:
+PyAudio has two modes: blocking, where data has to read (pulled) from the stream; and [non-blocking, where a callback function](https://people.csail.mit.edu/hubert/pyaudio/docs/#pyaudio.Stream.__init__){:target="_blank" rel="noopener nofollow"} is passed to PyAudio for feeding (pushing) the audio data stream. The non-blocking mechanism suits transcriber. The data buffer processing code using DeepSpeech streaming API has to be wrapped in a call back:
 
 ~~~ python
 text_so_far = ''
@@ -241,7 +241,7 @@ except KeyboardInterrupt:
     print('Final text = {}'.format(text))
 ~~~
 
-That’s all it takes, just 66 lines of Python code to put it all together: [ds-transcriber.py](https://github.com/scgupta/yearn2learn/blob/master/speech/asr/deepspeech06/ds-transcriber.py){:target="_blank" rel="nofollow"}.
+That’s all it takes, just 66 lines of Python code to put it all together: [ds-transcriber.py](https://github.com/scgupta/yearn2learn/blob/master/speech/asr/deepspeech06/ds-transcriber.py){:target="_blank" rel="noopener nofollow"}.
 
 
 ## Recap

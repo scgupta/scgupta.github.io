@@ -2,7 +2,7 @@
 {% assign share_txt = (include.title | uri_escape) %}
 <div id="shareicons">{% comment %}<span class="w3-hide-small">Share:</span>{% endcomment %}
 {% for socialmedia in site.data.socialmedias %}{% if socialmedia[1].showshare == true %}
-<a href="{{ socialmedia[1].shareurlprefix | append: share_url | append: socialmedia[1].sharetxtsuffix | append: share_txt }}" title="Share on {{ socialmedia[0] }}" target="_blank"><span class="fa-stack w3-hover-text-dark-grey" style="color: {{ socialmedia[1].color }};">
+<a href="{{ socialmedia[1].shareurlprefix | append: share_url | append: socialmedia[1].sharetxtsuffix | append: share_txt }}" title="Share on {{ socialmedia[0] }}" target="_blank" rel="noopener"><span class="fa-stack w3-hover-text-dark-grey" style="color: {{ socialmedia[1].color }};">
 <i class="fa fa-circle fa-stack-2x"></i>
 <i class="fa {{ socialmedia[1].faicon }} fa-stack-1x fa-inverse"></i>
 </span></a>

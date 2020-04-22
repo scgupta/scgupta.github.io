@@ -9,7 +9,7 @@
 {% endif %}
 
 {% if category == "tech" %}
-<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="{{ site.data.authors[page.author].linkedin }}"><a class="LI-simple-link" href="https://in.linkedin.com/in/{{ site.data.authors[page.author].linkedin }}?trk=profile-badge" target="_blank">{{ site.data.authors[page.author].name }}</a></div>
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="{{ site.data.authors[page.author].linkedin }}"><a class="LI-simple-link" href="https://in.linkedin.com/in/{{ site.data.authors[page.author].linkedin }}?trk=profile-badge" target="_blank" rel="noopener">{{ site.data.authors[page.author].name }}</a></div>
 {% else %}
 <div class="w3-hide-large w3-hide-medium">
 <div style="display: inline-block; vertical-align: top; margin-top: -2px;">

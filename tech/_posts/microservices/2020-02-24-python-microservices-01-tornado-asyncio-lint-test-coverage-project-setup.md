@@ -15,14 +15,14 @@ code: true
 
 ![](https://3.bp.blogspot.com/-XfGIp29o7pA/XlNCLext4FI/AAAAAAAATkM/doyTIgviBXIe_hP9MD-x4-xLS07nqkbtQCKgBGAsYHg/s1600/py-microservice-tornado-title-image.png){: width="100%" class="framedimg"}
 
-At SlangLabs, we are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="nofollow"}* to easily and quickly add multilingual, multimodal *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="nofollow"}* to their mobile and web apps. Think of an assistant like Alexa or Siri, but *[running inside your app and tailored for your app](https://www.youtube.com/watch?v=TMhGGIAc0f0){:target="_blank" rel="nofollow"}*.
+At SlangLabs, we are building a platform for *[programmers](https://slanglabs.in/developers.html){:target="_blank" rel="noopener nofollow"}* to easily and quickly add multilingual, multimodal *[Voice Augmented eXperiences (VAX)](https://medium.com/slanglabs/what-is-voice-augmented-experience-1003a28b6e5){:target="_blank" rel="noopener nofollow"}* to their mobile and web apps. Think of an assistant like Alexa or Siri, but *[running inside your app and tailored for your app](https://www.youtube.com/watch?v=TMhGGIAc0f0){:target="_blank" rel="noopener nofollow"}*.
 
 The platform consists of:
 
-- **Console** to configure a *[buddy](https://docs.slanglabs.in/slang/digging-deeper/building-buddies){:target="_blank" rel="nofollow"}* for an app,
-- **SDKs** for *[Android](https://docs.slanglabs.in/slang/getting-started/for-android-apps){:target="_blank" rel="nofollow"}* and *[Web (JavaScript)](https://docs.slanglabs.in/slang/getting-started/for-web-apps){:target="_blank" rel="nofollow"}* providing voice-to-action capabilities,
-- **Microservices** that SDKs invoke to infer the *[intent](https://docs.slanglabs.in/slang/digging-deeper/building-buddies/intents){:target="_blank" rel="nofollow"}* inherent in the voice utterance of an end-user, and extract associated *[entities](https://docs.slanglabs.in/slang/digging-deeper/building-buddies/entities-and-entity-types){:target="_blank" rel="nofollow"}*, and
-- **Analytics** to analyze [end-user behaviour](https://docs.slanglabs.in/slang/digging-deeper/understanding-analytics){:target="_blank" rel="nofollow"} and improve the experience.
+- **Console** to configure a *[buddy](https://docs.slanglabs.in/slang/digging-deeper/building-buddies){:target="_blank" rel="noopener nofollow"}* for an app,
+- **SDKs** for *[Android](https://docs.slanglabs.in/slang/getting-started/for-android-apps){:target="_blank" rel="noopener nofollow"}* and *[Web (JavaScript)](https://docs.slanglabs.in/slang/getting-started/for-web-apps){:target="_blank" rel="noopener nofollow"}* providing voice-to-action capabilities,
+- **Microservices** that SDKs invoke to infer the *[intent](https://docs.slanglabs.in/slang/digging-deeper/building-buddies/intents){:target="_blank" rel="noopener nofollow"}* inherent in the voice utterance of an end-user, and extract associated *[entities](https://docs.slanglabs.in/slang/digging-deeper/building-buddies/entities-and-entity-types){:target="_blank" rel="noopener nofollow"}*, and
+- **Analytics** to analyze [end-user behaviour](https://docs.slanglabs.in/slang/digging-deeper/understanding-analytics){:target="_blank" rel="noopener nofollow"} and improve the experience.
 
 This series of blog posts is to share the best practices and lessons we have learned while building the microservices.
 
@@ -50,9 +50,9 @@ Microservice architecture facilitates each service to independently choose the p
 
 With Python, came its infamous Global Interpreter Lock. In brief, a thread can execute only if it has acquired the Python interpreter lock. Since it is a global lock, only one thread of the program can acquire it and therefore run at a time, even if the hardware has multiple CPUs. It effectively renders Python programs limited to single-threaded performance.
 
-While GIL is a serious limitation for CPU-bound concurrent Python apps, for IO-bound apps, [cooperative multitasking](https://en.wikipedia.org/wiki/Cooperative_multitasking){:target="_blank" rel="nofollow"} of [AsyncIO](https://docs.python.org/3/library/asyncio.html){:target="_blank" rel="nofollow"} offers good performance (more about it later). For performance, we desired a web framework which is **lightweight** yet **mature**, and has **AsyncIO** APIs.
+While GIL is a serious limitation for CPU-bound concurrent Python apps, for IO-bound apps, [cooperative multitasking](https://en.wikipedia.org/wiki/Cooperative_multitasking){:target="_blank" rel="noopener nofollow"} of [AsyncIO](https://docs.python.org/3/library/asyncio.html){:target="_blank" rel="noopener nofollow"} offers good performance (more about it later). For performance, we desired a web framework which is **lightweight** yet **mature**, and has **AsyncIO** APIs.
 
-We evaluated three Python Web Frameworks: [Django](https://www.djangoproject.com/){:target="_blank" rel="nofollow"}, [Flask](https://flask.palletsprojects.com/){:target="_blank" rel="nofollow"}, and [Tornado](https://www.tornadoweb.org/){:target="_blank" rel="nofollow"}.
+We evaluated three Python Web Frameworks: [Django](https://www.djangoproject.com/){:target="_blank" rel="noopener nofollow"}, [Flask](https://flask.palletsprojects.com/){:target="_blank" rel="noopener nofollow"}, and [Tornado](https://www.tornadoweb.org/){:target="_blank" rel="noopener nofollow"}.
 
 - **Django** follows "batteries included" approach, it has everything you will need and more. While that eliminates integration compatibility blues, it also makes it bulky. It does not have AsyncIO APIs.
 - **Flask**, on the other hand, is super lightweight and has a simple way of defining service endpoints through annotation. It does not have AsyncIO APIs.
@@ -60,7 +60,7 @@ We evaluated three Python Web Frameworks: [Django](https://www.djangoproject.com
 
 > Tornado was just right for our needs. But most of our design tactics are independent of that choice, and are applicable regardless of the chosen web framework.
 
-In recent time, more AsyncIO Python web frameworks are emerging: [Sanic](https://sanic.readthedocs.io/){:target="_blank" rel="nofollow"}, [Vibora](https://vibora.io/){:target="_blank" rel="nofollow"}, [Quart](https://pgjones.gitlab.io/quart/){:target="_blank" rel="nofollow"}, [FastAPI](https://fastapi.tiangolo.com/){:target="_blank" rel="nofollow"}. Even [Django is beginning to support async](https://docs.djangoproject.com/en/3.0/topics/async/){:target="_blank" rel="nofollow"}.
+In recent time, more AsyncIO Python web frameworks are emerging: [Sanic](https://sanic.readthedocs.io/){:target="_blank" rel="noopener nofollow"}, [Vibora](https://vibora.io/){:target="_blank" rel="noopener nofollow"}, [Quart](https://pgjones.gitlab.io/quart/){:target="_blank" rel="noopener nofollow"}, [FastAPI](https://fastapi.tiangolo.com/){:target="_blank" rel="noopener nofollow"}. Even [Django is beginning to support async](https://docs.djangoproject.com/en/3.0/topics/async/){:target="_blank" rel="noopener nofollow"}.
 
 <figure class="aligncenter">
   <img src="https://1.bp.blogspot.com/-67Hf2dkOCu8/XlPC_dbiF4I/AAAAAAAATlM/Ek4gCFvMOnIF-C0NiPzhc6xABLYlQGnxQCKgBGAsYHg/s1600/py-microservice-why-tornado.png" class="framedimg" >
@@ -210,7 +210,7 @@ $ pip3 install -r ./requirements.txt
 The script `run.py` is a handy utility script to run static type checker, linter, unit tests, and code coverage. In this series, you will see that using these tools from the very beginning is actually most economical, and does not add perceived overhead.
 Let's try running these. In each of the following, you can use either of the commands.
 
-**Static Type Checker:** [mypy](http://mypy-lang.org/){:target="_blank" rel="nofollow"} package
+**Static Type Checker:** [mypy](http://mypy-lang.org/){:target="_blank" rel="noopener nofollow"} package
 
 ~~~ bash
 $ mypy ./addrservice ./tests
@@ -218,7 +218,7 @@ $ mypy ./addrservice ./tests
 $ ./run.py typecheck
 ~~~
 
-**Linter:** [flake8](https://flake8.pycqa.org/){:target="_blank" rel="nofollow"} package
+**Linter:** [flake8](https://flake8.pycqa.org/){:target="_blank" rel="noopener nofollow"} package
 
 ~~~ bash
 $ flake8 ./addrservice ./tests
@@ -226,7 +226,7 @@ $ flake8 ./addrservice ./tests
 $ ./run.py lint
 ~~~
 
-**Unit Tests:** Python [unittest](https://docs.python.org/3/library/unittest.html){:target="_blank" rel="nofollow"} framework
+**Unit Tests:** Python [unittest](https://docs.python.org/3/library/unittest.html){:target="_blank" rel="noopener nofollow"} framework
 
 ~~~ bash
 $ python -m unittest discover tests -p '*_test.py'
@@ -241,7 +241,7 @@ $ ./run.py test --suite unit
 $ ./run.py test --suite integration
 ~~~
 
-**Code Coverage:** [coverage](https://coverage.readthedocs.io/){:target="_blank" rel="nofollow"} package
+**Code Coverage:** [coverage](https://coverage.readthedocs.io/){:target="_blank" rel="noopener nofollow"} package
 
 ~~~ bash
 $ coverage run --source=addrservice --branch -m unittest discover tests -p '*_test.py'

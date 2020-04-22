@@ -147,11 +147,11 @@ def simulate_stream(buffer: bytes, batch_size: int = 4096):
 
 ![](https://1.bp.blogspot.com/-yGaN4SLPvlg/XkilwaO9gEI/AAAAAAAATFA/o8FGrVJjiDoeGEqf2N7Oi2bYcCTWYuO6QCKgBGAsYHg/s1600/Google-Cloud-Speech.png){: width="25%" class="framedimg alignleft"}
 
-Google has [speech-to-text](https://cloud.google.com/speech-to-text/docs){:target="_blank" rel="nofollow"} as one of the Google Cloud services. It has [libraries](https://cloud.google.com/speech-to-text/docs/reference/libraries){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It supports both batch and stream modes. Please open the [Colab](http://bit.ly/colab-speech-recognition-python){:target="_blank"}, and execute the code as you read this post. And also play with the code.
+Google has [speech-to-text](https://cloud.google.com/speech-to-text/docs){:target="_blank" rel="noopener nofollow"} as one of the Google Cloud services. It has [libraries](https://cloud.google.com/speech-to-text/docs/reference/libraries){:target="_blank" rel="noopener nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It supports both batch and stream modes. Please open the [Colab](http://bit.ly/colab-speech-recognition-python){:target="_blank"}, and execute the code as you read this post. And also play with the code.
 
 ### Setup
 
-You will need your [Google Cloud Credentials](https://developers.google.com/accounts/docs/application-default-credentials){:target="_blank" rel="nofollow"}. You will need to setup `GOOGLE_APPLICATION_CREDENTIALS` environment variable pointing to the cred file:
+You will need your [Google Cloud Credentials](https://developers.google.com/accounts/docs/application-default-credentials){:target="_blank" rel="noopener nofollow"}. You will need to setup `GOOGLE_APPLICATION_CREDENTIALS` environment variable pointing to the cred file:
 
 ~~~ bash
 $ export GOOGLE_APPLICATION_CREDENTIALS='/path/to/google/cloud/cred/file/gc-creds.json'
@@ -297,7 +297,7 @@ google-cloud-streaming-stt: "experience proves this"
 
 ![](https://1.bp.blogspot.com/-O3wB1GGbMro/XkimgPKvsfI/AAAAAAAATFI/j3cMevYvJ2YzIbbeLZd6CCfHOF0EVLcuACKgBGAsYHg/s1600/Microsoft-Azure-Speech-to-Text.png){: width="25%" class="framedimg alignleft"}
 
-Microsoft Azure [Speech Services](https://azure.microsoft.com/en-in/services/cognitive-services/speech-services/){:target="_blank" rel="nofollow"} have [Speech to Text](https://azure.microsoft.com/en-in/services/cognitive-services/speech-to-text/){:target="_blank" rel="nofollow"} service.
+Microsoft Azure [Speech Services](https://azure.microsoft.com/en-in/services/cognitive-services/speech-services/){:target="_blank" rel="noopener nofollow"} have [Speech to Text](https://azure.microsoft.com/en-in/services/cognitive-services/speech-to-text/){:target="_blank" rel="noopener nofollow"} service.
 
 ### Setup
 
@@ -307,7 +307,7 @@ Install Azure speech package:
 $ pip3 install azure-cognitiveservices-speech
 ~~~
 
-You can enable Speech service and find credentials for your account at [Microsoft Azure portal](https://portal.azure.com/){:target="_blank" rel="nofollow"}. You can open a free account [here](https://azure.microsoft.com/en-in/free/ai/){:target="_blank" rel="nofollow"}. Service credentials:
+You can enable Speech service and find credentials for your account at [Microsoft Azure portal](https://portal.azure.com/){:target="_blank" rel="noopener nofollow"}. You can open a free account [here](https://azure.microsoft.com/en-in/free/ai/){:target="_blank" rel="noopener nofollow"}. Service credentials:
 
 ~~~ python
 AZURE_SPEECH_KEY = 'YOUR AZURE SPEECH KEY'
@@ -420,7 +420,7 @@ azure-streaming-stt: "Experience proves this."
 
 ![](https://4.bp.blogspot.com/-QMZoIEzqhDs/XkimgPDd8HI/AAAAAAAATFI/aLGvVgJLapAT1BRZbNMx1HDCRgH15VBbgCKgBGAsYHg/s1600/IBM-Watson.png){: width="25%" class="framedimg alignleft"}
 
-IBM [Watson Speech to Text](https://www.ibm.com/in-en/cloud/watson-speech-to-text){:target="_blank" rel="nofollow"} is ASR service with .NET, Go, JavaScript, [Python](https://cloud.ibm.com/apidocs/speech-to-text/speech-to-text?code=python){:target="_blank" rel="nofollow"}, Ruby, Swift and Unity API libraries, as well as REST endpoints. It has rich documentation.
+IBM [Watson Speech to Text](https://www.ibm.com/in-en/cloud/watson-speech-to-text){:target="_blank" rel="noopener nofollow"} is ASR service with .NET, Go, JavaScript, [Python](https://cloud.ibm.com/apidocs/speech-to-text/speech-to-text?code=python){:target="_blank" rel="noopener nofollow"}, Ruby, Swift and Unity API libraries, as well as REST endpoints. It has rich documentation.
 
 ### Setup
 
@@ -617,7 +617,7 @@ watson-cloud-streaming-stt: "experience proves this "
 
 ![](https://1.bp.blogspot.com/-Lx_7dsyO7-s/XkimgM8xRZI/AAAAAAAATFI/85tQK1fIW5ogajM-13qGmkoSY-k3Su_owCKgBGAsYHg/s1600/amazon-social-transcribe.jpg){: width="25%" class="framedimg alignleft"}
 
-[Amazon Transcribe](https://aws.amazon.com/transcribe/){:target="_blank" rel="nofollow"} is a [speech-to-text](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started.html){:target="_blank" rel="nofollow"} AWS cloud service with [libraries](https://aws.amazon.com/transcribe/resources/){:target="_blank" rel="nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It has a [batch](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-python.html){:target="_blank" rel="nofollow"} speech-to-text API (also available as [command line](https://docs.aws.amazon.com/cli/latest/reference/transcribe/start-transcription-job.html){:target="_blank" rel="nofollow"}), but it requires the audio file to be either in S3 bucket, or be available over HTTP. It also has a streaming API on [WebSocket](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html){:target="_blank" rel="nofollow"} and [HTTP/2](https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html){:target="_blank" rel="nofollow"}. Here is an [example with AWS Java SDK](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-streaming.html){:target="_blank" rel="nofollow"}, but no Python bindings (of course, a Python socket library can be used, but it will require getting into [low-level event stream encoding](https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html){:target="_blank" rel="nofollow"}).
+[Amazon Transcribe](https://aws.amazon.com/transcribe/){:target="_blank" rel="noopener nofollow"} is a [speech-to-text](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started.html){:target="_blank" rel="noopener nofollow"} AWS cloud service with [libraries](https://aws.amazon.com/transcribe/resources/){:target="_blank" rel="noopener nofollow"} in C#, Go, Java, JavaScript, PHP, Python, and Ruby. It has a [batch](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-python.html){:target="_blank" rel="noopener nofollow"} speech-to-text API (also available as [command line](https://docs.aws.amazon.com/cli/latest/reference/transcribe/start-transcription-job.html){:target="_blank" rel="noopener nofollow"}), but it requires the audio file to be either in S3 bucket, or be available over HTTP. It also has a streaming API on [WebSocket](https://docs.aws.amazon.com/transcribe/latest/dg/websocket.html){:target="_blank" rel="noopener nofollow"} and [HTTP/2](https://docs.aws.amazon.com/transcribe/latest/dg/how-streaming.html){:target="_blank" rel="noopener nofollow"}. Here is an [example with AWS Java SDK](https://docs.aws.amazon.com/transcribe/latest/dg/getting-started-streaming.html){:target="_blank" rel="noopener nofollow"}, but no Python bindings (of course, a Python socket library can be used, but it will require getting into [low-level event stream encoding](https://docs.aws.amazon.com/transcribe/latest/dg/event-stream.html){:target="_blank" rel="noopener nofollow"}).
 
 Amazon Transcribe Python APIs currently do not facilitate use cases covered in this notebook, and therefore code samples are not included here.
 
@@ -627,7 +627,7 @@ Amazon Transcribe Python APIs currently do not facilitate use cases covered in t
 
 ![](https://2.bp.blogspot.com/-otX2dmaQulI/XkimgKn98EI/AAAAAAAATFI/BjR8l10TgJUI8IJR88mfCnAUi3vyITl6gCKgBGAsYHg/s1600/Nuance-Dragon.png){: width="25%" class="framedimg alignleft"}
  
-Nuance is most probably the oldest [commercial speech recognition products](https://www.nuance.com/mobile/speech-recognition-solutions.html){:target="_blank" rel="nofollow"}, even customised for various domains and industries. They do have [Python bindings](https://nuancedev.github.io/samples/http/python/){:target="_blank" rel="nofollow"} for a speech recognition service. Here is a [code sample](https://github.com/NuanceDev/ndev-python-http-cli/blob/master/ndev/asr.py){:target="_blank" rel="nofollow"} in their GitHub repo.
+Nuance is most probably the oldest [commercial speech recognition products](https://www.nuance.com/mobile/speech-recognition-solutions.html){:target="_blank" rel="noopener nofollow"}, even customised for various domains and industries. They do have [Python bindings](https://nuancedev.github.io/samples/http/python/){:target="_blank" rel="noopener nofollow"} for a speech recognition service. Here is a [code sample](https://github.com/NuanceDev/ndev-python-http-cli/blob/master/ndev/asr.py){:target="_blank" rel="noopener nofollow"} in their GitHub repo.
  
 I could not figure out a way to create a developer account. I hope there is a way to get a limited period free trial credits similar to other products, and get the credentials needed to access the services.
 
@@ -637,11 +637,11 @@ I could not figure out a way to create a developer account. I hope there is a wa
 
 ![](https://3.bp.blogspot.com/-UH8R1gJuEhY/XkimgKzfTFI/AAAAAAAATFI/UF17oQqC_sAxZA49ctDcchjIt4_Wk0QqwCKgBGAsYHg/s1600/cmu-sphinx-wav.png){: width="25%" class="framedimg alignleft"}
 
-[CMUSphinx](https://cmusphinx.github.io/){:target="_blank" rel="nofollow"} has been around for quite some time, and has been adapting to advancements in ASR technologies. [PocketSphinx](https://github.com/cmusphinx/pocketsphinx-python){:target="_blank" rel="nofollow"} is speech-to-text decoder Python package.
+[CMUSphinx](https://cmusphinx.github.io/){:target="_blank" rel="noopener nofollow"} has been around for quite some time, and has been adapting to advancements in ASR technologies. [PocketSphinx](https://github.com/cmusphinx/pocketsphinx-python){:target="_blank" rel="noopener nofollow"} is speech-to-text decoder Python package.
 
 ### Setup
 
-First, install [swig](http://www.swig.org/){:target="_blank" rel="nofollow"}. On macOS, you can install using `brew`:
+First, install [swig](http://www.swig.org/){:target="_blank" rel="noopener nofollow"}. On macOS, you can install using `brew`:
 
 ~~~ bash
 $ brew install swig
@@ -748,7 +748,7 @@ for t in TESTCASES:
 
 ![](https://2.bp.blogspot.com/-RVIupURDNUI/XkimgGEjH-I/AAAAAAAATFI/yzty4qVV1UYHbbC9rITrRuWI6zYu27GswCKgBGAsYHg/s1600/Mozilla-DeepSpeech-logo.png){: width="25%" class="framedimg alignleft"}
 
-Mozilla released [DeepSpeech 0.6](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="nofollow"} software package in December 2019 with [APIs](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="nofollow"} in C, Java, .NET, [Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="nofollow"}, and JavaScript, including support for TensorFlow Lite models for use on edge devices.
+Mozilla released [DeepSpeech 0.6](https://hacks.mozilla.org/2019/12/deepspeech-0-6-mozillas-speech-to-text-engine/){:target="_blank" rel="noopener nofollow"} software package in December 2019 with [APIs](https://github.com/mozilla/DeepSpeech/releases/tag/v0.6.0){:target="_blank" rel="noopener nofollow"} in C, Java, .NET, [Python](https://deepspeech.readthedocs.io/en/v0.6.0/Python-API.html){:target="_blank" rel="noopener nofollow"}, and JavaScript, including support for TensorFlow Lite models for use on edge devices.
 
 ### Setup
 
@@ -882,9 +882,9 @@ Check out how to write a [Python transcriber that converts microphone input to t
 
 ![](https://1.bp.blogspot.com/-hCAFOfb6zZ4/XkimgFgUy6I/AAAAAAAATFI/JlQQuFsgXzshePAPp-2j6XBoZWdqpXEBwCKgBGAsYHg/s1600/Kaldi-ASR.png){: width="25%" class="framedimg alignleft"}
  
-[Kaldi](https://kaldi-asr.org/doc/about.html){:target="_blank" rel="nofollow"} is a very popular software toolkit speech recognition among the research community. It is designed to experiment with different research ideas and possibilities. It has a rich collection of various possible techniques and alternatives. The learning curve is steeper compared to other alternatives discussed in the code lab.
+[Kaldi](https://kaldi-asr.org/doc/about.html){:target="_blank" rel="noopener nofollow"} is a very popular software toolkit speech recognition among the research community. It is designed to experiment with different research ideas and possibilities. It has a rich collection of various possible techniques and alternatives. The learning curve is steeper compared to other alternatives discussed in the code lab.
  
-[PyKaldi](https://pykaldi.github.io/){:target="_blank" rel="nofollow"} provides [Python bindings](https://pykaldi.github.io/api/kaldi.asr.html){:target="_blank" rel="nofollow"}. Please do take a look at [README](https://github.com/pykaldi/pykaldi){:target="_blank" rel="nofollow"} of their GitHub repo.
+[PyKaldi](https://pykaldi.github.io/){:target="_blank" rel="noopener nofollow"} provides [Python bindings](https://pykaldi.github.io/api/kaldi.asr.html){:target="_blank" rel="noopener nofollow"}. Please do take a look at [README](https://github.com/pykaldi/pykaldi){:target="_blank" rel="noopener nofollow"} of their GitHub repo.
  
 There is no pre-build PyPI ready to use package, and you have to build it either from source or from Conda. Neither options suit the Colab environment.
 
@@ -894,15 +894,15 @@ There is no pre-build PyPI ready to use package, and you have to build it either
 
 ![](https://4.bp.blogspot.com/-1FThWMRiDqQ/Xkjh5vf9CZI/AAAAAAAATFk/mWRhksvFq9AK0UKYjlgOFZ_Z37bRlbmFQCKgBGAsYHg/s1600/fb-wav2letter.png){: width="25%" class="framedimg alignleft"}
  
-[Facebook wav2letter@anywhere](https://ai.facebook.com/blog/online-speech-recognition-with-wav2letteranywhere/){:target="_blank" rel="nofollow"} released  in January 2020. It boasts a fully convolutional (CNN) acoustic model instead of a recurrent neural network (RNN) that is used by other solutions. It is very promising, include for use in edge devices. It has [Python bindings](https://github.com/facebookresearch/wav2letter/wiki/Python-bindings){:target="_blank" rel="nofollow"} for its [inference framework](https://github.com/facebookresearch/wav2letter/wiki/Inference-Framework){:target="_blank" rel="nofollow"}.
+[Facebook wav2letter@anywhere](https://ai.facebook.com/blog/online-speech-recognition-with-wav2letteranywhere/){:target="_blank" rel="noopener nofollow"} released  in January 2020. It boasts a fully convolutional (CNN) acoustic model instead of a recurrent neural network (RNN) that is used by other solutions. It is very promising, include for use in edge devices. It has [Python bindings](https://github.com/facebookresearch/wav2letter/wiki/Python-bindings){:target="_blank" rel="noopener nofollow"} for its [inference framework](https://github.com/facebookresearch/wav2letter/wiki/Inference-Framework){:target="_blank" rel="noopener nofollow"}.
  
-Like Kaldi, this also does not provide a PyPI package, and needs to build and installe from [source](https://github.com/facebookresearch/wav2letter/){:target="_blank" rel="nofollow"}.
+Like Kaldi, this also does not provide a PyPI package, and needs to build and installe from [source](https://github.com/facebookresearch/wav2letter/){:target="_blank" rel="noopener nofollow"}.
 
 ---
 
 ## SpeechRecognition Python Package
 
-The [SpeechRecognition](https://pypi.org/project/SpeechRecognition/){:target="_blank" rel="nofollow"} package provides a nice abstraction over several solutions. We already explored using Google service and CMU Sphinxpackage. Now we will use these through SpeechRecognition package APIs. It can be installed using pip:
+The [SpeechRecognition](https://pypi.org/project/SpeechRecognition/){:target="_blank" rel="noopener nofollow"} package provides a nice abstraction over several solutions. We already explored using Google service and CMU Sphinxpackage. Now we will use these through SpeechRecognition package APIs. It can be installed using pip:
 
 ~~~ bash
 $ pip3 install SpeechRecognition
@@ -910,7 +910,7 @@ $ pip3 install SpeechRecognition
 
 ### Batch API
 
-SpeechRecognition has only batch API. The first step to create an audio record, either from a file or from a microphone, and the second step is to call `recognize_<speech engine name>` function. It currently has APIs for [CMU Sphinx, Google, Microsoft, IBM, Houndify, and Wit](https://github.com/Uberi/speech_recognition){:target="_blank" rel="nofollow"}. Let's checkout using one cloud service (Google) and one software package (Sphinx) through SpeechRecognition abstraction.
+SpeechRecognition has only batch API. The first step to create an audio record, either from a file or from a microphone, and the second step is to call `recognize_<speech engine name>` function. It currently has APIs for [CMU Sphinx, Google, Microsoft, IBM, Houndify, and Wit](https://github.com/Uberi/speech_recognition){:target="_blank" rel="noopener nofollow"}. Let's checkout using one cloud service (Google) and one software package (Sphinx) through SpeechRecognition abstraction.
 
 ``` python
 import speech_recognition as sr
@@ -970,9 +970,9 @@ google: "your power is sufficient I said"
 
 ### API for other providers
 
-For other speech recognition providers, you will need to create API credentials, which you have to pass to `recognize_<speech engine name>` function, you can check out [this example](https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py){:target="_blank" rel="nofollow"}.
+For other speech recognition providers, you will need to create API credentials, which you have to pass to `recognize_<speech engine name>` function, you can check out [this example](https://github.com/Uberi/speech_recognition/blob/master/examples/audio_transcribe.py){:target="_blank" rel="noopener nofollow"}.
 
-It also has a nice abstraction for Microphone, implemented over PyAudio/PortAudio. Check out examples to capture input from the microphone in [batch](https://github.com/Uberi/speech_recognition/blob/master/examples/microphone_recognition.py){:target="_blank" rel="nofollow"} and continuously in the [background](https://github.com/Uberi/speech_recognition/blob/master/examples/background_listening.py){:target="_blank" rel="nofollow"}.
+It also has a nice abstraction for Microphone, implemented over PyAudio/PortAudio. Check out examples to capture input from the microphone in [batch](https://github.com/Uberi/speech_recognition/blob/master/examples/microphone_recognition.py){:target="_blank" rel="noopener nofollow"} and continuously in the [background](https://github.com/Uberi/speech_recognition/blob/master/examples/background_listening.py){:target="_blank" rel="noopener nofollow"}.
 
 ---
 

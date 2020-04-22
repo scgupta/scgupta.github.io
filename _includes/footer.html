@@ -9,7 +9,7 @@
 <link itemprop="name" content="{{ site.title }}">
 <link itemprop="url" href="/">
 {% for socialmedia in site.data.socialmedias %} {% if socialmedia[1].showprofile == true %}
-<a itemprop="sameAs" href="{{ socialmedia[1].user | prepend: socialmedia[1].url }}" title="@{{ socialmedia[0] }}" target="_blank"><span class="w3-hover-text-dark-grey" style="color: {{ socialmedia[1].color }};">
+<a itemprop="sameAs" href="{{ socialmedia[1].user | prepend: socialmedia[1].url }}" title="@{{ socialmedia[0] }}" target="_blank" rel="noopener"><span class="w3-hover-text-dark-grey" style="color: {{ socialmedia[1].color }};">
 <i class="fa {{ socialmedia[1].faicon }} fa-fw"></i>
 </span></a>
 {% endif %} {% endfor %}
@@ -22,7 +22,7 @@
 <i class="fa fa-sitemap fa-fw"></i></a>
 </span></a>
 
-<a href="{{ "/feed.xml" | prepend: site.baseurl }}" title="RSS feed" target="_blank"><span class="w3-hover-text-dark-grey" style="color: #f26522;">
+<a href="{{ "/feed.xml" | prepend: site.baseurl }}" title="RSS feed" target="_blank" rel="noopener"><span class="w3-hover-text-dark-grey" style="color: #f26522;">
 <i class="fa fa-rss fa-fw"></i>
 </span></a>
 </div>
