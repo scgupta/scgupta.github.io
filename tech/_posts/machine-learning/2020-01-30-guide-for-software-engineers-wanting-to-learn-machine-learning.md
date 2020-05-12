@@ -12,13 +12,15 @@ tags:
 
 ![](https://4.bp.blogspot.com/-vTTgpLbLNIY/XkYUrf4G00I/AAAAAAAATDU/VfLiDGPsFzI12RhX_kTV4JiTEY9yopqiQCKgBGAsYHg/s1600/AC_Day11_367.JPG){: width="100%" class="framedimg"}
 
-You are a Software Engineer. You notice Artificial Intelligence, Machine Learning, Deep Learning, Data Science buzzwords all around. You wonder what these phrases mean, whether all this is for real and useful or is yet another hype and passing fad.
+**You are a Software Engineer.** You notice Artificial Intelligence, Machine Learning, Deep Learning, Data Science buzzwords all around. You wonder what these phrases mean, whether all this is for real and useful or is yet another hype and passing fad.
 
 You want to figure out how it is changing or will change the computer/IT industry, and why you should care, if at all. You google about it, you read various articles, blogs, and tutorials. You get some idea but are also overwhelmed by the enormous wealth of math, tools, frameworks you discover.
 
-You wish if someone could give an overview, say, a map and compass suitable for an engineer, to help you embark on the journey of mastering it all. This blog post is for you.
+You wish if someone could give an overview, say, a map and compass suitable for an engineer, to help you embark on the journey of mastering it all. This blog post is for you.
 
 Like you, I am a software engineer and have been through that journey. My experience is relevant, and you can use it for charting out your own course. Apart from programming, I also love to trek in the Himalayas. I see interesting parallels in my ML journey and high altitude treks. Through those parallels, I will explain how you can plan and go on an ML expedition.
+
+---
 
 ## A Trekking Expedition
 
@@ -35,6 +37,8 @@ A trek has the following four stages.
 And then the adventure begins!
 
 Let's examine these four stages of the expedition to learn Machine Learning.
+
+---
 
 ## Irresistible Allure
 
@@ -188,6 +192,8 @@ For deep learning, [TensorFlow](https://www.tensorflow.org/){:target="_blank" re
 
 To deploy on the cloud, there are alternatives from all major cloud providers: Google [Cloud AutoML](https://cloud.google.com/automl/){:target="_blank" rel="noopener nofollow"}, Amazon [SageMaker](https://docs.aws.amazon.com/sagemaker/){:target="_blank" rel="noopener nofollow"}, Microsoft [Azure ML](https://docs.microsoft.com/en-us/azure/machine-learning/){:target="_blank" rel="noopener nofollow"}.
 
+--
+
 ## Train Hard
 
 As you can see, machine learning is a vast terrain, a lot of ground to cover. And it is not easy. So you need to train hard.
@@ -219,21 +225,9 @@ Once you get started in ML, you might want to pick some of these books and stren
 - [Machine Learning Yearning](https://www.deeplearning.ai/machine-learning-yearning/){:target="_blank" rel="noopener nofollow"}, by Andrew Ng
 - [Speech and Language Processing](https://web.stanford.edu/~jurafsky/slp3/){:target="_blank" rel="noopener nofollow"}, by Jurafsky, Martin
 
-## Check Your Gears
+### Quickstart Guides
 
-As you begin your ML journey, it is time to check your gears and get a hang of the map and compass.
-
-### Beware of blind spots
-
-**Deterministic logic** is ingrained in Software Engineers. But machine learning is statistical in nature. We need to learn to accept that the model will not work correctly on all inputs. Fixing it for a particular input will most likely degrade overall performance. Learning that was the biggest struggle I had.
-
-You may be surprised that a unit test that has been passing, may start failing even without any code change. It can happen due to the random partitioning of training data into the train, validate, and test sets. Random partitioning can result in a slightly different model. And that model can coincidently fail on the input used in that unit test. You need to internalize the notion of **statistical correctness**.
-
-### Map
-
-You learned about the three most prominent machine learning techniques: linear regression, classification, and clustering. You know about neural networks and applications of deep learning. You also got a list of courses and books for in-depth knowledge. If you want to gather a quick glimpse of the landscape, here is a list of articles to quickly start working on a specific technique or problem.
-
-#### Quickstart Guide:
+If you want to gather a quick glimpse for a specific problem, here is a list of articles to quickly start working on a specific technique or problem.
 
 - An [intro](https://towardsdatascience.com/intro-to-data-science-part-1-numpy-and-pandas-49d98740661b){:target="_blank" rel="noopener nofollow"}, [tutorial](https://www.hackerearth.com/practice/machine-learning/data-manipulation-visualisation-r-python/tutorial-data-manipulation-numpy-pandas-python/tutorial/){:target="_blank" rel="noopener nofollow"}, and [complete guide](https://towardsdatascience.com/a-complete-pandas-guide-2dc53c77a002){:target="_blank" rel="noopener nofollow"} to [data manipulation](https://towardsdatascience.com/data-manipulation-for-machine-learning-with-pandas-ab23e79ba5de){:target="_blank" rel="noopener nofollow"} with [NumPy and Pandas](https://towardsdatascience.com/numpy-and-pandas-for-data-scientists-2be4a093b4b5){:target="_blank" rel="noopener nofollow"}
 - [Tips](https://towardsdatascience.com/10-tips-to-improve-your-plotting-f346fa468d18){:target="_blank" rel="noopener nofollow"} on [graph plotting](https://towardsdatascience.com/basics-of-graph-plotting-7eaadd11a8d){:target="_blank" rel="noopener nofollow"} and [data visualization](https://towardsdatascience.com/introduction-to-data-visualization-in-python-89a54c97fbed){:target="_blank" rel="noopener nofollow"} with [Matplotlib](https://towardsdatascience.com/data-visualization-using-matplotlib-16f1aae5ce70){:target="_blank" rel="noopener nofollow"} and [Seaborn](https://towardsdatascience.com/data-visualization-using-seaborn-fc24db95a850){:target="_blank" rel="noopener nofollow"}, and having [fun](https://towardsdatascience.com/seaborn-lets-make-plotting-fun-4951b89a0c07){:target="_blank" rel="noopener nofollow"} doing [Exploratory Data Analysis](https://towardsdatascience.com/how-to-perform-exploratory-data-analysis-with-seaborn-97e3413e841d){:target="_blank" rel="noopener nofollow"}
@@ -253,7 +247,21 @@ You learned about the three most prominent machine learning techniques: linear r
 - [Principal Component Analysis](https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c){:target="_blank" rel="noopener nofollow"} ([Dimensionality Reduction](https://towardsdatascience.com/dimensionality-reduction-for-machine-learning-80a46c2ebb7e){:target="_blank" rel="noopener nofollow"}) with [Scikit-Learn](https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_3d.html){:target="_blank" rel="noopener nofollow"} [example](https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html){:target="_blank" rel="noopener nofollow"}
 - A [brief explanation](https://towardsdatascience.com/brief-on-recommender-systems-b86a1068a4dd){:target="_blank" rel="noopener nofollow"} of [Building](https://towardsdatascience.com/how-to-build-a-simple-recommender-system-in-python-375093c3fb7d){:target="_blank" rel="noopener nofollow"} a [Recommender Systems](https://towardsdatascience.com/introduction-to-recommender-systems-6c66cf15ada){:target="_blank" rel="noopener nofollow"}
 
-Now you have a map of the ML landscape. You are ready to go on the journey of learning how ML models work.
+--
+
+## Check Your Gears
+
+As you begin your ML journey, it is time to check your gears and get a hang of the map and compass.
+
+### Beware of blind spots
+
+**Deterministic logic** is ingrained in Software Engineers. But machine learning is statistical in nature. We need to learn to accept that the model will not work correctly on all inputs. Fixing it for a particular input will most likely degrade overall performance. Learning that was the biggest struggle I had.
+
+You may be surprised that a unit test that has been passing, may start failing even without any code change. It can happen due to the random partitioning of training data into the train, validate, and test sets. Random partitioning can result in a slightly different model. And that model can coincidently fail on the input used in that unit test. You need to internalize the notion of **statistical correctness**.
+
+### Map
+
+You learned about the three most prominent machine learning techniques: linear regression, classification, and clustering. You know about neural networks and applications of deep learning. You also got a list of courses and books for in-depth knowledge. You also have a list of articles for most important topics and techniques. All of it together gives you an overview of the ML landscape. That is your **map**. You are ready to go on the journey of learning how ML models work.
 
 ### Compass
 
@@ -265,7 +273,7 @@ Do remember your strengths as a software engineer. You have strong programming s
 
 These skills are not common in data scientists. They may not care about establishing correctness guarantees of an ML model in a 24x7 production system. They typically build batch programs for a given data set. It may require significant (re)work and engineering to take it to production. You have to adapt your engineer practices to the world of ML. You can bring that engineering discipline and rigor to ML.
 
-Both data scientists and software engineers need to develop a better understanding of the counterpart. They must keep moving towards the top-right quadrant. That is your compass.
+Both data scientists and software engineers need to develop a better understanding of the counterpart. They must keep moving towards the top-right quadrant. That is your **compass**.
 
 ## Adventure Begins
 
