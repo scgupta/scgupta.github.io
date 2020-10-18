@@ -11,6 +11,8 @@ canonical_url: "https://towardsdatascience.com/apply-function-to-pandas-datafram
 code: true
 ---
 
+![](https://cdn-images-1.medium.com/max/2320/1*zsfQIDGZrdGLsjA5vrafWA.jpeg){:width="100%" class="framedimg"}
+
 Applying a function to all rows in a [Pandas](https://pandas.pydata.org/) [DataFrame](https://pandas.pydata.org/docs/reference/frame.html) is one of the most common operations during [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling). There are many ways of doing it. In this article, you will measure the performance of 6 common alternatives. With a companion Colab, you can do it all in your browser. No need to install anything on your machine.
 
 ## Problem
@@ -52,7 +54,7 @@ It is a good time to open the companion [Colab](https://colab.research.google.co
 We will minimize the storage size to eliminate its effect on any of the alternatives. The DataFrame with a million tasks is taking 22.9MB:
 
 ~~~ python
-**>>>** test_data_set.info()
+>>> test_data_set.info()
 
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 1000000 entries, 0 to 999999
@@ -82,7 +84,7 @@ test_data_set['priority'] = test_data_set['priority'].astype(priority_dtype)
 Let’s check out the DataFrame size now:
 
 ~~~ python
-**>>>** test_data_set.info()
+>>> test_data_set.info()
 
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 1000000 entries, 0 to 999999
@@ -114,7 +116,7 @@ For this exercise, we will assume that a task with **HIGH priority** is **import
 The Eisenhower Action for a task (i.e. a row in the DataFrame) is computed by using the `due_date` and `priority` columns:
 
 ~~~ python
-**>>>** cutoff_date = datetime.date.today() + datetime.timedelta(days=2)
+>>> cutoff_date = datetime.date.today() + datetime.timedelta(days=2)
 
 >>> eisenhower_action(
   test_data_set.loc[0].priority == 'HIGH',
