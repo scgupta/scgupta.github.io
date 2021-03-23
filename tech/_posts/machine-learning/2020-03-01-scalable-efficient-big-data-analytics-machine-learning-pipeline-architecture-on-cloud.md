@@ -153,19 +153,10 @@ With the advent of [serverless computing](https://en.wikipedia.org/wiki/Serverle
 
 Typical serverless architectures of big data pipelines on **Amazon Web Services**, **Microsoft Azure**, and **Google Cloud Platform (GCP)** are shown below. Each maps closely to the general big data architecture discussed in the previous section. You can use these as a reference for shortlisting technologies suitable for your needs.
 
-<figure class="aligncenter">
-  <img src="https://3.bp.blogspot.com/-KJcUTrUPLXo/Xl_nysua7kI/AAAAAAAATrs/5Kmrx9DW3hsUqBL_9T9Ez2tH-V3GWAOXgCKgBGAsYHg/s1600/BigDataPipeline-AWS.png" class="framedimg" width="100%" >
-  <figcaption class="aligncenter">Serverless big data pipeline architecture on Amazon Web Services (AWS)</figcaption>
-</figure>
 
 <figure class="aligncenter">
-  <img src="https://2.bp.blogspot.com/-C7mZX5Sfqh0/Xl_nyl476tI/AAAAAAAATrs/SFPBR9HQ3BsCOeMj7RmUrCsScD7mb9RDACKgBGAsYHg/s1600/BigDataPipeline-Azure.png" class="framedimg" width="100%" >
-  <figcaption class="aligncenter">Serverless big data pipeline architecture on Microsoft Azure</figcaption>
-</figure>
-
-<figure class="aligncenter">
-  <img src="https://1.bp.blogspot.com/-GG4oe6NS_gw/Xl_nytqF00I/AAAAAAAATrs/MPwSqn5w8NA4OTp7_U5i0SRC5_7emV43ACKgBGAsYHg/s1600/BigDataPipeline-GC.png" class="framedimg" width="100%" >
-  <figcaption class="aligncenter">Serverless big data pipeline architecture on Google Cloud Platform (GCP)</figcaption>
+  <img src="https://miro.medium.com/max/814/1*vvGpN1GMH0iQKC_GsTRH7Q.png" class="framedimg" width="100%" >
+  <figcaption class="aligncenter">Serverless big data pipeline architecture on AWS, Microsoft Azure, and GCP</figcaption>
 </figure>
 
 ---
