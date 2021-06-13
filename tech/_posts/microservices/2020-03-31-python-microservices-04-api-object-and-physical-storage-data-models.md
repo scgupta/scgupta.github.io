@@ -7,7 +7,7 @@ tags:
   - "microservices"
   - "python"
   - "tornado"
-canonical_url: "https://medium.com/slanglabs/python-microservices-04-api-object-and-physical-storage-data-models-9ad24c630d36"
+canonical_url: "https://medium.com/swlh/python-microservices-04-api-object-and-physical-storage-data-models-9ad24c630d36"
 code: true
 ---
 

@@ -7,7 +7,7 @@ tags:
   - "microservices"
   - "python"
   - "tornado"
-canonical_url: "https://medium.com/slanglabs/python-microservices-02-tornado-rest-unit-integration-tests-6a1e64900c6f"
+canonical_url: "https://medium.com/swlh/python-microservices-02-tornado-rest-unit-integration-tests-6a1e64900c6f"
 code: true
 ---
 

@@ -8,6 +8,7 @@ tags:
   - "data-science"
   - "big-data"
   - "analytics"
+canonical_url: "https://towardsdatascience.com/scalable-efficient-big-data-analytics-machine-learning-pipeline-architecture-on-cloud-4d59efc092b5"
 ---
 
 For deploying big-data analytics, data science, and machine learning (ML) applications in real-world, analytics-tuning and model-training is only around 25% of the work. Approximately 50% of the effort goes into making data ready for analytics and ML. The remaining 25% effort goes into making insights and model inferences easily consumable at scale. The big data pipeline puts it all together. It is the railroad on which heavy and marvelous wagons of ML run. Long term success depends on getting the data pipeline right.

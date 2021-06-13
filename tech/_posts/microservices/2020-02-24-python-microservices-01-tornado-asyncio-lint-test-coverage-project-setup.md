@@ -7,7 +7,7 @@ tags:
   - "microservices"
   - "python"
   - "tornado"
-canonical_url: "https://medium.com/slanglabs/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup-9fbf4ca3bf90"
+canonical_url: "https://medium.com/swlh/python-microservices-01-tornado-asyncio-lint-test-coverage-project-setup-9fbf4ca3bf90"
 code: true
 ---
 

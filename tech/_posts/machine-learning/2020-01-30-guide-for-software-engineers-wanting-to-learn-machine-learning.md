@@ -8,6 +8,7 @@ tags:
   - "data-science"
   - "deep-learning"
   - "artificial-intelligence"
+canonical_url: "https://towardsdatascience.com/software-engineers-trek-into-machine-learning-46b45895d9e0"
 ---
 
 ![](https://4.bp.blogspot.com/-vTTgpLbLNIY/XkYUrf4G00I/AAAAAAAATDU/VfLiDGPsFzI12RhX_kTV4JiTEY9yopqiQCKgBGAsYHg/s1600/AC_Day11_367.JPG){: width="100%" class="framedimg"}
