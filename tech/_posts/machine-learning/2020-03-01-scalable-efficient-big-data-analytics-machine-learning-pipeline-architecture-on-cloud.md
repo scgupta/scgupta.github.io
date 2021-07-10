@@ -156,7 +156,7 @@ Typical serverless architectures of big data pipelines on **Amazon Web Services*
 
 
 <figure class="aligncenter">
-  <img src="https://miro.medium.com/max/814/1*vvGpN1GMH0iQKC_GsTRH7Q.png" class="framedimg" width="100%" >
+  <img src="https://miro.medium.com/max/2000/1*zwjVpH9A-IsPBXo2etcCVQ.jpeg" class="framedimg" width="100%" >
   <figcaption class="aligncenter">Serverless big data pipeline architecture on AWS, Microsoft Azure, and GCP</figcaption>
 </figure>
 
